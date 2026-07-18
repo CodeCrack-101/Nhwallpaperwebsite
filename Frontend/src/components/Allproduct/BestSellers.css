@@ -1,0 +1,261 @@
+/* Base Container Configurations */
+.bestsellers-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 40px 24px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #111;
+    background-color: #ffffff;
+  }
+  
+  /* Header Area styling */
+  .page-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  
+  .main-title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+  }
+  
+  .main-subtitle {
+    color: #555;
+    font-size: 1.05rem;
+    margin-bottom: 24px;
+  }
+  
+  .search-wrapper {
+    max-width: 540px;
+    margin: 0 auto;
+  }
+  
+  .search-input {
+    width: 100%;
+    padding: 14px 24px;
+    border: 1px solid #7c7c7c;
+    border-radius: 30px; /* Perfect capsule curve */
+    font-size: 0.95rem;
+    outline: none;
+  }
+  
+  /* Section Navigation */
+  .section-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-bottom: 1px solid #eaeaea;
+    padding-bottom: 16px;
+    margin-bottom: 24px;
+  }
+  
+  .section-title {
+    font-family: 'Times New Roman', Times, serif; /* Editorial serif title font style */
+    font-size: 1.65rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    margin: 0 0 4px 0;
+  }
+  
+  .section-offer {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #333;
+    margin: 0 0 16px 0;
+  }
+  
+  .tabs-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+  
+  .tab-item {
+    cursor: pointer;
+    color: #8c8c8c;
+  }
+  
+  .tab-item.active {
+    color: #000;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+  
+  .tab-separator {
+    color: #ccc;
+  }
+  
+  .shop-all-link {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #111;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  
+  /* Grid Framework: Defaults to 4 columns */
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  
+  /* Individual Card Blocks */
+  .product-card {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+  }
+  
+  .product-image-box {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: #f7f7f7;
+    overflow: hidden;
+  }
+  
+  .product-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Badges Placement */
+  .badge-tag {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 0.6rem;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 3px;
+    color: #fff;
+    letter-spacing: 0.5px;
+  }
+  
+  .badge-tag.sold-out {
+    background-color: #a5a5a5;
+  }
+  
+  .badge-tag.save-25%{
+    background-color: #111;
+  }
+  
+  /* Typography elements within the info layout block */
+  .product-info {
+    padding: 12px 0;
+    flex-grow: 1;
+  }
+  
+  .brand-name {
+    font-size: 0.65rem;
+    color: #777;
+    display: block;
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+  }
+  
+  .product-title {
+    font-size: 0.76rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: #222;
+    margin: 0 0 8px 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .price-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  
+  .original-price {
+    color: #999;
+    text-decoration: line-through;
+  }
+  
+  .sale-price {
+    color: #d9534f; /* Muted contrast red tone */
+  }
+  
+  .rating-stars {
+    color: #f0ad4e;
+    font-size: 0.75rem;
+  }
+  
+  /* Action Buttons Styling */
+  .action-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    background: transparent;
+    border-radius: 24px; /* Matches the pill style look */
+    cursor: pointer;
+    transition: all 0.2s ease;
+    letter-spacing: 0.5px;
+  }
+  
+  .btn-add {
+    border: 1px solid #111;
+    color: #111;
+  }
+  
+  .btn-add:hover {
+    background-color: #111;
+    color: #fff;
+  }
+  
+  .btn-soldout {
+    border: 1px solid #eaeaea;
+    color: #b5b5b5;
+    cursor: not-allowed;
+  }
+  
+  /* Mobile & Tablet Responsiveness: Locks items directly into a 2x2 grid */
+  @media (max-width: 900px) {
+    .products-grid {
+      grid-template-columns: repeat(2, 1fr); /* Enforces exactly two items across the row */
+      gap: 16px;
+    }
+    
+    .section-nav {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    
+    .nav-right {
+      align-self: flex-start;
+    }
+  
+    .main-title {
+      font-size: 1.75rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .bestsellers-container {
+      padding: 24px 12px;
+    }
+    
+    .product-title {
+      font-size: 0.7rem;
+    }
+    
+    .action-btn {
+      padding: 10px;
+    }
+  }

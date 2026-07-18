@@ -1,0 +1,134 @@
+/* Base Layout */
+.collection-section {
+    padding: 60px 24px;
+    max-width: 1400px;
+    margin: 0 auto;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  }
+  
+  /* Header Styling */
+  .collection-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .collection-title {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2.2rem;
+    font-weight: 500;
+    color: #1a1a1a;
+    margin: 0 0 10px 0;
+  }
+  
+  .collection-subtitle {
+    font-size: 0.95rem;
+    color: #666;
+    margin: 0;
+    letter-spacing: 0.5px;
+  }
+  
+  /* Desktop Grid Configuration (4 Columns) */
+  .collection-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 100%;
+  }
+  
+  /* Individual Card Styling */
+  .collection-card {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    aspect-ratio: 3 / 4;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .card-image-wrapper {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #f4f4f4;
+  }
+  
+  .card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+  
+  .collection-card:hover .card-image {
+    transform: scale(1.04);
+  }
+  
+  /* Floating bottom labels */
+  .card-tag {
+    position: absolute;
+    bottom: 16px;
+    left: 12px;
+    right: 12px;
+    background-color: #ffffff;
+    padding: 14px 18px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: background-color 0.2s ease;
+  }
+  
+  .tag-text {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #111111;
+    letter-spacing: 0.5px;
+    line-height: 1.3;
+    text-transform: uppercase;
+    padding-right: 10px;
+  }
+  
+  .tag-arrow {
+    font-size: 1.1rem;
+    color: #111111;
+    transition: transform 0.2s ease;
+  }
+  
+  .collection-card:hover .card-tag {
+    background-color: #f9f9f9;
+  }
+  
+  .collection-card:hover .tag-arrow {
+    transform: translateX(4px);
+  }
+  
+  /* Responsive Rules: Forces a strict 2-column view on tablets & mobile screens */
+  @media (max-width: 900px) {
+    .collection-grid {
+      grid-template-columns: repeat(2, 1fr); /* 2 items per row */
+      gap: 12px; /* Slightly tighter gap on smaller screens */
+    }
+  
+    .collection-title {
+      font-size: 1.75rem;
+    }
+    
+    .card-tag {
+      bottom: 10px;
+      left: 8px;
+      right: 8px;
+      padding: 10px 12px;
+    }
+  
+    .tag-text {
+      font-size: 0.65rem; /* Scales text down dynamically so it doesn't break the small boxes */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .collection-section {
+      padding: 30px 12px;
+    }
+  }

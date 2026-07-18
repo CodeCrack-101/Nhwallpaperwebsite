@@ -9,7 +9,10 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer/Footer';
-
+import BookSlider from '../components/Slider/ProductSlider';
+import ImageSlider from '../components/Slider/ImageSlider';
+import Product from '../components/Products/Product';
+import BestSellers from '../components/Allproduct/BestSellers';
 const MainLayout = () => {
     return (
         <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
@@ -20,7 +23,10 @@ const MainLayout = () => {
             <main style={{ flex: '1 0 auto' }}>
                 <Outlet />
             </main>
-
+            <BookSlider/>
+            <ImageSlider/>
+            <Product/>
+            <BestSellers/>
             {/* Bottom Brand Footer */}
             <Footer />
         </div>
