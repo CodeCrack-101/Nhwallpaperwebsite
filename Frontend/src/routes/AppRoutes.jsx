@@ -16,6 +16,7 @@ import MainLayout from '../layouts/MainLayout';
 import Header from '../components/Header/Header'; // Existing hero page component
 import Login from '../pages/Login';
 import Register from '../pages/Register';
+import ProductDetails from '../pages/ProductDetails';
 import Profile from '../pages/Profile';
 import Orders from '../pages/Orders';
 
@@ -70,6 +71,7 @@ const AppRoutes = () => {
                 <Route path="contact" element={<Contact />} />
                 <Route path="login" element={<Login />} />
                 <Route path="register" element={<Register />} />
+                <Route path="product/:id" element={<ProductDetails />} />
 
                 {/* ================= Protected Routes ================= */}
                 <Route path="profile" element={
