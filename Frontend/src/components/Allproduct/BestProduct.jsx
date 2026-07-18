@@ -66,6 +66,8 @@ const categories = [
 
 const BestProduct = () => {
     const [searchTerm, setSearchTerm] = useState('');
+    // State to manage maximum visible items initially set to 4
+    const [visibleCount, setVisibleCount] = useState(4);
 
     const filteredCategories = useMemo(() => {
         return categories.filter((cat) =>
@@ -74,6 +76,15 @@ const BestProduct = () => {
                 .includes(searchTerm.toLowerCase())
         );
     }, [searchTerm]);
+
+    // Toggles list visibility count
+    const handleToggleVisibility = () => {
+        if (visibleCount >= filteredCategories.length) {
+            setVisibleCount(4);
+        } else {
+            setVisibleCount((prev) => prev + 4);
+        }
+    };
 
     return (
         <div className="best-products-container">
@@ -121,25 +132,36 @@ const BestProduct = () => {
             </div>
 
             {filteredCategories.length > 0 ? (
-                <div className="categories-grid">
-                    {filteredCategories.map((cat) => (
-                        <Link key={cat.id} to={cat.path} className="category-card">
-                            <div 
-                                className="category-image-box"
-                                style={{ backgroundImage: `url(${cat.img})` }}
-                            >
-                                <div className="category-image-overlay" />
-                            </div>
-                            <div className="category-card-body">
-                                <h3 className="category-card-name">{cat.name}</h3>
-                                <p className="category-card-desc">{cat.desc}</p>
-                                <span className="category-card-link">
-                                    Browse Collection &rarr;
-                                </span>
-                            </div>
-                        </Link>
-                    ))}
-                </div>
+                <>
+                    <div className="categories-grid">
+                        {filteredCategories.slice(0, visibleCount).map((cat) => (
+                            <Link key={cat.id} to={cat.path} className="category-card">
+                                <div 
+                                    className="category-image-box"
+                                    style={{ backgroundImage: `url(${cat.img})` }}
+                                >
+                                    <div className="category-image-overlay" />
+                                </div>
+                                <div className="category-card-body">
+                                    <h3 className="category-card-name">{cat.name}</h3>
+                                    <p className="category-card-desc">{cat.desc}</p>
+                                    <span className="category-card-link">
+                                        Browse Collection &rarr;
+                                    </span>
+                                </div>
+                            </Link>
+                        ))}
+                    </div>
+
+                    {/* View More / View Less Action Wrapper */}
+                    {filteredCategories.length > 4 && (
+                        <div className="view-toggle-container">
+                            <button className="view-toggle-btn" onClick={handleToggleVisibility}>
+                                {visibleCount >= filteredCategories.length ? 'View Less' : 'View More'}
+                            </button>
+                        </div>
+                    )}
+                </>
             ) : (
                 <div style={{ textAlign: 'center', padding: '40px', color: '#666', fontFamily: "'Poppins', sans-serif" }}>
                     No categories found matching your search.

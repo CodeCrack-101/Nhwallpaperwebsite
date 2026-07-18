@@ -13,7 +13,7 @@ import { useAuth } from '../context/AuthContext';
 import MainLayout from '../layouts/MainLayout';
 
 // Components/Pages
-import Header from '../components/Header/Header'; // Existing hero page component
+import Header from '../components/Header/Header';
 import Login from '../pages/Login';
 import Register from '../pages/Register';
 import ProductDetails from '../pages/ProductDetails';
@@ -70,8 +70,10 @@ const AppRoutes = () => {
             {/* Wrap all pages inside the MainLayout (Navbar + Footer) */}
             <Route path="/" element={<MainLayout />}>
 
-                {/* ================= Public Routes ================= */}
-                <Route index element={<Header />} /> {/* Existing home hero page */}
+                {/* ================= Public Home Route ================= */}
+                <Route index element={<Header />} /> 
+
+                {/* ================= Public Inner Pages ================= */}
                 <Route path="about" element={<About />} />
                 <Route path="contact" element={<Contact />} />
                 <Route path="login" element={<Login />} />
