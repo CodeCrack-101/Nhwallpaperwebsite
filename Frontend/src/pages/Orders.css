@@ -1,0 +1,363 @@
+/**
+ * Orders Page Stylesheet
+ * Location: frontend/src/pages/Orders.css
+ */
+
+.orders-page {
+    min-height: 90vh;
+    background-color: #fafafa;
+    padding: 60px 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.orders-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.orders-header {
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+.orders-header h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 10px;
+}
+
+.orders-header h1 span {
+    color: #C89B5B;
+}
+
+.orders-header p {
+    color: #666;
+    font-size: 15px;
+}
+
+.loading-state, .error-state {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    font-size: 16px;
+    color: #666;
+}
+
+.error-msg {
+    color: #ca3e3e;
+    font-weight: 600;
+    background-color: #fdf2f2;
+    padding: 15px 30px;
+    border-radius: 8px;
+    border: 1px solid #fbd5d5;
+}
+
+/* Empty Orders Illustrative Styling */
+.empty-orders {
+    background-color: #fff;
+    padding: 60px 40px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    border: 1px solid #eee;
+}
+
+.empty-icon {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.empty-orders h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #111;
+    margin-bottom: 10px;
+}
+
+.empty-orders p {
+    color: #666;
+    font-size: 15px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* Orders list and card styles */
+.orders-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.order-card {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    border: 1px solid #f0f0f0;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.order-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+}
+
+.order-card-header {
+    background-color: #f8f9fa;
+    padding: 20px 25px;
+    border-bottom: 1px solid #eee;
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr 3fr;
+    gap: 15px;
+    text-align: left;
+}
+
+.header-col {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.header-col .label {
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #888;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.header-col .value {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+}
+
+.header-col .value.total {
+    font-weight: 600;
+    color: #C89B5B;
+}
+
+.shipping-col {
+    position: relative;
+}
+
+.shipping-trigger {
+    color: #0066cc !important;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.shipping-tooltip {
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #111;
+    color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    width: 250px;
+    font-size: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    z-index: 10;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    text-align: left;
+}
+
+.shipping-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: #111 transparent transparent transparent;
+}
+
+.shipping-col:hover .shipping-tooltip {
+    opacity: 1;
+}
+
+.order-num-col {
+    text-align: right;
+}
+
+/* Order Status Banner */
+.order-status-banner {
+    padding: 15px 25px;
+    background-color: #fff;
+    border-bottom: 1px solid #f5f5f5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.status-indicator {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.status-dot.processing {
+    background-color: #C89B5B;
+    box-shadow: 0 0 8px rgba(200, 155, 91, 0.5);
+}
+
+.status-dot.shipped {
+    background-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+}
+
+.status-dot.delivered {
+    background-color: #1f7a45;
+    box-shadow: 0 0 8px rgba(31, 122, 69, 0.5);
+}
+
+.status-dot.cancelled {
+    background-color: #ca3e3e;
+    box-shadow: 0 0 8px rgba(202, 62, 62, 0.5);
+}
+
+.status-indicator h4 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #444;
+}
+
+.status-text {
+    font-weight: 700;
+    color: #111;
+}
+
+.delivery-info {
+    font-size: 13px;
+    color: #666;
+    font-weight: 500;
+}
+
+.payment-badge {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.payment-badge.pending {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.payment-badge.paid {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.payment-badge.failed {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+/* Order items list */
+.order-items {
+    padding: 10px 25px;
+}
+
+.item-row {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.item-row:last-child {
+    border-bottom: none;
+}
+
+.item-image-wrapper {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #eee;
+    flex-shrink: 0;
+}
+
+.item-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.item-details {
+    flex-grow: 1;
+    padding-left: 20px;
+    text-align: left;
+}
+
+.item-details h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 5px;
+}
+
+.item-meta {
+    font-size: 13px;
+    color: #777;
+    display: flex;
+    gap: 10px;
+}
+
+.item-meta .separator {
+    color: #ddd;
+}
+
+.item-meta strong {
+    color: #111;
+}
+
+.item-total {
+    font-size: 16px;
+    font-weight: 600;
+    color: #111;
+    text-align: right;
+    min-width: 100px;
+}
+
+@media (max-width: 768px) {
+    .order-card-header {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        padding: 15px;
+    }
+    .order-num-col {
+        text-align: left;
+    }
+    .item-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    .item-details {
+        padding-left: 0;
+    }
+    .item-total {
+        text-align: left;
+        width: 100%;
+        border-top: 1px dashed #eee;
+        padding-top: 10px;
+    }
+}

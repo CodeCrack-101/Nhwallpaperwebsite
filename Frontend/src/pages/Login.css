@@ -1,0 +1,253 @@
+/**
+ * Login/Registration Stylesheet
+ * Location: frontend/src/pages/Login.css
+ */
+
+.auth-page {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fafafa;
+    padding: 40px 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.auth-card {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+    border: 1px solid #f0f0f0;
+    width: 100%;
+    max-width: 520px;
+    transition: all 0.3s ease;
+}
+
+.auth-brand {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.auth-brand h2 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #111;
+    margin-bottom: 5px;
+}
+
+.auth-brand h2 span {
+    color: #C89B5B;
+}
+
+.auth-brand p {
+    font-size: 13px;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.auth-tabs {
+    display: flex;
+    border-bottom: 2px solid #eee;
+    margin-bottom: 30px;
+}
+
+.tab-btn {
+    flex: 1;
+    background: none;
+    border: none;
+    padding: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #888;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+}
+
+.tab-btn:hover {
+    color: #111;
+}
+
+.tab-btn.active {
+    color: #C89B5B;
+    border-bottom-color: #C89B5B;
+}
+
+.auth-message {
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-size: 14px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.auth-message.success {
+    background-color: #e6f7ed;
+    color: #1f7a45;
+    border: 1px solid #c2ebd0;
+}
+
+.auth-message.error {
+    background-color: #fdf2f2;
+    color: #ca3e3e;
+    border: 1px solid #fbd5d5;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: left;
+}
+
+.form-group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #444;
+}
+
+.form-group input {
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+    color: #222;
+}
+
+.form-group input:focus {
+    border-color: #C89B5B;
+    box-shadow: 0 0 8px rgba(200, 155, 91, 0.15);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr;
+    gap: 15px;
+}
+
+.submit-btn {
+    background-color: #111;
+    color: #fff;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 14px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.submit-btn:hover:not(:disabled) {
+    background-color: #C89B5B;
+    box-shadow: 0 4px 15px rgba(200, 155, 91, 0.3);
+}
+
+.submit-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.verify-btn {
+    background-color: #1f7a45;
+}
+
+.verify-btn:hover:not(:disabled) {
+    background-color: #1a6539;
+    box-shadow: 0 4px 15px rgba(31, 122, 69, 0.3);
+}
+
+/* OTP verification styles */
+.otp-info {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.otp-info p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.otp-info h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 10px;
+}
+
+.countdown span {
+    font-weight: 600;
+    color: #ca3e3e;
+}
+
+.otp-input {
+    text-align: center;
+    letter-spacing: 8px;
+    font-size: 22px !important;
+    font-weight: 700;
+}
+
+.resend-btn {
+    background: none;
+    border: none;
+    color: #C89B5B;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.2s;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.resend-btn:hover:not(:disabled) {
+    color: #a87a3a;
+}
+
+.resend-btn:disabled {
+    color: #999;
+    cursor: not-allowed;
+}
+
+.back-btn {
+    background: none;
+    border: 1px solid #ccc;
+    color: #555;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'Poppins', sans-serif;
+}
+
+.back-btn:hover {
+    background-color: #f5f5f5;
+    color: #111;
+}
+
+@media (max-width: 580px) {
+    .auth-card {
+        padding: 30px 20px;
+    }
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}
