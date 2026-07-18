@@ -14,7 +14,7 @@ const App = () => {
     return (
         <AuthProvider>
             <CartProvider>
-                <AppRoutes />
+                <AppRoutes/>
             </CartProvider>
         </AuthProvider>
     );

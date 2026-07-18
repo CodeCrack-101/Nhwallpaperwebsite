@@ -1,0 +1,114 @@
+/**
+ * BestProduct CSS Stylesheet
+ * Location: frontend/src/components/Allproduct/BestProduct.css
+ * Description: Premium styling for categories showcase cards.
+ */
+
+.best-products-container {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.catalogue-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.catalogue-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 10px;
+}
+
+.catalogue-title span {
+    color: #C89B5B;
+}
+
+.catalogue-subtitle {
+    font-size: 16px;
+    color: #666;
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.category-card {
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.category-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(200, 155, 91, 0.15);
+    border-color: #C89B5B;
+}
+
+.category-image-box {
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.category-image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 40%, rgba(0,0,0,0.4) 100%);
+}
+
+.category-card-body {
+    padding: 25px;
+    text-align: left;
+}
+
+.category-card-name {
+    font-size: 22px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 8px;
+    transition: color 0.2s;
+}
+
+.category-card:hover .category-card-name {
+    color: #C89B5B;
+}
+
+.category-card-desc {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.category-card-link {
+    font-size: 14px;
+    font-weight: 600;
+    color: #C89B5B;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: gap 0.2s;
+}
+
+.category-card:hover .category-card-link {
+    gap: 8px;
+}

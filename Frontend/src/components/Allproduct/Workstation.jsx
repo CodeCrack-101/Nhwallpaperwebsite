@@ -1,7 +1,7 @@
 /**
- * Soho Category Catalog Page File
- * Location: frontend/src/components/Allproduct/Soho.jsx
- * Description: Renders products under the SOHO category.
+ * Workstation Seating Category Catalog Page File
+ * Location: frontend/src/components/Allproduct/Workstation.jsx
+ * Description: Renders products under the Workstation category.
  *              Allows searching and links directly to separate ProductDetails page.
  */
 
@@ -11,9 +11,13 @@ import { getProductsByCategory } from '../../data/products';
 import { FiSearch, FiX, FiArrowLeft } from 'react-icons/fi';
 import './CategoryProducts.css';
 
-const products = getProductsByCategory('SOHO');
+// For Workstation seating, display Urbano-3 and SOHO-4 as workstation choices
+const products = [
+    ...getProductsByCategory('Office Chair').slice(2, 3),
+    ...getProductsByCategory('SOHO').slice(3, 4)
+];
 
-const Soho = () => {
+const Workstation = () => {
     const [searchTerm, setSearchTerm] = useState('');
 
     const filteredProducts = useMemo(() => {
@@ -33,8 +37,8 @@ const Soho = () => {
 
             {/* Page Header */}
             <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-                <h1 className="category-heading-title">SOHO Chairs</h1>
-                <p className="category-heading-desc">Premium minimalist seating designed to elevate your home workspaces.</p>
+                <h1 className="category-heading-title">Workstation Seating</h1>
+                <p className="category-heading-desc">Multi-functional draft chairs and task stools optimized for active collaborative desks.</p>
             </div>
 
             {/* Search Bar */}
@@ -42,7 +46,7 @@ const Soho = () => {
                 <FiSearch className="category-search-icon" />
                 <input
                     type="text"
-                    placeholder="Search Soho products..."
+                    placeholder="Search Workstation products..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                     className="category-search-input"
@@ -92,9 +96,10 @@ const Soho = () => {
                     ))}
                 </div>
             ) : (
-                <div className="category-no-results">No Soho products found.</div>
+                <div className="category-no-results">No Workstation seating found.</div>
             )}
         </main>
     );
-}
-export default Soho;
+};
+
+export default Workstation;

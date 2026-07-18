@@ -1,0 +1,214 @@
+/**
+ * Category Products Styling Sheet
+ * Location: frontend/src/components/Allproduct/CategoryProducts.css
+ * Description: Premium CSS styling sheet for Soho, Sky, Urbano, Gaming,
+ *              Visitor and Workstation catalog page grids and layouts.
+ */
+
+.app-container {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fcfcfc;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.app-main {
+    flex-grow: 1;
+}
+
+/* Category Page Title styling */
+.category-heading-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #111;
+    margin: 0;
+    letter-spacing: -0.5px;
+}
+
+.category-heading-desc {
+    color: #666;
+    font-size: 15px;
+    margin-top: 5px;
+}
+
+/* Back Link style */
+.category-back-link {
+    display: inline-flex;
+    align-items: center;
+    color: #888;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    margin-bottom: 35px;
+    gap: 6px;
+    transition: color 0.2s;
+}
+
+.category-back-link:hover {
+    color: #C89B5B;
+}
+
+/* Search Bar Wrapper */
+.category-search-wrapper {
+    display: flex;
+    align-items: center;
+    max-width: 500px;
+    margin: 0 auto 40px auto;
+    border: 1px solid #e5e5e5;
+    border-radius: 30px;
+    padding: 10px 22px;
+    background-color: #fff;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+    transition: all 0.2s;
+}
+
+.category-search-wrapper:focus-within {
+    border-color: #C89B5B;
+    box-shadow: 0 4px 15px rgba(200, 155, 91, 0.1);
+}
+
+.category-search-input {
+    border: none;
+    width: 100%;
+    outline: none;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    background: transparent;
+}
+
+.category-search-input::placeholder {
+    color: #aaa;
+}
+
+.category-search-icon {
+    color: #888;
+    margin-right: 12px;
+    font-size: 16px;
+}
+
+.category-clear-icon {
+    color: #888;
+    cursor: pointer;
+    font-size: 16px;
+    transition: color 0.2s;
+}
+
+.category-clear-icon:hover {
+    color: #111;
+}
+
+/* Products Catalog Grid */
+.category-products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+/* Product Card Styling */
+.category-product-card {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+    border: 1px solid #f0f0f0;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+}
+
+.category-product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+    border-color: #C89B5B;
+}
+
+.category-product-image {
+    background-size: cover;
+    background-position: center;
+    height: 240px;
+    width: 100%;
+    transition: transform 0.5s ease;
+}
+
+.category-product-card:hover .category-product-image {
+    transform: scale(1.03);
+}
+
+.category-product-body {
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+    text-align: left;
+}
+
+.category-product-title {
+    font-size: 17px;
+    font-weight: 600;
+    color: #111;
+    margin: 0 0 8px 0;
+    line-height: 1.4;
+    transition: color 0.2s;
+}
+
+.category-product-card:hover .category-product-title {
+    color: #C89B5B;
+}
+
+.category-product-desc {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.5;
+    margin: 0 0 15px 0;
+    display: -webkit-box;
+    WebkitLineClamp: 2;
+    WebkitBoxOrient: 'vertical';
+    overflow: hidden;
+}
+
+.category-product-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #f9f9f9;
+    padding-top: 15px;
+    margin-top: auto;
+}
+
+.category-product-price {
+    color: #C89B5B;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.category-product-btn {
+    font-size: 12px;
+    color: #C89B5B;
+    font-weight: 600;
+    border: 1px solid #C89B5B;
+    border-radius: 20px;
+    padding: 4px 14px;
+    background: transparent;
+    transition: all 0.2s;
+}
+
+.category-product-card:hover .category-product-btn {
+    background-color: #C89B5B;
+    color: #fff;
+}
+
+.category-no-results {
+    text-align: center;
+    padding: 60px 20px;
+    color: #888;
+    font-size: 16px;
+}

@@ -20,8 +20,15 @@ import ProductDetails from '../pages/ProductDetails';
 import Profile from '../pages/Profile';
 import Orders from '../pages/Orders';
 
+// Category Components
+import Soho from '../components/Allproduct/Soho';
+import Sky from '../components/Allproduct/Sky';
+import Uv from '../components/Allproduct/Uv';
+import Urbano from '../components/Allproduct/Urbano';
+import Ew from '../components/Allproduct/Ew';
+import Workstation from '../components/Allproduct/Workstation';
+
 // Placeholders for complete UX routes
-import Shop from '../pages/Shop';
 import About from '../pages/About';
 import Contact from '../pages/Contact';
 import Cart from '../pages/Cart';
@@ -65,13 +72,17 @@ const AppRoutes = () => {
 
                 {/* ================= Public Routes ================= */}
                 <Route index element={<Header />} /> {/* Existing home hero page */}
-                <Route path="products" element={<Shop />} />
-                <Route path="shop" element={<Shop />} />
                 <Route path="about" element={<About />} />
                 <Route path="contact" element={<Contact />} />
                 <Route path="login" element={<Login />} />
                 <Route path="register" element={<Register />} />
                 <Route path="product/:id" element={<ProductDetails />} />
+                <Route path="soho" element={<Soho />} />
+                <Route path="sky" element={<Sky />} />
+                <Route path="gaming" element={<Uv />} />
+                <Route path="office" element={<Urbano />} />
+                <Route path="visitor" element={<Ew />} />
+                <Route path="workstation" element={<Workstation />} />
 
                 {/* ================= Protected Routes ================= */}
                 <Route path="profile" element={
