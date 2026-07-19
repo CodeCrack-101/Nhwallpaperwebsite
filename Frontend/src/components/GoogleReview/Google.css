@@ -1,0 +1,163 @@
+.google-reviews-section {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 20px;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+.reviews-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.reviews-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 10px;
+}
+
+.reviews-title span {
+    color: #C89B5B; /* Matches your premium gold layout aesthetic */
+}
+
+.reviews-subtitle {
+    font-size: 16px;
+    color: #666;
+}
+
+/* 3-Column Base Desktop Grid */
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    width: 100%;
+}
+
+/* Review Individual Card Setup */
+.review-card {
+    background-color: #ffffff;
+    border: 1px solid #f0f0f0;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-4px);
+    border-color: #e2d2ba;
+}
+
+/* Profile Metadata Block */
+.reviewer-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.reviewer-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: #eaeaea;
+}
+
+.reviewer-meta {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.reviewer-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: #222;
+    margin: 0;
+}
+
+.review-time {
+    font-size: 12px;
+    color: #999;
+    margin-top: 2px;
+}
+
+/* Gold Stars styling */
+.review-stars {
+    color: #FFB800;
+    font-size: 16px;
+    margin-bottom: 12px;
+    text-align: left;
+}
+
+.review-text {
+    font-size: 13.5px;
+    color: #444;
+    line-height: 1.6;
+    margin: 0;
+    text-align: left;
+    display: -webkit-box;
+    -webkit-line-clamp: 5; /* Card overflow control safely caps extra-long text blocks */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* States Feedback layouts */
+.reviews-loading, .reviews-error {
+    text-align: center;
+    padding: 60px 20px;
+    color: #666;
+    font-size: 15px;
+}
+
+/* ================= RESPONSIVE SYSTEM ================= */
+/* Forces exactly TWO cards in one row dynamically */
+@media (max-width: 992px) {
+    .reviews-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    .reviews-title {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 600px) {
+    .google-reviews-section {
+        margin: 40px auto;
+    }
+
+    .reviews-grid {
+        grid-template-columns: repeat(2, 1fr); /* Stays strictly 2 cards side by side on mobile */
+        gap: 12px;
+    }
+
+    .review-card {
+        padding: 14px;
+        border-radius: 12px;
+    }
+
+    .reviewer-avatar {
+        width: 36px;
+        height: 36px;
+    }
+
+    .reviewer-name {
+        font-size: 13px;
+    }
+
+    .review-stars {
+        font-size: 12px;
+        margin-bottom: 8px;
+    }
+
+    .review-text {
+        font-size: 12px;
+        line-height: 1.4;
+    }
+}
