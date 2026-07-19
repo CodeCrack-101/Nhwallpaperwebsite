@@ -68,18 +68,18 @@ const AppRoutes = () => {
     return (
         <Routes>
             {/* Wrap all pages inside the MainLayout (Navbar + Footer) */}
-            <Route path="/" element={<MainLayout />}>
+            <Route path="/" element={<MainLayout/>}>
 
                 {/* ================= Public Home Route ================= */}
-                <Route index element={<Header />} /> 
+                <Route index element={<Header />} />
 
                 {/* ================= Public Inner Pages ================= */}
                 <Route path="about" element={<About />} />
                 <Route path="contact" element={<Contact />} />
                 <Route path="login" element={<Login />} />
-                <Route path="register" element={<Register />} />
-                <Route path="product/:id" element={<ProductDetails />} />
-                <Route path="soho" element={<Soho />} />
+                <Route path="register" element={<Register/>} />
+                <Route path="product/:id" element={<ProductDetails/>} />
+                <Route path="soho" element={<Soho/>} />
                 <Route path="sky" element={<Sky />} />
                 <Route path="gaming" element={<Uv />} />
                 <Route path="office" element={<Urbano />} />
