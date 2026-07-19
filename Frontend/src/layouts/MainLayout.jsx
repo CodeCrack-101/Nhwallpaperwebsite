@@ -9,25 +9,19 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer/Footer';
-import BookSlider from '../components/Slider/ProductSlider'
-import ImageSlider from '../components/Slider/ImageSlider'
-import Product from '../components/Products/Product'
-import BestProduct from '../components/Allproduct/BestProduct'
+
 const MainLayout = () => {
     return (
         <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-            {/* Top Navigation Header */}
+            {/* Top Navigation Header - Har page par common rahega */}
             <Navbar />
 
             {/* Main Content Area - Renders active route component via Outlet */}
             <main style={{ flex: '1 0 auto' }}>
                 <Outlet />
             </main>
-            <BookSlider/>
-            <ImageSlider/>
-            <Product/>
-            <BestProduct/>
-            {/* Bottom Global Footer */}
+
+            {/* Bottom Global Footer - Har page par common rahega */}
             <Footer />
         </div>
     );

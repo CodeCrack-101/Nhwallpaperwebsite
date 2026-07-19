@@ -1,5 +1,12 @@
+import React from 'react';
 import { Link } from "react-router-dom";
 import "./Header.css";
+
+// Home Page ke baaki child components ko import kiya
+import BookSlider from '../Slider/ProductSlider';
+import ImageSlider from '../Slider/ImageSlider';
+import Product from '../Products/Product';
+import BestProduct from '../Allproduct/BestProduct';
 
 function Header() {
   return (
@@ -26,41 +33,12 @@ function Header() {
         </div>
       </section>
 
-      {/* Featured Categories */}
-      {/* <section className="categories-section">
-        <div className="section-header">
-          <h2>Shop by Category</h2>
-          <p>Find the perfect theme for every room in your home</p>
-        </div>
-        <div className="categories-grid">
-          <div className="category-card">
-            <div className="category-image nature-img"></div>
-            <div className="category-info">
-              <h3>Nature</h3>
-              <p>Tropical leaves & botanical designs</p>
-              <Link to="/shop?category=Nature" className="category-link">Browse &rarr;</Link>
-            </div>
-          </div>
-
-          <div className="category-card">
-            <div className="category-image space-img"></div>
-            <div className="category-info">
-              <h3>Space</h3>
-              <p>Cosmic nebulae & star fields</p>
-              <Link to="/shop?category=Space" className="category-link">Browse &rarr;</Link>
-            </div>
-          </div>
-
-          <div className="category-card">
-            <div className="category-image abstract-img"></div>
-            <div className="category-info">
-              <h3>Abstract</h3>
-              <p>Textured marble & geometric forms</p>
-              <Link to="/shop?category=Abstract" className="category-link">Browse &rarr;</Link>
-            </div>
-          </div>
-        </div>
-      </section> */}
+      {/* ================= HOME SPECIFIC COMPONENTS ================= */}
+      {/* Yeh saare sections ab Hero section ke thik niche render honge */}
+      <BookSlider />
+      <ImageSlider />
+      <Product />
+      <BestProduct />
     </div>
   );
 }
