@@ -37,17 +37,14 @@ function Navbar() {
                 {/* Left Menu */}
                 <nav className="left-nav">
                     <Link to="/">Home</Link>
-                    <Link to="/shop">Shop</Link>
+                    <Link to="/shop">Category</Link>
                     <Link to="/collections">Collections</Link>
                     <Link to="/about">About</Link>
                     <Link to="/contact">Contact</Link>
                 </nav>
-
                 {/* Center Logo */}
                 <div className="logo">
-                    <Link to="/">
-                        <span>WALL</span>ART
-                    </Link>
+                    <img src="/Logo.png" alt="" />
                 </div>
 
                 {/* Right Icons */}
@@ -55,23 +52,38 @@ function Navbar() {
                     <div className="desktop-icons">
                         {user ? (
                             <>
-                                <Link to="/wishlist" title="Wishlist" className="nav-icon-link">
-                                    <FiHeart />
-                                    {wishlist.length > 0 && <span className="badge">{wishlist.length}</span>}
-                                </Link>
-                                <Link to="/profile" title="Profile" className="nav-icon-link">
-                                    <FiUser />
-                                </Link>
-                                <Link to="/orders" title="Orders" className="nav-text-link">
-                                    Orders
-                                </Link>
+
+                               
+                                {/* Hover Container Anchor Element */}
+                                <div className="profile-dropdown-container">
+                                    <Link to="/profile" title="Profile" className="nav-icon-link">
+                                        <FiUser />
+                                    </Link>
+                                    
+                                    {/* Hover Activated Menu List Overlay */}
+                                    <div className="profile-dropdown-menu">
+                                        <div className="dropdown-user-info">
+                                            <strong>{user.name}</strong>
+                                            <span>{user.email}</span>
+                                        </div>
+                                        <hr />
+                                        <Link to="/orders">My Orders</Link>
+                                        <Link to="/profile">Edit Profile</Link>
+                                        <button onClick={handleLogout} className="dropdown-logout-btn">
+                                            Logout
+                                        </button>
+                                    </div>
+                                </div>
+
                                 <Link to="/cart" title="Cart" className="nav-icon-link cart">
                                     <FiShoppingBag />
                                     {cartItemCount > 0 && <span>{cartItemCount}</span>}
                                 </Link>
-                                <button onClick={handleLogout} className="logout-btn">
-                                    Logout
-                                </button>
+
+                                <Link to="/wishlist" title="Wishlist" className="nav-icon-link">
+                                    <FiHeart />
+                                    {wishlist.length > 0 && <span className="badge">{wishlist.length}</span>}
+                                </Link>
                             </>
                         ) : (
                             <Link to="/login" title="Login" className="nav-icon-link">

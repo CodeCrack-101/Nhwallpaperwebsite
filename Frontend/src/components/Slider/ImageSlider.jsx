@@ -58,7 +58,7 @@ const ImageSlider = ({ beforeImage, afterImage }) => {
         <h1>Empty Wall Into Best Wall</h1>
       {/* "After" Image (Background) */}
       <img 
-        src={afterImage || "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80"} 
+        src={afterImage || "Preview2.png"} 
         alt="After" 
         className="slider-image image-after"
         draggable="false"
@@ -70,7 +70,7 @@ const ImageSlider = ({ beforeImage, afterImage }) => {
         style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
       >
         <img 
-          src={beforeImage || "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80"} 
+          src={beforeImage || "/Preview1.png"} 
           alt="Before" 
           className="slider-image image-before"
           draggable="false"

@@ -70,7 +70,7 @@ const Profile = () => {
                 type: 'error' 
             });
         } finally {
-            setLoading(false);
+            loading(false);
         }
     };
 

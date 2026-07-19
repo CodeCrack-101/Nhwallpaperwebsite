@@ -11,40 +11,30 @@ body {
     background: #f7f7f7;
 }
 
-/* =======================
-        NAVBAR
-======================= */
-
+/* ========================
+        NAVBAR MAIN
+======================== */
 .navbar {
     position: fixed;
     top: 15px;
     left: 50%;
     transform: translateX(-50%);
-
     width: 95%;
     max-width: 1400px;
     height: 78px;
-
-    background: #fff;
-
+    background: #ffffff;
     border-radius: 22px;
-
     display: grid;
     grid-template-columns: 1fr auto 1fr;
-
     align-items: center;
-
     padding: 0 35px;
-
     box-shadow: 0 10px 35px rgba(0, 0, 0, .08);
-
     z-index: 1000;
 }
 
-/* =======================
-      LEFT MENU
-======================= */
-
+/* ========================
+        LEFT MENU
+======================== */
 .left-nav {
     display: flex;
     align-items: center;
@@ -79,30 +69,26 @@ body {
     width: 100%;
 }
 
-/* =======================
-        LOGO
-======================= */
-
+/* ========================
+          LOGO
+======================== */
 .logo {
     justify-self: center;
+    display: flex;
+    align-items: center;
 }
 
-.logo a {
-    text-decoration: none;
-    color: #111;
-    font-size: 30px;
-    font-weight: 700;
-    letter-spacing: 2px;
+.logo img {
+    height: 70px;
+    width: auto;
+    margin-top: 5px;
+    object-fit: contain;
+    display: block;
 }
 
-.logo span {
-    color: #C89B5B;
-}
-
-/* =======================
-     RIGHT SECTION
-======================= */
-
+/* ========================
+      RIGHT SECTION
+======================== */
 .right-nav {
     display: flex;
     justify-content: flex-end;
@@ -122,7 +108,7 @@ body {
 }
 
 .desktop-icons a {
-    color: inherit;
+    color: #444;
     display: flex;
 }
 
@@ -131,10 +117,9 @@ body {
     transform: translateY(-2px);
 }
 
-/* =======================
-         CART
-======================= */
-
+/* ========================
+           CART
+======================== */
 .cart {
     position: relative;
 }
@@ -143,26 +128,20 @@ body {
     position: absolute;
     top: -8px;
     right: -8px;
-
     width: 18px;
     height: 18px;
-
     border-radius: 50%;
-
     background: #C89B5B;
     color: #fff;
-
     font-size: 10px;
-
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* =======================
-      MENU BUTTON
-======================= */
-
+/* ========================
+       MENU BUTTON
+======================== */
 .menu-btn {
     display: none;
     cursor: pointer;
@@ -172,20 +151,16 @@ body {
     font-size: 34px;
 }
 
-/* =======================
-      OVERLAY
-======================= */
-
+/* ========================
+        OVERLAY
+======================== */
 .overlay {
     position: fixed;
     inset: 0;
     background: rgba(0, 0, 0, .4);
-
     opacity: 0;
     visibility: hidden;
-
     transition: .3s;
-
     z-index: 999;
 }
 
@@ -194,32 +169,22 @@ body {
     visibility: visible;
 }
 
-/* =======================
+/* ========================
         SIDEBAR
-======================= */
-
+======================== */
 .sidebar {
     position: fixed;
-
     top: 0;
     left: -300px;
-
     width: 280px;
     height: 100vh;
-
     background: #fff;
-
     padding: 30px;
-
     display: flex;
     flex-direction: column;
-
     gap: 25px;
-
     transition: .4s;
-
     z-index: 1001;
-
     box-shadow: 0 10px 40px rgba(0, 0, 0, .15);
 }
 
@@ -249,93 +214,9 @@ body {
     padding-left: 8px;
 }
 
-/* =======================
-      MOBILE
-======================= */
-
-@media(max-width:992px) {
-
-    .navbar {
-
-        grid-template-columns: 60px 1fr 110px;
-
-        height: 70px;
-
-        padding: 0 18px;
-    }
-
-    /* Hide Desktop Menu */
-
-    .left-nav {
-        display: none;
-    }
-
-    /* Show Hamburger */
-
-    .menu-btn {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-    }
-
-    /* Keep Icons */
-
-    .desktop-icons {
-        display: flex;
-        justify-content: flex-end;
-        gap: 18px;
-    }
-
-    .desktop-icons svg {
-        font-size: 22px;
-    }
-
-    .logo a {
-        font-size: 24px;
-    }
-
-    .right-nav {
-        display: flex;
-        justify-content: flex-end;
-    }
-
-}
-
-/* =======================
-      SMALL MOBILE
-======================= */
-
-@media(max-width:500px) {
-
-    .navbar {
-
-        grid-template-columns: 55px 1fr 95px;
-
-        padding: 0 12px;
-    }
-
-    .logo a {
-        font-size: 20px;
-    }
-
-    .desktop-icons {
-        gap: 12px;
-    }
-
-    .desktop-icons svg {
-        font-size: 20px;
-    }
-
-    .menu-btn svg {
-        font-size: 30px;
-    }
-
-}
-
-/* =======================
-     ADDED AUTH STYLES
-======================= */
-
+/* ========================
+      ADDED AUTH STYLES
+======================== */
 .nav-icon-link {
     position: relative;
     display: flex;
@@ -361,38 +242,6 @@ body {
     align-items: center;
 }
 
-.nav-text-link {
-    text-decoration: none;
-    color: #444;
-    font-size: 14px;
-    font-weight: 500;
-    transition: color 0.3s;
-}
-
-.nav-text-link:hover {
-    color: #C89B5B;
-}
-
-.logout-btn {
-    background: none;
-    border: 1px solid #444;
-    color: #444;
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-size: 13px;
-    font-weight: 500;
-    font-family: 'Poppins', sans-serif;
-    cursor: pointer;
-    transition: all 0.3s;
-}
-
-.logout-btn:hover {
-    background: #ff4757;
-    border-color: #ff4757;
-    color: #fff;
-    transform: translateY(-1px);
-}
-
 .sidebar-logout-btn {
     background: #ff4757;
     color: #fff;
@@ -411,4 +260,167 @@ body {
 
 .sidebar-logout-btn:hover {
     background: #e04050;
+}
+
+/* ==================================
+   PURE WHITE PROFILE DROPDOWN SYSTEM
+================================== */
+.profile-dropdown-container {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 12px;
+    margin-bottom: -12px;
+}
+
+.profile-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: -20px;
+    width: 240px;
+    background-color: #ffffff;
+    border: 1px solid #eaeaea;
+    border-radius: 14px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    padding: 16px 0 10px 0;
+    z-index: 1100;
+    display: flex;
+    flex-direction: column;
+    
+    /* Animation hidden states */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: opacity 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                visibility 0.25s;
+}
+
+/* Display trigger context box */
+.profile-dropdown-container:hover .profile-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(5px);
+}
+
+.dropdown-user-info {
+    padding: 0 20px 10px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.dropdown-user-info strong {
+    font-size: 0.95rem;
+    color: #111111;
+    font-weight: 600;
+}
+
+.dropdown-user-info span {
+    font-size: 0.8rem;
+    color: #888888;
+    word-break: break-all;
+}
+
+.profile-dropdown-menu hr {
+    border: none;
+    border-top: 1px solid #f0f0f0;
+    margin: 4px 0 8px 0;
+}
+
+/* Action Items Inside the Menu */
+.profile-dropdown-menu a, 
+.profile-dropdown-menu .dropdown-logout-btn {
+    padding: 10px 20px;
+    font-size: 0.88rem;
+    color: #555555;
+    text-decoration: none;
+    text-align: left;
+    background: none;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    box-sizing: border-box;
+    display: block;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.profile-dropdown-menu a:hover {
+    background-color: #f9f9f9;
+    color: #C89B5B;
+}
+
+.profile-dropdown-menu .dropdown-logout-btn {
+    color: #ff4757;
+    margin-top: 4px;
+    border-top: 1px solid #fbfbfb;
+}
+
+.profile-dropdown-menu .dropdown-logout-btn:hover {
+    background-color: #fff5f6;
+    color: #e04050;
+}
+
+/* ========================
+      RESPONSIVE MEDIA
+======================== */
+@media(max-width:992px) {
+    .navbar {
+        grid-template-columns: 60px 1fr 110px;
+        height: 70px;
+        padding: 0 18px;
+    }
+
+    .left-nav {
+        display: none;
+    }
+
+    .menu-btn {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .desktop-icons {
+        display: flex;
+        justify-content: flex-end;
+        gap: 18px;
+    }
+
+    .desktop-icons svg {
+        font-size: 22px;
+    }
+
+    .logo img {
+        height: 38px;
+    }
+
+    .right-nav {
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+
+@media(max-width:500px) {
+    .navbar {
+        grid-template-columns: 55px 1fr 95px;
+        padding: 0 12px;
+    }
+
+    .logo img {
+        height: 32px;
+    }
+
+    .desktop-icons {
+        gap: 12px;
+    }
+
+    .desktop-icons svg {
+        font-size: 20px;
+    }
+
+    .menu-btn svg {
+        font-size: 30px;
+    }
 }
