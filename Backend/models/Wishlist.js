@@ -2,6 +2,7 @@
  * Wishlist Model File
  * Location: backend/models/Wishlist.js
  * Description: Mongoose schema representing the user's wishlist items. References the User.
+ *              Includes category tracking for each saved item.
  */
 
 const mongoose = require('mongoose');
@@ -20,7 +21,8 @@ const WishlistSchema = new mongoose.Schema({
         },
         name: String,
         price: Number,
-        productImage: String
+        productImage: String,
+        category: String // Store product category in the database
     }]
 }, {
     timestamps: true

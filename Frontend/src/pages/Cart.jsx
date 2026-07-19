@@ -12,12 +12,11 @@ import { FiTrash2, FiShoppingBag, FiArrowLeft } from 'react-icons/fi';
 import './Cart.css';
 
 const Cart = () => {
-    // ===============================
-    // DATABASE INTEGRATION (FUTURE)
-    // TODO: Fetch from MongoDB
-    // GET /api/cart
-    // ===============================
-    const { cart, totalPrice, updateQuantity, removeFromCart, clearCart } = useCart();
+    const { cart, totalPrice, updateQuantity, removeFromCart, clearCart, refreshCart } = useCart();
+
+    React.useEffect(() => {
+        refreshCart();
+    }, [refreshCart]);
 
     const handleQuantityAdjust = (itemId, newQty) => {
         updateQuantity(itemId, newQty);
