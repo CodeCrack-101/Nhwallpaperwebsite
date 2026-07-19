@@ -1,122 +1,121 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React from 'react';
+import { FiEdit3 } from 'react-icons/fi';
 import './Google.css';
 
+const feedbacks = [
+  {
+    id: 1,
+    name: 'Robert Karmazov',
+    rating: 4,
+    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=150&auto=format&fit=crop',
+    comment: 'Auctor magnis proin vitae laoreet ultrices ultricies diam. Sed duis mattis cras lacus donec. Aliquam lorem ipsum dolor sit amet.'
+  },
+  {
+    id: 2,
+    name: 'Sarah Jenkins',
+    rating: 5,
+    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&auto=format&fit=crop',
+    comment: 'Redefine living spaces perfectly! Premium material and completely flawless experience across the execution dashboard.'
+  },
+  {
+    id: 3,
+    name: 'Arjun Mehta',
+    rating: 4,
+    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=150&auto=format&fit=crop',
+    comment: 'Durable and beautiful premium design formats. The installation workflow was highly professional.'
+  }
+];
+
 const Google = () => {
-  const [reviews, setReviews] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const googleScriptLoaded = useRef(false);
-
-  // ⚠️ APNI DETAILS YAHAN DAALEIN
-  const GOOGLE_API_KEY = "YOUR_GOOGLE_MAPS_API_KEY"; 
-  const GOOGLE_PLACE_ID = "ChIJvYNY7aDJ5zsRiOXCvUvjijc"; 
-
-  useEffect(() => {
-    // 1. Google Maps Script ko dynamically load karne ka function
-    const loadGoogleMapsScript = () => {
-      if (window.google && window.google.maps) {
-        initPlacesService();
-        return;
-      }
-
-      if (googleScriptLoaded.current) return;
-      googleScriptLoaded.current = true;
-
-      const script = document.createElement('script');
-      script.src = `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_API_KEY}&libraries=places`;
-      script.async = true;
-      script.defer = true;
-      script.onload = () => initPlacesService();
-      script.onerror = () => {
-        setError("Failed to load Google Maps SDK.");
-        setLoading(false);
-      };
-      document.head.appendChild(script);
-    };
-
-    // 2. Google Places Service se raw reviews fetch karne ka function
-    const initPlacesService = () => {
-      try {
-        // Ek dummy element create karte hain kyunki PlacesService ko DOM node chahiye hota hai
-        const dummyElement = document.createElement('div');
-        const service = new window.google.maps.places.PlacesService(dummyElement);
-
-        service.getDetails(
-          {
-            placeId: GOOGLE_PLACE_ID,
-            fields: ['reviews', 'rating'], // Sirf zaroori fields pull karenge
-          },
-          (place, status) => {
-            if (status === window.google.maps.places.PlacesServiceStatus.OK && place.reviews) {
-              // Google by default top 5 relevant reviews return karta hai
-              setReviews(place.reviews);
-            } else {
-              setError("No reviews found or API status failed.");
-            }
-            setLoading(false);
-          }
-        );
-      } catch (err) {
-        setError("Error initializing Google Places Service.");
-        setLoading(false);
-      }
-    };
-
-    loadGoogleMapsScript();
-  }, []);
-
-  if (loading) {
-    return (
-      <div className="reviews-loading">
-        <p>Fetching live reviews from Google...</p>
-      </div>
-    );
-  }
-
-  if (error) {
-    return (
-      <div className="reviews-error">
-        <p>{error}</p>
-      </div>
-    );
-  }
+  // ⚠️ APNI GOOGLE BUSINESS PLACE ID YAHAN PASTE KAREIN
+  const GOOGLE_REVIEW_URL = "https://search.google.com/local/writereview?placeid=YOUR_GOOGLE_BUSINESS_PLACE_ID";
 
   return (
-    <section className="google-reviews-section">
-      <div className="reviews-header">
-        <h2 className="reviews-title">What Our <span>Customers Say</span></h2>
-        <p className="reviews-subtitle">Real-time reviews synced straight from our Google Business Profile.</p>
-      </div>
-
-      <div className="reviews-grid">
-        {reviews.map((review, index) => (
-          <div key={index} className="review-card">
-            {/* Reviewer Header */}
-            <div className="reviewer-profile">
-              <img 
-                src={review.profile_photo_url} 
-                alt={review.author_name} 
-                className="reviewer-avatar"
-                referrerPolicy="no-referrer"
-              />
-              <div className="reviewer-meta">
-                <h4 className="reviewer-name">{review.author_name}</h4>
-                <span className="review-time">{review.relative_time_description}</span>
-              </div>
-            </div>
-
-            {/* Dynamic Gold Stars */}
-            <div className="review-stars">
-              {'★'.repeat(review.rating)}
-              {'☆'.repeat(5 - review.rating)}
-            </div>
-
-            {/* Review Text Comments */}
-            <p className="review-text">"{review.text}"</p>
+    <div className="google-reviews-container">
+      
+      {/* ================= TOP METRICS STATS DASHBOARD ================= */}
+      <div className="metrics-dashboard">
+        <div className="breakdown-card">
+          <div className="bar-row">
+            <span className="star-label">FIVE</span>
+            <div className="progress-track"><div className="progress-fill fill-90"></div></div>
+            <span className="count-label">989</span>
           </div>
-        ))}
+          <div className="bar-row">
+            <span className="star-label">FOUR</span>
+            <div className="progress-track"><div className="progress-fill fill-75"></div></div>
+            <span className="count-label">4.5K</span>
+          </div>
+          <div className="bar-row">
+            <span className="star-label">THREE</span>
+            <div className="progress-track"><div className="progress-fill fill-15"></div></div>
+            <span className="count-label">50</span>
+          </div>
+          <div className="bar-row">
+            <span className="star-label">TWO</span>
+            <div className="progress-track"><div className="progress-fill fill-10"></div></div>
+            <span className="count-label">16</span>
+          </div>
+          <div className="bar-row">
+            <span className="star-label">ONE</span>
+            <div className="progress-track"><div className="progress-fill fill-5"></div></div>
+            <span className="count-label">8</span>
+          </div>
+        </div>
+
+        <div className="score-card">
+          <h1 className="average-number">4.3</h1>
+          <div className="score-stars">★★★★★</div>
+          <p className="ratings-total">50 Ratings</p>
+        </div>
       </div>
-    </section>
+
+      {/* ================= MAIN SPLIT GRID BLOCK ================= */}
+      <div className="reviews-split-grid">
+        
+        {/* Left Side: Recent Feedbacks Feed */}
+        <div className="feedbacks-column">
+          <h2 className="section-title">Recent Feedbacks</h2>
+          <div className="feedbacks-stack">
+            {feedbacks.map((item) => (
+              <div key={item.id} className="feedback-item-card">
+                <img src={item.avatar} alt={item.name} className="user-avatar" />
+                <div className="feedback-body">
+                  <div className="feedback-head-row">
+                    <h4 className="user-name">{item.name}</h4>
+                    <div className="card-stars">
+                      {'★'.repeat(item.rating)}{'☆'.repeat(5 - item.rating)}
+                    </div>
+                  </div>
+                  <p className="user-comment">{item.comment}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Right Side: Clean Call-to-Action Box with GMB Review Button */}
+        <div className="action-column">
+          <div className="gmb-cta-box">
+            <h2 className="cta-title">Share Your Experience</h2>
+            <p className="cta-desc">
+              Your feedback helps us grow. Click below to write a review directly on our Google Business Profile page.
+            </p>
+            <a 
+              href={GOOGLE_REVIEW_URL} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="gmb-review-btn"
+            >
+              <FiEdit3 className="btn-icon" />
+              Write a Review on Google
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
   );
 };
 

@@ -1,163 +1,248 @@
-.google-reviews-section {
+.google-reviews-container {
     max-width: 1200px;
-    margin: 80px auto;
+    margin: 60px auto;
     padding: 0 20px;
-    font-family: 'Poppins', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #1a1a1a;
     box-sizing: border-box;
-}
-
-.reviews-header {
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-.reviews-title {
-    font-size: 36px;
-    font-weight: 700;
-    color: #111;
-    margin-bottom: 10px;
-}
-
-.reviews-title span {
-    color: #C89B5B; /* Matches your premium gold layout aesthetic */
-}
-
-.reviews-subtitle {
-    font-size: 16px;
-    color: #666;
-}
-
-/* 3-Column Base Desktop Grid */
-.reviews-grid {
+  }
+  
+  /* Metrics Overview Panel Layout */
+  .metrics-dashboard {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    width: 100%;
-}
-
-/* Review Individual Card Setup */
-.review-card {
-    background-color: #ffffff;
-    border: 1px solid #f0f0f0;
-    border-radius: 16px;
-    padding: 24px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+    grid-template-columns: 1.5fr 1fr;
+    gap: 40px;
+    margin-bottom: 60px;
+    align-items: center;
+  }
+  
+  .breakdown-card {
     display: flex;
     flex-direction: column;
-    transition: transform 0.2s ease;
-}
-
-.review-card:hover {
-    transform: translateY(-4px);
-    border-color: #e2d2ba;
-}
-
-/* Profile Metadata Block */
-.reviewer-profile {
+    gap: 12px;
+  }
+  
+  .bar-row {
     display: flex;
     align-items: center;
-    gap: 12px;
-    margin-bottom: 14px;
-}
-
-.reviewer-avatar {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    object-fit: cover;
-    background-color: #eaeaea;
-}
-
-.reviewer-meta {
+    gap: 16px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+  
+  .star-label {
+    width: 50px;
+    color: #333;
+  }
+  
+  .progress-track {
+    flex-grow: 1;
+    height: 6px;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  
+  .progress-fill {
+    height: 100%;
+    background-color: #f3b942;
+    border-radius: 4px;
+  }
+  
+  .fill-90 { width: 70%; }
+  .fill-75 { width: 85%; }
+  .fill-15 { width: 20%; }
+  .fill-10 { width: 12%; }
+  .fill-5  { width: 6%; }
+  
+  .count-label {
+    width: 40px;
+    text-align: right;
+    color: #666;
+  }
+  
+  /* Score Box Card */
+  .score-card {
+    background-color: #fffdf2;
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(243, 185, 66, 0.05);
+  }
+  
+  .average-number {
+    font-size: 3rem;
+    margin: 0 0 6px 0;
+    color: #f3b942;
+    font-weight: 700;
+  }
+  
+  .score-stars {
+    color: #f3b942;
+    font-size: 1.6rem;
+    margin-bottom: 8px;
+  }
+  
+  .ratings-total {
+    font-size: 0.95rem;
+    color: #555;
+    margin: 0;
+    font-weight: 600;
+  }
+  
+  /* Main Split Grid Structures */
+  .reviews-split-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 50px;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: #111;
+  }
+  
+  /* Feed Cards Styling */
+  .feedbacks-stack {
     display: flex;
     flex-direction: column;
-    text-align: left;
-}
-
-.reviewer-name {
-    font-size: 15px;
-    font-weight: 600;
-    color: #222;
+    gap: 20px;
+  }
+  
+  .feedback-item-card {
+    display: flex;
+    gap: 20px;
+    border: 1px solid #eaeaea;
+    border-radius: 24px;
+    padding: 24px;
+    background: #fff;
+  }
+  
+  .user-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .feedback-body {
+    flex-grow: 1;
+  }
+  
+  .feedback-head-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  
+  .user-name {
+    font-size: 1.05rem;
+    font-weight: 700;
     margin: 0;
-}
-
-.review-time {
-    font-size: 12px;
-    color: #999;
-    margin-top: 2px;
-}
-
-/* Gold Stars styling */
-.review-stars {
-    color: #FFB800;
-    font-size: 16px;
-    margin-bottom: 12px;
-    text-align: left;
-}
-
-.review-text {
-    font-size: 13.5px;
-    color: #444;
+  }
+  
+  .card-stars {
+    color: #f3b942;
+    font-size: 0.95rem;
+  }
+  
+  .user-comment {
+    font-size: 0.9rem;
+    color: #666;
     line-height: 1.6;
     margin: 0;
-    text-align: left;
-    display: -webkit-box;
-    -webkit-line-clamp: 5; /* Card overflow control safely caps extra-long text blocks */
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
-
-/* States Feedback layouts */
-.reviews-loading, .reviews-error {
+  }
+  
+  /* Right Side: Google Review CTA Box & Button */
+  .gmb-cta-box {
+    background-color: #ffffff;
+    border: 1px solid #eaeaea;
+    border-radius: 24px;
+    padding: 40px 30px;
     text-align: center;
-    padding: 60px 20px;
+    position: sticky;
+    top: 40px; /* Viewport frame alignment par fix rahega scrolling ke waqt */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  }
+  
+  .cta-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 0 0 12px 0;
+    color: #111;
+  }
+  
+  .cta-desc {
+    font-size: 0.9rem;
     color: #666;
-    font-size: 15px;
-}
-
-/* ================= RESPONSIVE SYSTEM ================= */
-/* Forces exactly TWO cards in one row dynamically */
-@media (max-width: 992px) {
-    .reviews-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
+    line-height: 1.6;
+    margin: 0 0 30px 0;
+  }
+  
+  .gmb-review-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #f3b942;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 700;
+    padding: 14px 24px;
+    border-radius: 12px;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: 0 4px 15px rgba(243, 185, 66, 0.2);
+    transition: all 0.2s ease;
+    cursor: pointer;
+  }
+  
+  .gmb-review-btn:hover {
+    background-color: #deaa3b;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(243, 185, 66, 0.3);
+  }
+  
+  .btn-icon {
+    font-size: 1.1rem;
+  }
+  
+  /* ================= RESPONSIVE DESIGN INTERFACE SYSTEM ================= */
+  @media (max-width: 900px) {
+    .reviews-split-grid {
+      grid-template-columns: 1fr; /* CTA layout moves elegantly under the list grid */
+      gap: 40px;
     }
-    .reviews-title {
-        font-size: 28px;
+    .gmb-cta-box {
+      position: static;
+      padding: 30px 20px;
     }
-}
-
-@media (max-width: 600px) {
-    .google-reviews-section {
-        margin: 40px auto;
+  }
+  
+  @media (max-width: 600px) {
+    .metrics-dashboard {
+      grid-template-columns: 1fr;
+      gap: 24px;
     }
-
-    .reviews-grid {
-        grid-template-columns: repeat(2, 1fr); /* Stays strictly 2 cards side by side on mobile */
-        gap: 12px;
+    
+    .feedback-item-card {
+      padding: 16px;
+      gap: 12px;
     }
-
-    .review-card {
-        padding: 14px;
-        border-radius: 12px;
+  
+    .user-avatar {
+      width: 48px;
+      height: 48px;
     }
-
-    .reviewer-avatar {
-        width: 36px;
-        height: 36px;
+  
+    .feedback-head-row {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4px;
     }
-
-    .reviewer-name {
-        font-size: 13px;
-    }
-
-    .review-stars {
-        font-size: 12px;
-        margin-bottom: 8px;
-    }
-
-    .review-text {
-        font-size: 12px;
-        line-height: 1.4;
-    }
-}
+  }

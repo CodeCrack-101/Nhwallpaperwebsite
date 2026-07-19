@@ -7,6 +7,7 @@ import BookSlider from '../Slider/ProductSlider';
 import ImageSlider from '../Slider/ImageSlider';
 import Product from '../Products/Product';
 import BestProduct from '../Allproduct/BestProduct';
+import Google from '../GoogleReview/Google';
 
 function Header() {
   return (
@@ -39,6 +40,7 @@ function Header() {
       <ImageSlider />
       <Product />
       <BestProduct />
+      <Google/>
     </div>
   );
 }
