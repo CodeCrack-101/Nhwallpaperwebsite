@@ -15,12 +15,10 @@ const MainLayout = () => {
         <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
             {/* Top Navigation Header - Har page par common rahega */}
             <Navbar />
-
             {/* Main Content Area - Renders active route component via Outlet */}
             <main style={{ flex: '1 0 auto' }}>
                 <Outlet />
             </main>
-
             {/* Bottom Global Footer - Har page par common rahega */}
             <Footer />
         </div>
