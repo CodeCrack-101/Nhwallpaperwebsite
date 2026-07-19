@@ -12,12 +12,11 @@ import { FiHeart, FiShoppingBag, FiTrash2, FiArrowLeft } from 'react-icons/fi';
 import './Wishlist.css';
 
 const Wishlist = () => {
-    // ===============================
-    // DATABASE INTEGRATION (FUTURE)
-    // TODO: Fetch from MongoDB
-    // GET /api/wishlist
-    // ===============================
-    const { wishlist, addToCart, removeFromWishlist } = useCart();
+    const { wishlist, addToCart, removeFromWishlist, refreshWishlist } = useCart();
+
+    React.useEffect(() => {
+        refreshWishlist();
+    }, [refreshWishlist]);
 
     const handleMoveToCart = (item) => {
         addToCart(item, 1);

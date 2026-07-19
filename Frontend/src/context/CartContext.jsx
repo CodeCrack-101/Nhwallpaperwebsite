@@ -3,11 +3,11 @@
  * Location: frontend/src/context/CartContext.jsx
  * Description: Manages user-specific shopping cart and wishlist states.
  *              Synchronizes with MongoDB for logged-in users and LocalStorage for guest users.
- *              Exposes functions to add, update, remove, and clear cart items.
+ *              Exposes functions to add, update, remove, and clear cart/wishlist items.
  *              Includes elegant toast notification alerts.
  */
 
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import { useAuth } from './AuthContext';
 import axiosInstance from '../api/axiosInstance';
 
@@ -37,27 +37,65 @@ export const CartProvider = ({ children }) => {
         }));
     };
 
+    /**
+     * Map MongoDB backend wishlist products to the frontend-expected schema shape.
+     * Keeps `id` and `img` variables compatible with existing components.
+     */
+    const mapBackendWishlist = (backendProducts) => {
+        if (!backendProducts) return [];
+        return backendProducts.map(item => ({
+            id: item.productId,
+            productId: item.productId,
+            name: item.name,
+            price: item.price,
+            img: item.productImage,
+            productImage: item.productImage,
+            category: item.category || 'Seating'
+        }));
+    };
+
+    /**
+     * Explicitly refetch the authenticated user's cart from MongoDB
+     */
+    const refreshCart = useCallback(async () => {
+        if (isAuthenticated && user) {
+            try {
+                const cartRes = await axiosInstance.get('/cart');
+                if (cartRes.data && cartRes.data.success) {
+                    setCart(mapBackendCart(cartRes.data.items));
+                }
+            } catch (error) {
+                console.error('[CART CONTEXT] Refresh cart failed:', error.message);
+            }
+        }
+    }, [isAuthenticated, user]);
+
+    /**
+     * Explicitly refetch the authenticated user's wishlist from MongoDB
+     */
+    const refreshWishlist = useCallback(async () => {
+        if (isAuthenticated && user) {
+            try {
+                const wishlistRes = await axiosInstance.get('/wishlist');
+                if (wishlistRes.data && wishlistRes.data.success) {
+                    setWishlist(mapBackendWishlist(wishlistRes.data.products));
+                }
+            } catch (error) {
+                console.error('[CART CONTEXT] Refresh wishlist failed:', error.message);
+            }
+        }
+    }, [isAuthenticated, user]);
+
     // Synchronize Cart and Wishlist based on active authentication session
     useEffect(() => {
         const syncUserData = async () => {
             if (isAuthenticated && user) {
-                const userId = user.id || user._id;
-                try {
-                    // Fetch authenticated user's cart from MongoDB
-                    const cartRes = await axiosInstance.get('/cart');
-                    if (cartRes.data && cartRes.data.success) {
-                        setCart(mapBackendCart(cartRes.data.items));
-                    }
-                    
-                    // Fetch user-specific wishlist from LocalStorage
-                    const storedWishlist = localStorage.getItem(`wallart_wishlist_${userId}`);
-                    setWishlist(storedWishlist ? JSON.parse(storedWishlist) : []);
-                } catch (error) {
-                    console.error('[CART CONTEXT] Sync failed:', error.message);
-                }
+                // Perform initial fetch on login/mount
+                await refreshCart();
+                await refreshWishlist();
             } else {
                 // Load guest states from LocalStorage if not logged in.
-                // Clear any leftover authenticated cart cache from memory immediately.
+                // Clear any leftover authenticated cart/wishlist cache from memory immediately.
                 const storedGuestCart = localStorage.getItem('wallart_cart_guest');
                 setCart(storedGuestCart ? JSON.parse(storedGuestCart) : []);
 
@@ -67,7 +105,7 @@ export const CartProvider = ({ children }) => {
         };
 
         syncUserData();
-    }, [isAuthenticated, user]);
+    }, [isAuthenticated, user, refreshCart, refreshWishlist]);
 
     /**
      * Triggers a global animated alert toast
@@ -216,52 +254,76 @@ export const CartProvider = ({ children }) => {
     };
 
     /**
-     * Save product to the user-specific wishlist
+     * Save product to the user-specific wishlist (MongoDB when logged in, localStorage when guest)
      */
-    const addToWishlist = (product) => {
+    const addToWishlist = async (product) => {
         const prodId = product.id || product._id || product.productId;
-        setWishlist(prev => {
-            const exists = prev.some(item => (item.id || item.productId || item._id) === prodId);
-            if (exists) return prev;
-            const updatedWishlist = [...prev, {
-                ...product,
-                id: prodId,
-                productId: prodId
-            }];
-
-            // Persist based on active session
-            if (isAuthenticated && user) {
-                const userId = user.id || user._id;
-                localStorage.setItem(`wallart_wishlist_${userId}`, JSON.stringify(updatedWishlist));
-            } else {
-                localStorage.setItem('wallart_wishlist_guest', JSON.stringify(updatedWishlist));
+        
+        if (isAuthenticated && user) {
+            try {
+                const res = await axiosInstance.post('/wishlist', {
+                    productId: prodId,
+                    name: product.name,
+                    price: product.price,
+                    productImage: product.img || product.productImage,
+                    category: product.category || 'Seating'
+                });
+                if (res.data && res.data.success) {
+                    setWishlist(mapBackendWishlist(res.data.products));
+                    triggerToast(`Saved ${product.name} to Wishlist!`, 'success');
+                }
+            } catch (error) {
+                console.error('[CART CONTEXT ERROR] Add to Wishlist MongoDB failed:', error.message);
+                triggerToast('Failed to save wishlist item.', 'error');
             }
-
-            return updatedWishlist;
-        });
-        triggerToast(`Saved ${product.name} to Wishlist!`, 'success');
+        } else {
+            // Guest session wishlist add
+            setWishlist(prev => {
+                const exists = prev.some(item => (item.id || item.productId || item._id) === prodId);
+                if (exists) return prev;
+                const updatedWishlist = [...prev, {
+                    id: prodId,
+                    productId: prodId,
+                    name: product.name,
+                    price: product.price,
+                    img: product.img || product.productImage,
+                    productImage: product.img || product.productImage,
+                    category: product.category || 'Seating'
+                }];
+                localStorage.setItem('wallart_wishlist_guest', JSON.stringify(updatedWishlist));
+                return updatedWishlist;
+            });
+            triggerToast(`Saved ${product.name} to Wishlist!`, 'success');
+        }
     };
 
     /**
-     * Remove item from wishlist
+     * Remove item from wishlist (MongoDB when logged in, localStorage when guest)
      */
-    const removeFromWishlist = (productId) => {
+    const removeFromWishlist = async (productId) => {
         const item = wishlist.find(i => (i.id || i.productId || i._id) === productId);
-        setWishlist(prev => {
-            const updatedWishlist = prev.filter(item => (item.id || item.productId || item._id) !== productId);
-
-            // Persist based on active session
-            if (isAuthenticated && user) {
-                const userId = user.id || user._id;
-                localStorage.setItem(`wallart_wishlist_${userId}`, JSON.stringify(updatedWishlist));
-            } else {
-                localStorage.setItem('wallart_wishlist_guest', JSON.stringify(updatedWishlist));
+        
+        if (isAuthenticated && user) {
+            try {
+                const res = await axiosInstance.delete(`/wishlist/${productId}`);
+                if (res.data && res.data.success) {
+                    setWishlist(mapBackendWishlist(res.data.products));
+                    if (item) triggerToast(`Removed ${item.name} from Wishlist.`, 'error');
+                }
+            } catch (error) {
+                console.error('[CART CONTEXT ERROR] Remove from Wishlist MongoDB failed:', error.message);
+                triggerToast('Failed to remove item from wishlist.', 'error');
             }
-
-            return updatedWishlist;
-        });
-        if (item) {
-            triggerToast(`Removed ${item.name} from Wishlist.`, 'error');
+        } else {
+            // Guest session wishlist remove
+            setWishlist(prev => {
+                const updatedWishlist = prev.filter(item => (item.id || item.productId || item._id) !== productId);
+                localStorage.setItem('wallart_wishlist_guest', JSON.stringify(updatedWishlist));
+                return updatedWishlist;
+            });
+            if (item) {
+                triggerToast(`Removed ${item.name} from Wishlist.`, 'error');
+            }
         }
     };
 
@@ -290,6 +352,8 @@ export const CartProvider = ({ children }) => {
         addToWishlist,
         removeFromWishlist,
         isInWishlist,
+        refreshCart,
+        refreshWishlist,
         triggerToast
     };
 
