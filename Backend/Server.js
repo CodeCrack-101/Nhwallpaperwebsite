@@ -33,6 +33,7 @@ configureSecurity(app);
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/orders', orderRoutes);
+app.use('/api/cart', require('./routes/cartRoutes'));
 
 // Base route for API status verification
 app.get('/api/status', (req, res) => {
