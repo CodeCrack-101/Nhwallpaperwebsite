@@ -21,6 +21,7 @@ const CartSchema = new mongoose.Schema({
         name: String,
         price: Number,
         productImage: String,
+        category: String, // Keep track of the product category
         quantity: {
             type: Number,
             required: true,

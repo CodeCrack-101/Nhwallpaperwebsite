@@ -8,6 +8,7 @@
 const User = require('../models/User');
 const Address = require('../models/Address');
 const Order = require('../models/Order');
+const OTP = require('../models/OTP'); // Import OTP model for holding pending signups
 const { sendOtpEmail, sendResetOtpEmail } = require('../services/emailService');
 const { generateToken } = require('../utils/jwt');
 const bcrypt = require('bcryptjs');
@@ -83,7 +84,7 @@ exports.register = async (req, res) => {
     const { name, email, phone, password, confirmPassword, streetAddress, city, state, pincode } = req.body;
 
     try {
-        // Step 1: Input Valids
+        // Step 1: Validate input parameters
         if (!name || name.trim().length < 2) {
             return res.status(400).json({ success: false, message: 'Valid name is required (minimum 2 characters).' });
         }
@@ -106,7 +107,7 @@ exports.register = async (req, res) => {
         const cleanedEmail = email.toLowerCase().trim();
         const cleanedPhone = phone.trim();
 
-        // Step 2: Check duplicates
+        // Step 2: Ensure account is not already registered in User database
         const existingEmail = await User.findOne({ email: cleanedEmail });
         if (existingEmail) {
             return res.status(400).json({ success: false, message: 'Email address is already registered. Please Login.' });
@@ -117,51 +118,36 @@ exports.register = async (req, res) => {
             return res.status(400).json({ success: false, message: 'Mobile number is already registered. Please Login.' });
         }
 
-        // Step 3: Hash password
+        // Step 3: Hash password temporarily for security
         const hashedPassword = await bcrypt.hash(password, 10);
 
-        // Step 4: Generate 6-digit OTP and set expiry (10 minutes)
+        // Step 4: Generate 6-digit verification code
         const otpCode = crypto.randomInt(100000, 999999).toString();
-        const otpExpiry = Date.now() + 10 * 60 * 1000; // 10 minutes
 
-        // Step 5: Pre-generate user ID and save Address
-        const userId = new mongoose.Types.ObjectId();
-        let addressId = null;
+        // Step 5: Temporarily save registration parameters in the OTP schema (expires in 10 minutes)
+        // This avoids writing the unverified user to the main User collection.
+        await OTP.findOneAndUpdate(
+            { email: cleanedEmail },
+            {
+                email: cleanedEmail,
+                otp: otpCode,
+                tempData: {
+                    name: name.trim(),
+                    email: cleanedEmail,
+                    phone: cleanedPhone,
+                    password: hashedPassword,
+                    streetAddress: (streetAddress || "").trim(),
+                    city: (city || "").trim(),
+                    state: (state || "").trim(),
+                    pincode: (pincode || "").trim()
+                },
+                createdAt: new Date() // Reset expiry countdown
+            },
+            { upsert: true, new: true }
+        );
 
-        if (streetAddress || city || state || pincode) {
-            const address = new Address({
-                user: userId,
-                streetAddress: (streetAddress || "").trim(),
-                city: (city || "").trim(),
-                state: (state || "").trim(),
-                pincode: (pincode || "").trim()
-            });
-            await address.save();
-            addressId = address._id;
-        }
-
-        // Create unverified user
-        const user = new User({
-            _id: userId,
-            name: name.trim(),
-            email: cleanedEmail,
-            phone: cleanedPhone,
-            mobile: cleanedPhone, // Populate both fields for query compatibility
-            password: hashedPassword,
-            address: addressId,
-            isVerified: false,
-            otp: otpCode,
-            otpExpiry
-        });
-        await user.save();
-
-        if (addressId) {
-            // Seed mock orders
-            await seedSampleOrders(userId, addressId);
-        }
-
-        // Step 6: Dispatch OTP email
-        await sendOtpEmail(cleanedEmail, user.name, otpCode);
+        // Step 6: Send verification email
+        await sendOtpEmail(cleanedEmail, name.trim(), otpCode);
 
         return res.status(201).json({
             success: true,
@@ -176,7 +162,7 @@ exports.register = async (req, res) => {
 
 /**
  * Endpoint: POST /api/auth/resend-otp
- * Description: Generates new 6-digit OTP and resets expiry to 10 minutes.
+ * Description: Generates new 6-digit OTP and updates the temporary signup record.
  */
 exports.resendOtp = async (req, res) => {
     const { email } = req.body;
@@ -187,24 +173,27 @@ exports.resendOtp = async (req, res) => {
         }
 
         const cleanedEmail = email.toLowerCase().trim();
+
+        // Check if the user is already verified and registered
         const user = await User.findOne({ email: cleanedEmail });
-
-        if (!user) {
-            return res.status(404).json({ success: false, message: 'Account profile not found.' });
-        }
-
-        if (user.isVerified) {
+        if (user) {
             return res.status(400).json({ success: false, message: 'Account is already verified. Please Login.' });
         }
 
-        // Generate new OTP and reset expiry to 10 minutes
-        const otpCode = crypto.randomInt(100000, 999999).toString();
-        user.otp = otpCode;
-        user.otpExpiry = Date.now() + 10 * 60 * 1000; // 10 minutes
-        await user.save();
+        // Check if there is an active temporary registration session
+        const pendingOtp = await OTP.findOne({ email: cleanedEmail });
+        if (!pendingOtp) {
+            return res.status(404).json({ success: false, message: 'Verification session expired. Please register again.' });
+        }
 
-        // Send Email
-        await sendOtpEmail(cleanedEmail, user.name, otpCode);
+        // Generate new OTP and reset expiration timer
+        const otpCode = crypto.randomInt(100000, 999999).toString();
+        pendingOtp.otp = otpCode;
+        pendingOtp.createdAt = new Date(); // Reset TTL countdown
+        await pendingOtp.save();
+
+        // Dispatch email
+        await sendOtpEmail(cleanedEmail, pendingOtp.tempData.name, otpCode);
 
         return res.status(200).json({
             success: true,
@@ -219,7 +208,7 @@ exports.resendOtp = async (req, res) => {
 
 /**
  * Endpoint: POST /api/auth/verify-registration
- * Description: Verifies registration OTP and activates account.
+ * Description: Verifies registration OTP and finalizes MongoDB database creation of User & Address.
  */
 exports.verifyRegistration = async (req, res) => {
     const { email, otp } = req.body;
@@ -232,38 +221,69 @@ exports.verifyRegistration = async (req, res) => {
         const cleanedEmail = email.toLowerCase().trim();
         const cleanedOtp = otp.trim();
 
-        const user = await User.findOne({ email: cleanedEmail });
-        if (!user) {
-            return res.status(404).json({ success: false, message: 'Account profile not found.' });
-        }
-
-        // Check if already verified
-        if (user.isVerified) {
+        // Check if already registered
+        const existingUser = await User.findOne({ email: cleanedEmail });
+        if (existingUser) {
             return res.status(400).json({ success: false, message: 'Account is already verified. Please Login.' });
         }
 
-        // Validate OTP exists
-        if (!user.otp) {
-            return res.status(400).json({ success: false, message: 'No active OTP verification session found.' });
+        // Find temporary registration metadata in the OTP collection
+        const pendingOtp = await OTP.findOne({ email: cleanedEmail });
+        if (!pendingOtp) {
+            return res.status(400).json({ success: false, message: 'Verification session expired. Please register again.' });
         }
 
-        // Validate OTP and Expiry (10 minutes)
-        if (user.otp !== cleanedOtp) {
+        // Validate code matches
+        if (pendingOtp.otp !== cleanedOtp) {
             return res.status(400).json({ success: false, message: 'Invalid OTP code. Please check your email and try again.' });
         }
 
-        if (Date.now() > user.otpExpiry.getTime()) {
+        // Validate OTP expiry (Must be within 10 minutes)
+        const isExpired = Date.now() - pendingOtp.createdAt.getTime() > 10 * 60 * 1000;
+        if (isExpired) {
             return res.status(400).json({ success: false, message: 'OTP has expired. Please click Resend OTP.' });
         }
 
-        // Set activation status and clear OTP parameters
-        user.isVerified = true;
-        user.otp = undefined;
-        user.otpExpiry = undefined;
+        const { name, phone, password, streetAddress, city, state, pincode } = pendingOtp.tempData;
+        const userId = new mongoose.Types.ObjectId();
+        let addressId = null;
+
+        // Step 1: Create Address document if shipping details are provided
+        if (streetAddress || city || state || pincode) {
+            const address = new Address({
+                user: userId,
+                streetAddress: (streetAddress || "").trim(),
+                city: (city || "").trim(),
+                state: (state || "").trim(),
+                pincode: (pincode || "").trim()
+            });
+            await address.save();
+            addressId = address._id;
+        }
+
+        // Step 2: Create User document in main collection
+        const user = new User({
+            _id: userId,
+            name,
+            email: cleanedEmail,
+            phone,
+            mobile: phone, // Populate both fields for query compatibility
+            password,      // Stores already-hashed password
+            address: addressId,
+            isVerified: true
+        });
         await user.save();
 
-        const populatedUser = await User.findById(user._id).populate('address');
-        const token = generateToken(user._id);
+        // Step 3: Seed mock orders for verified users
+        if (addressId) {
+            await seedSampleOrders(userId, addressId);
+        }
+
+        // Step 4: Delete the temporary registration document
+        await OTP.deleteOne({ _id: pendingOtp._id });
+
+        const populatedUser = await User.findById(userId).populate('address');
+        const token = generateToken(userId);
 
         return res.status(200).json({
             success: true,
@@ -288,8 +308,7 @@ exports.verifyRegistration = async (req, res) => {
 
 /**
  * Endpoint: POST /api/auth/login
- * Description: Allows log in using Email OR Phone (Mobile) number.
- *              Rejects login if email verification status is incomplete.
+ * Description: Validates credentials. Routes unverified/pending signups to verification.
  */
 exports.login = async (req, res) => {
     const { loginId, password } = req.body;
@@ -301,7 +320,7 @@ exports.login = async (req, res) => {
 
         const cleanedLoginId = loginId.trim();
 
-        // Find user by Email OR Mobile fields
+        // Query the main User collection
         const user = await User.findOne({
             $or: [
                 { email: cleanedLoginId.toLowerCase() },
@@ -310,17 +329,34 @@ exports.login = async (req, res) => {
             ]
         }).populate('address');
 
+        // If user not in main database, check if they have a pending registration session in the OTP collection
         if (!user) {
+            const pendingReg = await OTP.findOne({
+                $or: [
+                    { email: cleanedLoginId.toLowerCase() },
+                    { 'tempData.phone': cleanedLoginId }
+                ]
+            });
+
+            if (pendingReg) {
+                return res.status(401).json({ 
+                    success: false, 
+                    unverified: true,
+                    email: pendingReg.email,
+                    message: 'Please verify your email before logging in.' 
+                });
+            }
+
             return res.status(401).json({ success: false, message: 'Invalid credentials entered.' });
         }
 
-        // Verify password
+        // Verify password match
         const isMatch = await bcrypt.compare(password, user.password);
         if (!isMatch) {
             return res.status(401).json({ success: false, message: 'Invalid credentials entered.' });
         }
 
-        // Enforce verification check (Require EXACT message match)
+        // Verify account is active
         if (!user.isVerified) {
             return res.status(401).json({ 
                 success: false, 
