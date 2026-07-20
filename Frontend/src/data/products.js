@@ -42,6 +42,7 @@ export const mockProducts = [
     // ================= SOHO CATEGORY =================
     {
         id: 'soho-1',
+        patternno:525301,
         name: 'Soho Classic Ergonomic Chair',
         price: 999,
         rating: 5.0,
