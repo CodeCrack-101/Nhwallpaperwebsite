@@ -111,7 +111,7 @@ export const mockProducts = [
         price: 15999,
         rating: 4.9,
         reviewsCount: 110,
-        category: 'Executive Chair',
+        category: 'SKY',
         img: sk1,
         thumbnails: [sk1, sk2, sk3],
         description: 'The ultimate signature cabin seat. Handcrafted with premium genuine leather surfaces, hand-polished wooden accents, and knee-tilt multi-locking synchro mechanisms.',
@@ -127,7 +127,7 @@ export const mockProducts = [
         price: 10999,
         rating: 4.7,
         reviewsCount: 85,
-        category: 'Executive Chair',
+        category: 'SKY',
         img: sk2,
         thumbnails: [sk2, sk3, sk4],
         description: 'Stay cool and fresh under pressure. Features high-tensile structural elastomeric mesh backing that offers excellent weight distribution and pressure reduction.',
@@ -143,7 +143,7 @@ export const mockProducts = [
         price: 9499,
         rating: 4.8,
         reviewsCount: 74,
-        category: 'Executive Chair',
+        category: 'SKY',
         img: sk3,
         thumbnails: [sk3, sk4, sk5],
         description: 'Endorsed by spinal practitioners. The Orthopedic model integrates a unique spring-loaded self-adjusting lumbar curve that maintains spinal alignment automatically.',
@@ -156,12 +156,12 @@ export const mockProducts = [
 
     // ================= GAMING CHAIRS (UV / SP) =================
     {
-        id: 'gaming-1',
+        id: 'urbano-1',
         name: 'Viper GT Carbon Pro Gaming Chair',
         price: 18999,
         rating: 4.9,
         reviewsCount: 165,
-        category: 'Gaming Chair',
+        category: 'URBANO',
         img: sp1,
         thumbnails: [sp1, sp2, sp3],
         description: 'Immerse yourself in esports style. Features a 180-degree fully reclining backrest, 4D adjustable armrests, and headrest/lumbar pillow sets wrapped in high-fidelity carbon fibre texture panels.',
@@ -172,12 +172,12 @@ export const mockProducts = [
         deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
     },
     {
-        id: 'gaming-2',
+        id: 'urbano-2',
         name: 'Viper Apex Ergonomic Racer Seat',
         price: 14999,
         rating: 4.8,
         reviewsCount: 114,
-        category: 'Gaming Chair',
+        category: 'URBANO',
         img: sp2,
         thumbnails: [sp2, sp3, sp4],
         description: 'Engineered for absolute control during long raids. Form-fitting side bolstering keeps your posture snug, supported by multi-axis neck pillows and memory foam cushions.',
@@ -188,12 +188,12 @@ export const mockProducts = [
         deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
     },
     {
-        id: 'gaming-3',
+        id: 'urbano-3',
         name: 'Viper Strike Stealth Gaming Throne',
         price: 16499,
         rating: 4.6,
         reviewsCount: 89,
-        category: 'Gaming Chair',
+        category: 'URBANO',
         img: sp3,
         thumbnails: [sp3, sp4, sp5],
         description: 'Sleek all-black matte appearance. The Stealth edition offers noise-free polyurethane wheels and high-load hydraulic gas cylinders for smooth transitions.',
@@ -204,14 +204,14 @@ export const mockProducts = [
         deliveryInfo: 'Pre-order item. Ships within 10-15 business days.'
     },
 
-    // ================= OFFICE CHAIRS (URBANO) =================
+    // ================= WALLFLORAL / OFFICE CHAIRS =================
     {
-        id: 'office-1',
+        id: 'wallfloral-1',
         name: 'Urbano Taskmaster Mesh Chair',
         price: 4999,
         rating: 4.7,
         reviewsCount: 220,
-        category: 'Office Chair',
+        category: 'WALLFLORAL',
         img: ur1,
         thumbnails: [ur1, ur2, ur3],
         description: 'The standard choice for efficient offices. Outfitted with high-strength mesh back, dynamic tilt tension, and solid pneumatic cylinder height adjustments.',
@@ -222,12 +222,12 @@ export const mockProducts = [
         deliveryInfo: 'Free bulk delivery options. Ships in 2 business days.'
     },
     {
-        id: 'office-2',
+        id: 'wallfloral-2',
         name: 'Urbano Comfort-Air Mid-Back',
         price: 5999,
         rating: 4.6,
         reviewsCount: 135,
-        category: 'Office Chair',
+        category: 'WALLFLORAL',
         img: ur2,
         thumbnails: [ur2, ur3, ur4],
         description: 'Maximize space without sacrificing back support. Sleek mid-back curvature contours seamlessly to your lower spine. Includes flip-up armrests.',
@@ -238,12 +238,12 @@ export const mockProducts = [
         deliveryInfo: 'Free shipping. Dispatched in 2 business days.'
     },
     {
-        id: 'office-3',
+        id: 'wallfloral-3',
         name: 'Urbano Executive Lite Mesh',
         price: 7999,
         rating: 4.8,
         reviewsCount: 154,
-        category: 'Office Chair',
+        category: 'WALLFLORAL',
         img: ur3,
         thumbnails: [ur3, ur4, ur5],
         description: 'An executive choice that blends value and features. Incorporates an adjustable headrest, multi-tilt lock controls, and high-quality castors.',

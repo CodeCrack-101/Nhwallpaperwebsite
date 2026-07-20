@@ -27,6 +27,7 @@ import Uv from '../components/Allproduct/Uv';
 import Urbano from '../components/Allproduct/Urbano';
 import Ew from '../components/Allproduct/Ew';
 import Workstation from '../components/Allproduct/Workstation';
+import DynamicCategoryRouter from '../components/Allproduct/DynamicCategoryRouter'; // Dynamic controller
 
 // Placeholders for complete UX routes
 import About from '../pages/About';
@@ -79,6 +80,11 @@ const AppRoutes = () => {
                 <Route path="login" element={<Login />} />
                 <Route path="register" element={<Register/>} />
                 <Route path="product/:id" element={<ProductDetails/>} />
+                
+                {/* Dynamic Parameter Router matches path patterns matching /category/anyname */}
+                <Route path="category/:categoryName" element={<DynamicCategoryRouter />} />
+
+                {/* Legacy Base Fallbacks */}
                 <Route path="soho" element={<Soho/>} />
                 <Route path="sky" element={<Sky />} />
                 <Route path="gaming" element={<Uv />} />

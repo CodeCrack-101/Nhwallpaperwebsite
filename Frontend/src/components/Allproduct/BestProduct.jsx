@@ -1,131 +1,122 @@
 /**
  * BestProduct Component File
  * Location: frontend/src/components/Allproduct/BestProduct.jsx
- * Description: Renders the primary categories catalog page showing SOHO, Executive Chair,
- *              Gaming Chair, Office Chair, Visitor Chair, and Workstation categories.
+ * Description: Renders the primary categories catalog page showing various collections.
  *              Includes a live search bar to filter categories dynamically.
+ *              Displays 6 cards initially with full "View More" and "View Less" functionality.
+ *              Card design matches the floating box layout from the reference image.
  */
 
 import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { FiSearch, FiX } from 'react-icons/fi';
+// Make sure to import FontAwesome in your main app file (e.g., App.js) like: import '@fortawesome/fontawesome-free/css/all.min.css';
 import './BestProduct.css';
 
-// Direct Assets Imports
-import sh1 from '../../assets/SOHO/sh1.png';
-import sk1 from '../../assets/SKY/sk1.png';
-import sp1 from '../../assets/SP/sp1.png';
-import ur1 from '../../assets/URBANO/ur1.png';
-import sh3 from '../../assets/SOHO/sh3.png';
-import ur3 from '../../assets/URBANO/ur3.png';
+// Direct Assets Imports mapped properly from the public structure
+import sh1 from '/Soho.png';
+import sk1 from '/Sky.png';
+import ur1 from '/Urbano.png';
+import wa1 from '/Wallfloral.png';
+import ew1 from '/Epicwall.png';
 
 const categories = [
     {
         id: 'soho',
-        name: 'SOHO Chairs',
-        path: '/soho',
+        name: 'Soho',
+        path: '/category/soho',
         img: sh1,
         desc: 'Premium home office seats blending Scandinavian minimalism with posture ergonomics.'
     },
     {
-        id: 'executive',
-        name: 'Executive Chairs',
-        path: '/sky',
+        id: 'sky',
+        name: 'Sky',
+        path: '/category/sky',
         img: sk1,
         desc: 'Cabin-worthy top grain leather thrones built for leaders and visionaries.'
     },
     {
-        id: 'gaming',
-        name: 'Gaming Chairs',
-        path: '/gaming',
-        img: sp1,
+        id: 'urbano',
+        name: 'Urbano',
+        path: '/category/urbano',
+        img: ur1,
         desc: 'Reclining high-back racing seats designed to support endless intense gaming sessions.'
     },
     {
-        id: 'office',
-        name: 'Office Chairs',
-        path: '/office',
-        img: ur1,
+        id: 'Wallflora',
+        name: 'Wall Flora',
+        path: '/category/wallfloral',
+        img: wa1, 
         desc: 'Durable taskmesh chairs perfect for high-traffic office floors and shared desks.'
     },
     {
-        id: 'visitor',
-        name: 'Visitor Chairs',
-        path: '/visitor',
-        img: sh3,
-        desc: 'Comfortable, compact seating choices for reception areas and meeting rooms.'
+        id: 'epicwall',
+        name: 'Epic Wall',
+        path: '/category/epicwall',
+        img: ew1,
+        desc: 'Durable taskmesh chairs perfect for high-traffic office floors and shared desks.'
     },
     {
-        id: 'workstation',
-        name: 'Workstation Seating',
-        path: '/workstation',
-        img: ur3,
-        desc: 'Multi-functional draft chairs and task stools optimized for active collaborative desks.'
+        id: 'Mirabel',
+        name: 'Mirabel',
+        path: '/category/mirabel',
+        img: sh1, 
+        desc: 'Sleek guest chairs tailored for modern reception areas and meeting rooms.'
+    },
+    {
+        id: 'SelfiePoint',
+        name: 'Selfie Point',
+        path: '/category/selfiepoint',
+        img: ur1, 
+        desc: 'Comfortable seating engineered optimized for productivity and tech desks.'
+    },
+    {
+        id: 'Royaltexture',
+        name: 'Royal Texture',
+        path: '/category/royaltexture',
+        img: sk1, 
+        desc: 'Relaxed designer chairs bringing high-end comfort to breakout spaces.'
     }
 ];
 
 const BestProduct = () => {
     const [searchTerm, setSearchTerm] = useState('');
-    // State to manage maximum visible items initially set to 4
-    const [visibleCount, setVisibleCount] = useState(4);
+    const [visibleCount, setVisibleCount] = useState(6);
 
     const filteredCategories = useMemo(() => {
         return categories.filter((cat) =>
-            `${cat.name} ${cat.desc}`
-                .toLowerCase()
-                .includes(searchTerm.toLowerCase())
+            cat.name.toLowerCase().includes(searchTerm.toLowerCase())
         );
     }, [searchTerm]);
 
-    // Toggles list visibility count
     const handleToggleVisibility = () => {
         if (visibleCount >= filteredCategories.length) {
-            setVisibleCount(4);
+            setVisibleCount(6); 
         } else {
-            setVisibleCount((prev) => prev + 4);
+            setVisibleCount((prev) => prev + 6); 
         }
     };
 
     return (
         <div className="best-products-container">
             <header className="catalogue-header">
-                <h1 className="catalogue-title">Premium <span>Seating Collections</span></h1>
-                <p className="catalogue-subtitle">Discover high-end ergonomic design and luxury craftsmanship tailored to your space.</p>
+                <h1 className="catalogue-title">Premium <span>Collections</span></h1>
+                <p className="catalogue-subtitle">Discover high-end luxury craftsmanship tailored specifically to your space.</p>
             </header>
 
             {/* Catalogue Search Bar */}
-            <div style={{
-                display: 'flex',
-                alignItems: 'center',
-                maxWidth: '500px',
-                margin: '0 auto 50px auto',
-                border: '1px solid #e5e5e5',
-                borderRadius: '30px',
-                padding: '10px 22px',
-                backgroundColor: '#fff',
-                position: 'relative',
-                boxShadow: '0 4px 15px rgba(0, 0, 0, 0.02)',
-                fontFamily: "'Poppins', sans-serif"
-            }}>
-                <FiSearch style={{ color: '#888', marginRight: '12px', fontSize: '16px' }} />
+            <div className="catalogue-search-wrapper">
+                <FiSearch className="search-icon" />
                 <input
                     type="text"
                     placeholder="Search categories..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    style={{
-                        border: 'none',
-                        width: '100%',
-                        outline: 'none',
-                        fontSize: '14px',
-                        fontFamily: "'Poppins', sans-serif",
-                        color: '#333',
-                        background: 'transparent'
-                    }}
+                    className="search-input"
                 />
                 {searchTerm && (
                     <FiX 
-                        style={{ color: '#888', cursor: 'pointer', fontSize: '16px' }} 
+                        className="clear-icon" 
                         onClick={() => setSearchTerm('')} 
                     />
                 )}
@@ -137,24 +128,20 @@ const BestProduct = () => {
                         {filteredCategories.slice(0, visibleCount).map((cat) => (
                             <Link key={cat.id} to={cat.path} className="category-card">
                                 <div 
-                                    className="category-image-box"
+                                    className="category-image-wrapper"
                                     style={{ backgroundImage: `url(${cat.img})` }}
                                 >
-                                    <div className="category-image-overlay" />
-                                </div>
-                                <div className="category-card-body">
-                                    <h3 className="category-card-name">{cat.name}</h3>
-                                    <p className="category-card-desc">{cat.desc}</p>
-                                    <span className="category-card-link">
-                                        Browse Collection &rarr;
-                                    </span>
+                                    <div className="category-content-box">
+                                        <h3 className="category-name">{cat.name}</h3>
+                                        <i className="fa-solid fa-arrow-right-long category-arrow"></i>
+                                    </div>
                                 </div>
                             </Link>
                         ))}
                     </div>
 
-                    {/* View More / View Less Action Wrapper */}
-                    {filteredCategories.length > 4 && (
+                    {/* View More / View Less Toggle Button */}
+                    {filteredCategories.length > 6 && (
                         <div className="view-toggle-container">
                             <button className="view-toggle-btn" onClick={handleToggleVisibility}>
                                 {visibleCount >= filteredCategories.length ? 'View Less' : 'View More'}
@@ -163,7 +150,7 @@ const BestProduct = () => {
                     )}
                 </>
             ) : (
-                <div style={{ textAlign: 'center', padding: '40px', color: '#666', fontFamily: "'Poppins', sans-serif" }}>
+                <div className="no-results-message">
                     No categories found matching your search.
                 </div>
             )}

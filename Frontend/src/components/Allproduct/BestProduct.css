@@ -1,7 +1,8 @@
 /**
  * BestProduct CSS Stylesheet
  * Location: frontend/src/components/Allproduct/BestProduct.css
- * Description: Premium styling for categories showcase cards.
+ * Description: Premium styling for categories showcase cards,
+ *              matching image_0.png with a strict 2-column mobile view.
  */
 
  .best-products-container {
@@ -32,7 +33,45 @@
     color: #666;
 }
 
-/* Desktop 3-column configuration layout */
+/* --- Search Bar Styles --- */
+.catalogue-search-wrapper {
+    display: flex;
+    align-items: center;
+    max-width: 500px;
+    margin: 0 auto 50px auto;
+    border: 1px solid #e5e5e5;
+    border-radius: 30px;
+    padding: 10px 22px;
+    background-color: #fff;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+}
+
+.search-icon {
+    color: #888;
+    margin-right: 12px;
+    font-size: 16px;
+}
+
+.search-input {
+    border: none;
+    width: 100%;
+    outline: none;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    background: transparent;
+}
+
+.clear-icon {
+    color: #888;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* --- Categories Grid and Card Layout --- */
+
+/* Default: Desktop 3-column configuration layout */
 .categories-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -40,81 +79,74 @@
 }
 
 .category-card {
-    background-color: #fff;
-    border: 1px solid #eee;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
-    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
     position: relative;
-    cursor: pointer;
     text-decoration: none;
-    display: flex;
-    flex-direction: column;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 20px; /* Matches rounded corners of image_0.png */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.3s;
 }
 
 .category-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(200, 155, 91, 0.15);
-    border-color: #C89B5B;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(200, 155, 91, 0.15);
 }
 
-.category-image-box {
-    height: 250px;
+.category-image-wrapper {
+    width: 100%;
+    padding-top: 125%; /* Creates aspect ratio container (4:5 portrait) */
     background-size: cover;
     background-position: center;
     position: relative;
-    overflow: hidden;
 }
 
-.category-image-overlay {
+/* Floating white info block over image */
+.category-content-box {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(0,0,0,0) 40%, rgba(0,0,0,0.4) 100%);
-}
-
-.category-card-body {
-    padding: 25px;
-    text-align: left;
-}
-
-.category-card-name {
-    font-size: 22px;
-    font-weight: 700;
-    color: #111;
-    margin-bottom: 8px;
-    transition: color 0.2s;
-}
-
-.category-card:hover .category-card-name {
-    color: #C89B5B;
-}
-
-.category-card-desc {
-    font-size: 14px;
-    color: #666;
-    line-height: 1.5;
-    margin-bottom: 20px;
-}
-
-.category-card-link {
-    font-size: 14px;
-    font-weight: 600;
-    color: #C89B5B;
-    display: inline-flex;
+    bottom: 25px; 
+    left: 25px;   
+    background-color: #ffffff;
+    padding: 20px;
+    width: 80%;   
+    max-width: 320px;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 5px;
-    transition: gap 0.2s;
+    border-radius: 8px; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
+    box-sizing: border-box;
 }
 
-.category-card:hover .category-card-link {
-    gap: 8px;
+.category-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: #000000;
+    margin: 0;
+    text-transform: uppercase; 
+    line-height: 1.3;
+    flex-grow: 1;
+    padding-right: 15px; 
 }
 
-/* Interactive View Action Styles */
+.category-arrow {
+    color: #000000;
+    font-size: 16px;
+    transition: transform 0.3s ease;
+}
+
+.category-card:hover .category-arrow {
+    transform: translateX(5px); 
+}
+
+/* --- No Results Message --- */
+.no-results-message {
+    text-align: center;
+    padding: 40px;
+    color: #666;
+}
+
+/* --- Toggle Buttons --- */
 .view-toggle-container {
     display: flex;
     justify-content: center;
@@ -141,35 +173,54 @@
     color: #111111;
 }
 
-/* Responsive Breakpoints: Forces a strict 2-column view on smaller viewports */
+/* ==========================================================================
+   Responsive Breakpoints: Enforces a strict 2-column view on smaller screens
+   ========================================================================== */
+
+/* Tablets & Medium Viewports */
 @media (max-width: 992px) {
     .categories-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr); /* Two cards in one row */
         gap: 20px;
     }
 }
 
+/* Small Mobile Viewports (Forces 2 columns instead of stacking) */
 @media (max-width: 600px) {
+    .best-products-container {
+        margin: 40px auto;
+        padding: 0 12px;
+    }
+
+    .catalogue-title {
+        font-size: 26px;
+    }
+
     .categories-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
+        grid-template-columns: repeat(2, 1fr); /* STRICTLY keeps 2 cards per row */
+        gap: 12px; /* Thinner gutters to balance compact screens */
     }
 
-    .category-image-box {
-        height: 160px; /* Scales image down slightly on mobile views */
+    .category-card {
+        border-radius: 12px; /* Slightly tighter curves for smaller sizing */
     }
 
-    .category-card-body {
-        padding: 15px;
+    /* Scaling the white content block to prevent clipping on small widths */
+    .category-content-box {
+        bottom: 12px;
+        left: 5%;
+        width: 90%;
+        padding: 12px 10px;
+        border-radius: 6px;
     }
 
-    .category-card-name {
-        font-size: 16px;
+    .category-name {
+        font-size: 12px; /* Smaller typography size to prevent wrapping ugliness */
+        padding-right: 8px;
     }
 
-    .category-card-desc {
+    .category-arrow {
         font-size: 12px;
-        margin-bottom: 12px;
     }
     
     .view-toggle-btn {
