@@ -23,6 +23,7 @@
     "mongoose": "^9.7.4",
     "nodemailer": "^9.0.3",
     "qrcode-terminal": "^0.12.0",
+    "razorpay": "^2.9.8",
     "twilio": "^6.0.2",
     "whatsapp-web.js": "^1.34.7"
   }

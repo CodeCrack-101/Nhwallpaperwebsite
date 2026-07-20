@@ -87,13 +87,13 @@ const Cart = () => {
                 <div className="cart-items-list">
                     {cart.map((item) => (
                         <div key={item.id} className="cart-item-row">
-                            <img src={item.img} alt={item.name} className="cart-item-image" />
+                            <img src={item.img || ''} alt={item.name || 'Product'} className="cart-item-image" />
                             
                             <div className="cart-item-info">
-                                <span className="cart-item-category">{item.category}</span>
-                                <h3 className="cart-item-name">{item.name}</h3>
+                                <span className="cart-item-category">{item.category || 'Seating'}</span>
+                                <h3 className="cart-item-name">{item.name || 'Premium Item'}</h3>
                                 <div className="cart-item-price">
-                                    ₹{item.price.toLocaleString('en-IN')} / roll
+                                    ₹{(item.price || 0).toLocaleString('en-IN')} / roll
                                 </div>
                             </div>
 
@@ -101,59 +101,59 @@ const Cart = () => {
                                 <div className="qty-btn-group">
                                     <button 
                                         className="qty-adjust-btn" 
-                                        onClick={() => handleQuantityAdjust(item.id, item.quantity - 1)}
-                                        disabled={item.quantity <= 1}
+                                        onClick={() => handleQuantityAdjust(item.id, (item.quantity || 1) - 1)}
+                                        disabled={(item.quantity || 1) <= 1}
                                     >
                                         -
                                     </button>
                                     <input 
                                         type="number" 
-                                        value={item.quantity} 
+                                        value={item.quantity || 1} 
                                         onChange={(e) => handleQuantityAdjust(item.id, parseInt(e.target.value) || 1)}
                                         className="qty-input"
                                     />
                                     <button 
                                         className="qty-adjust-btn" 
-                                        onClick={() => handleQuantityAdjust(item.id, item.quantity + 1)}
+                                        onClick={() => handleQuantityAdjust(item.id, (item.quantity || 1) + 1)}
                                     >
                                         +
                                     </button>
                                 </div>
 
                                 <div style={{ minWidth: '90px', textAlign: 'right', fontWeight: '700', color: '#111', fontSize: '15px' }}>
-                                    ₹{(item.price * item.quantity).toLocaleString('en-IN')}
+                                    ₹{((item.price || 0) * (item.quantity || 1)).toLocaleString('en-IN')}
                                 </div>
 
                                 <button 
                                     className="cart-item-remove-btn" 
                                     onClick={() => handleItemRemove(item.id)}
                                     title="Remove item"
-                                >
-                                    <FiTrash2 />
-                                </button>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-
-                {/* Right: Cart Summary Column */}
-                <div className="cart-summary-card">
-                    <h2 className="summary-title">Order Summary</h2>
-                    
-                    <div className="summary-row">
-                        <span>Cart Subtotal</span>
-                        <span>₹{totalPrice.toLocaleString('en-IN')}</span>
-                    </div>
-                    
-                    <div className="summary-row">
-                        <span>Shipping Cost</span>
-                        <span style={{ color: '#1f7a45', fontWeight: '600' }}>FREE Shipping</span>
-                    </div>
-
-                    <div className="summary-row total">
-                        <span>Grand Total</span>
-                        <span>₹{totalPrice.toLocaleString('en-IN')}</span>
-                    </div>
+                                  >
+                                      <FiTrash2 />
+                                  </button>
+                              </div>
+                          </div>
+                      ))}
+                  </div>
+  
+                  {/* Right: Cart Summary Column */}
+                  <div className="cart-summary-card">
+                      <h2 className="summary-title">Order Summary</h2>
+                      
+                      <div className="summary-row">
+                          <span>Cart Subtotal</span>
+                          <span>₹{(totalPrice || 0).toLocaleString('en-IN')}</span>
+                      </div>
+                      
+                      <div className="summary-row">
+                          <span>Shipping Cost</span>
+                          <span style={{ color: '#1f7a45', fontWeight: '600' }}>FREE Shipping</span>
+                      </div>
+  
+                      <div className="summary-row total">
+                          <span>Grand Total</span>
+                          <span>₹{(totalPrice || 0).toLocaleString('en-IN')}</span>
+                      </div>
 
                     <div className="cart-action-btn-group">
                         <Link to="/checkout" className="btn-checkout">

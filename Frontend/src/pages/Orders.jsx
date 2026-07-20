@@ -57,7 +57,7 @@ const Orders = () => {
         );
     }
 
-    if (error){
+    if (error) {
         return (
             <div className="orders-container error-state">
                 <p className="error-msg">{error}</p>
@@ -83,7 +83,7 @@ const Orders = () => {
                     <div className="orders-list">
                         {orders.map((order) => (
                             <div key={order._id} className="order-card">
-                                
+
                                 {/* Order Metadata Header */}
                                 <div className="order-card-header">
                                     <div className="header-col">

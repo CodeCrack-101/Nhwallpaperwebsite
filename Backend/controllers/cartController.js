@@ -13,7 +13,7 @@ const Cart = require('../models/Cart');
 exports.getCart = async (req, res) => {
     try {
         let cart = await Cart.findOne({ user: req.user._id });
-        
+
         // If no cart exists for this user, initialize an empty cart document
         if (!cart) {
             cart = new Cart({ user: req.user._id, items: [] });

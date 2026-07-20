@@ -123,7 +123,7 @@ export const CartProvider = ({ children }) => {
      */
     const addToCart = async (product, quantity = 1) => {
         const prodId = product.id || product._id || product.productId;
-        
+
         if (isAuthenticated && user) {
             try {
                 const res = await axiosInstance.post('/cart', {
@@ -149,8 +149,8 @@ export const CartProvider = ({ children }) => {
                 let updatedCart;
 
                 if (existingIndex > -1) {
-                    updatedCart = prev.map((item, idx) => 
-                        idx === existingIndex 
+                    updatedCart = prev.map((item, idx) =>
+                        idx === existingIndex
                             ? { ...item, quantity: item.quantity + quantity }
                             : item
                     );
@@ -179,7 +179,7 @@ export const CartProvider = ({ children }) => {
      */
     const removeFromCart = async (productId) => {
         const item = cart.find(i => (i.id || i.productId) === productId);
-        
+
         if (isAuthenticated && user) {
             try {
                 const res = await axiosInstance.delete(`/cart/${productId}`);
@@ -222,8 +222,8 @@ export const CartProvider = ({ children }) => {
         } else {
             // Guest session update
             setCart(prev => {
-                const updatedCart = prev.map(item => 
-                    (item.id || item.productId) === productId 
+                const updatedCart = prev.map(item =>
+                    (item.id || item.productId) === productId
                         ? { ...item, quantity: newQuantity }
                         : item
                 );
@@ -258,7 +258,7 @@ export const CartProvider = ({ children }) => {
      */
     const addToWishlist = async (product) => {
         const prodId = product.id || product._id || product.productId;
-        
+
         if (isAuthenticated && user) {
             try {
                 const res = await axiosInstance.post('/wishlist', {
@@ -302,7 +302,7 @@ export const CartProvider = ({ children }) => {
      */
     const removeFromWishlist = async (productId) => {
         const item = wishlist.find(i => (i.id || i.productId || i._id) === productId);
-        
+
         if (isAuthenticated && user) {
             try {
                 const res = await axiosInstance.delete(`/wishlist/${productId}`);
@@ -335,9 +335,9 @@ export const CartProvider = ({ children }) => {
     };
 
     // Calculate aggregated states
-    const cartItemCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+    const cartItemCount = cart.reduce((sum, item) => sum + (item.quantity || 0), 0);
     const wishlistItemCount = wishlist.length;
-    const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+    const totalPrice = cart.reduce((sum, item) => sum + ((item.price || 0) * (item.quantity || 1)), 0);
 
     const value = {
         cart,

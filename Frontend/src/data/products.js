@@ -13,12 +13,12 @@ import sh4 from '../assets/SOHO/soho1.3.png';
 import sh5 from '../assets/SOHO/soho1.4.png';
 import sh6 from '../assets/SOHO/soho1.5.png';
 
-import sh6 from '../assets/SOHO/soho60.png';
+import sh60 from '../assets/SOHO/soho60.png';
 import sh7 from '../assets/SOHO/soho60.1.png';
-import sh8 from '../assets/SOHO/soho60.2.png';
+import sh8 from '../assets/SOHO/soho6.2.png';
 import sh9 from '../assets/SOHO/soho60.3.png';
 import sh10 from '../assets/SOHO/soho60.4.png';
-import sh11 from '../assets/SOHO/soho60.5.png';
+import sh11 from '../assets/SOHO/soho62.2.png';
 
 
 
@@ -59,13 +59,13 @@ export const mockProducts = [
         Info:{
             Weight: 1.3,
             Lenghtcm:7,
-            widthcm:7,
+            breadth:7,
             heightcm:48
         },
         reviewsCount: 142,
         category: 'SOHO',
-        img: sh6,
-        thumbnails: [sh1, sh2, sh3 , sh4, sh5],
+        img: sh60,
+        thumbnails: [sh60, sh7, sh8, sh9, sh10, sh11],
         description: 'Experience maximum support with the Soho Classic Ergonomic Chair. Engineered with contoured mesh backing, adjustable armrests, and smart lumbar support, this chair is optimized for productive home office environments and modern desks.',
         availability: 'In Stock',
         material: 'Premium Mesh fabric & Nylon base',
@@ -74,27 +74,27 @@ export const mockProducts = [
         deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
     },
     {
-        id: 'soho-1',
+        id: 'soho-2',
         patternno:525362,
-        name: 'Soho Classic Ergonomic Chair',
-        price: 999,
+        name: 'Soho Executive Mesh Throne',
+        price: 1499,
         rating: 5.0,
         Info:{
-            Weight: 1.3,
-            Lenghtcm:7,
-            widthcm:7,
-            heightcm:48
+            Weight: 1.5,
+            Lenghtcm:8,
+            breadth:8,
+            heightcm:52
         },
-        reviewsCount: 142,
+        reviewsCount: 89,
         category: 'SOHO',
-        img: sh6,
-        thumbnails: [sh6, sh7, sh8 , sh10, sh9,sh11],
-        description: 'Experience maximum support with the Soho Classic Ergonomic Chair. Engineered with contoured mesh backing, adjustable armrests, and smart lumbar support, this chair is optimized for productive home office environments and modern desks.',
+        img: sh1,
+        thumbnails: [sh1, sh2, sh3, sh4, sh5, sh6],
+        description: 'Premium upgrade of the Soho series. Contoured neck rest, memory foam base, adjustable tilt angle, and premium build quality.',
         availability: 'In Stock',
-        material: 'Premium Mesh fabric & Nylon base',
-        dimensions: 'W 65cm x H 115-125cm x D 60cm',
-        warranty: '2 Year Manufacturer Warranty',
-        deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+        material: 'Premium Memory Foam & Mesh fabric',
+        dimensions: 'W 70cm x H 120-130cm x D 65cm',
+        warranty: '3 Year Manufacturer Warranty',
+        deliveryInfo: 'Free shipping. Dispatched in 1-2 business days.'
     },
    
     // ================= (SKY) =================
