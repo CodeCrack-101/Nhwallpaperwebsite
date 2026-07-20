@@ -13,6 +13,16 @@ import sh4 from '../assets/SOHO/soho1.3.png';
 import sh5 from '../assets/SOHO/soho1.4.png';
 import sh6 from '../assets/SOHO/soho1.5.png';
 
+import sh6 from '../assets/SOHO/soho60.png';
+import sh7 from '../assets/SOHO/soho60.1.png';
+import sh8 from '../assets/SOHO/soho60.2.png';
+import sh9 from '../assets/SOHO/soho60.3.png';
+import sh10 from '../assets/SOHO/soho60.4.png';
+import sh11 from '../assets/SOHO/soho60.5.png';
+
+
+
+
 
 // SKY Imports
 import sk1 from '../assets/SKY/sk1.png';
@@ -55,7 +65,30 @@ export const mockProducts = [
         reviewsCount: 142,
         category: 'SOHO',
         img: sh6,
-        thumbnails: [sh1, sh2, sh3],
+        thumbnails: [sh1, sh2, sh3 , sh4, sh5],
+        description: 'Experience maximum support with the Soho Classic Ergonomic Chair. Engineered with contoured mesh backing, adjustable armrests, and smart lumbar support, this chair is optimized for productive home office environments and modern desks.',
+        availability: 'In Stock',
+        material: 'Premium Mesh fabric & Nylon base',
+        dimensions: 'W 65cm x H 115-125cm x D 60cm',
+        warranty: '2 Year Manufacturer Warranty',
+        deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+    },
+    {
+        id: 'soho-1',
+        patternno:525362,
+        name: 'Soho Classic Ergonomic Chair',
+        price: 999,
+        rating: 5.0,
+        Info:{
+            Weight: 1.3,
+            Lenghtcm:7,
+            widthcm:7,
+            heightcm:48
+        },
+        reviewsCount: 142,
+        category: 'SOHO',
+        img: sh6,
+        thumbnails: [sh6, sh7, sh8 , sh10, sh9,sh11],
         description: 'Experience maximum support with the Soho Classic Ergonomic Chair. Engineered with contoured mesh backing, adjustable armrests, and smart lumbar support, this chair is optimized for productive home office environments and modern desks.',
         availability: 'In Stock',
         material: 'Premium Mesh fabric & Nylon base',
