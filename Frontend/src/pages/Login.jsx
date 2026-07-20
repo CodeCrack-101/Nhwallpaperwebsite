@@ -6,7 +6,7 @@
  */
 
 import React, { useState, useEffect } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate, Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { loginUser, forgotPassword, resetPassword } from '../services/authService';
 import './Login.css';
@@ -14,6 +14,7 @@ import './Login.css';
 const Login = () => {
     const { login, isAuthenticated } = useAuth();
     const navigate = useNavigate();
+    const location = useLocation();
 
     // View sub-modes: 'login' | 'forgot' | 'reset'
     const [mode, setMode] = useState('login');
@@ -30,12 +31,13 @@ const Login = () => {
     const [message, setMessage] = useState({ text: '', type: '' }); // type: 'success' | 'error'
     const [loading, setLoading] = useState(false);
 
-    // Redirect home if already logged in
+    // Redirect home (or back to calling details page) if already logged in
     useEffect(() => {
         if (isAuthenticated) {
-            navigate('/');
+            const from = location.state?.from || '/';
+            navigate(from);
         }
-    }, [isAuthenticated, navigate]);
+    }, [isAuthenticated, navigate, location.state]);
 
     /**
      * Submit login credentials
@@ -49,9 +51,17 @@ const Login = () => {
             const data = await loginUser(loginId.trim(), password);
             if (data.success) {
                 login(data.token, data.user);
-                setMessage({ text: 'Login successful! Redirecting...', type: 'success' });
+                const from = location.state?.from || '/';
+                const action = location.state?.action || null;
+                const productId = location.state?.productId || null;
+                const quantity = location.state?.quantity || 1;
+
                 setTimeout(() => {
-                    navigate('/');
+                    if (from !== '/') {
+                        navigate(from, { state: { performAction: action, productId, quantity } });
+                    } else {
+                        navigate('/');
+                    }
                 }, 1500);
             }
         } catch (error) {

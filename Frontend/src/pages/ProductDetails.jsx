@@ -7,8 +7,9 @@
  */
 
 import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate, useLocation } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
+import { useAuth } from '../context/AuthContext';
 import { getProductById } from '../data/products';
 import { FiHeart, FiShoppingBag, FiArrowLeft, FiStar } from 'react-icons/fi';
 import './ProductDetails.css';
@@ -24,6 +25,9 @@ const ProductDetails = () => {
     const product = getProductById(id);
 
     const { addToCart, addToWishlist, removeFromWishlist, isInWishlist } = useCart();
+    const { isAuthenticated } = useAuth();
+    const navigate = useNavigate();
+    const location = useLocation();
     
     const [activeImage, setActiveImage] = useState('');
     const [quantity, setQuantity] = useState(1);
@@ -39,6 +43,24 @@ const ProductDetails = () => {
             setActiveImage(product.img);
         }
     }, [product]);
+
+    // Check for actions queued when redirected back from Login
+    useEffect(() => {
+        if (isAuthenticated && location.state?.performAction && product) {
+            const { performAction, productId, quantity: qty } = location.state;
+            if (productId === product.id) {
+                if (performAction === 'cart') {
+                    addToCart(product, qty || 1);
+                } else if (performAction === 'wishlist') {
+                    if (!isInWishlist(product.id)) {
+                        addToWishlist(product);
+                    }
+                }
+                // Clean up location state to avoid repeating action on page reloads
+                navigate(location.pathname, { replace: true, state: {} });
+            }
+        }
+    }, [isAuthenticated, location.state, product, addToCart, addToWishlist, isInWishlist, navigate, location.pathname]);
 
     if (!product) {
         return (
@@ -60,30 +82,40 @@ const ProductDetails = () => {
     };
 
     const handleWishlistToggle = () => {
+        if (!isAuthenticated) {
+            // Redirect guest to login and preserve action
+            navigate('/login', {
+                state: {
+                    from: location.pathname,
+                    action: 'wishlist',
+                    productId: product.id
+                }
+            });
+            return;
+        }
+
         if (isFav) {
             removeFromWishlist(product.id);
-            
-            // ======================================
-            // FUTURE DATABASE CODE
-            // TODO: Delete Item from MongoDB
-            // ======================================
         } else {
             addToWishlist(product);
-
-            // ======================================
-            // FUTURE DATABASE CODE
-            // TODO: Save Wishlist to MongoDB
-            // ======================================
         }
     };
 
     const handleCartSubmit = () => {
-        addToCart(product, quantity);
+        if (!isAuthenticated) {
+            // Redirect guest to login and preserve action
+            navigate('/login', {
+                state: {
+                    from: location.pathname,
+                    action: 'cart',
+                    productId: product.id,
+                    quantity: quantity
+                }
+            });
+            return;
+        }
 
-        // ======================================
-        // FUTURE DATABASE CODE
-        // TODO: Save Cart to MongoDB
-        // ======================================
+        addToCart(product, quantity);
     };
 
     // Zoom Move Tracker
