@@ -16,10 +16,10 @@ const crypto = require('crypto');
 const mongoose = require('mongoose');
 
 // Regex patterns
-const PHONE_REGEX = /^[6-9]\d{9}$/; // Indian 10-digit mobile number
+const PHONE_REGEX = /^\+?\d{7,15}$/; // Accept standard 7 to 15 digit mobile numbers
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-// Min 8 characters, at least 1 uppercase, 1 lowercase, 1 number, and 1 special character
-const PASSWORD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&#]{8,}$/;
+// Minimum 6 characters
+const PASSWORD_REGEX = /^.{6,}$/;
 
 // Seeding orders helper
 const seedSampleOrders = async (userId, addressId) => {
@@ -97,7 +97,7 @@ exports.register = async (req, res) => {
         if (!password || !PASSWORD_REGEX.test(password)) {
             return res.status(400).json({ 
                 success: false, 
-                message: 'Password must be at least 8 characters and contain at least one uppercase letter, one lowercase letter, one number, and one special character.' 
+                message: 'Password must be at least 6 characters.' 
             });
         }
         if (password !== confirmPassword) {

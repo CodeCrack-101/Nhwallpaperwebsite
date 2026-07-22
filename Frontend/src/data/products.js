@@ -208,7 +208,7 @@ import sh151 from '../assets/SOHO/soho38.5.png'
 //525337
 import sh152 from '../assets/SOHO/soho37.png'
 import sh153 from '../assets/SOHO/soho37.1.png'
-import sh153 from '../assets/SOHO/soho37.2.png'
+import sh153_b from '../assets/SOHO/soho37.2.png'
 import sh154 from '../assets/SOHO/soho37.3.png'
 import sh155 from '../assets/SOHO/soho37.4.png'
 import sh156 from '../assets/SOHO/soho37.5.png'
@@ -238,12 +238,12 @@ import sh173 from '../assets/SOHO/soho34.4.png'
 import sh174 from '../assets/SOHO/soho34.5.png'
 
 //525233
-import sh169 from '../assets/SOHO/soho33.png'
-import sh170 from '../assets/SOHO/soho33.1.png'
-import sh171 from '../assets/SOHO/soho33.2.png'
-import sh172 from '../assets/SOHO/soho33.3.png'
-import sh173 from '../assets/SOHO/soho33.4.png'
-import sh174 from '../assets/SOHO/soho33.5.png'
+import sh169_b from '../assets/SOHO/soho33.png'
+import sh170_b from '../assets/SOHO/soho33.1.png'
+import sh171_b from '../assets/SOHO/soho33.2.png'
+import sh172_b from '../assets/SOHO/soho33.3.png'
+import sh173_b from '../assets/SOHO/soho33.4.png'
+import sh174_b from '../assets/SOHO/soho33.5.png'
 
 //525332
 import sh175 from '../assets/SOHO/soho32.png'
@@ -292,7 +292,7 @@ import sh206 from '../assets/SOHO/soho27.1.png'
 import sh207 from '../assets/SOHO/soho27.2.png'
 import sh208 from '../assets/SOHO/soho27.3.png'
 import sh209 from '../assets/SOHO/soho27.4.png'
-import sh210 from '../assets/SOHO/soho27.5.png'
+import sh210 from '../assets/SOHO/soho27.4.png'
 
 //525326
 import sh211 from '../assets/SOHO/soho26.png'
@@ -311,34 +311,28 @@ import sh220 from '../assets/SOHO/soho25.1.png'
 //525324
 import sh221 from '../assets/SOHO/soho24.png'
 import sh222 from '../assets/SOHO/soho24.1.png'
-import sh223 from '../assets/SOHO/soho24.2.png'
+import sh223 from '../assets/SOHO/soho24.1.png'
 import sh224 from '../assets/SOHO/soho24.3.png'
 import sh225 from '../assets/SOHO/soho24.4.png'
 import sh226 from '../assets/SOHO/soho24.5.png'
 
 //525323
-import sh221 from '../assets/SOHO/soho23.png'
-import sh222 from '../assets/SOHO/soho23.1.png'
-import sh223 from '../assets/SOHO/soho23.2.png'
-import sh224 from '../assets/SOHO/soho23.3.png'
-import sh225 from '../assets/SOHO/soho23.4.png'
-import sh226 from '../assets/SOHO/soho23.5.png'
+import sh221_23 from '../assets/SOHO/soho23.png'
+import sh222_23 from '../assets/SOHO/soho23.1.png'
+import sh223_23 from '../assets/SOHO/soho23.1.png'
+import sh224_23 from '../assets/SOHO/soho23.3.png'
+import sh225_23 from '../assets/SOHO/soho23.4.png'
+import sh226_23 from '../assets/SOHO/soho23.5.png'
 
 //525322
 import sh227 from '../assets/SOHO/soho22.png'
 import sh228 from '../assets/SOHO/soho22.1.png'
-import sh229 from '../assets/SOHO/soho22.2.png'
+import sh229 from '../assets/SOHO/soho22.1.png'
 import sh230 from '../assets/SOHO/soho22.3.png'
 import sh231 from '../assets/SOHO/soho22.4.png'
 import sh232 from '../assets/SOHO/soho22.5.png'
 
-//525321
-import sh227 from '../assets/SOHO/soho22.png'
-import sh228 from '../assets/SOHO/soho22.1.png'
-import sh229 from '../assets/SOHO/soho22.2.png'
-import sh230 from '../assets/SOHO/soho22.3.png'
-import sh231 from '../assets/SOHO/soho22.4.png'
-import sh232 from '../assets/SOHO/soho22.5.png'
+//525321 (duplicate block removed)
 
 //525321
 import sh233 from '../assets/SOHO/soho21.png'
@@ -457,7 +451,7 @@ import sh317 from '../assets/SOHO/soho7.png'
 import sh318 from '../assets/SOHO/soho7.1.png'
 import sh319 from '../assets/SOHO/soho7.2.png'
 import sh320 from '../assets/SOHO/soho7.3.png'
-import sh221 from '../assets/SOHO/soho7.4.png'
+import sh321 from '../assets/SOHO/soho7.4.png'
 import sh322  from '../assets/SOHO/soho7.5.png'
 
 //525306
@@ -656,7 +650,7 @@ export const mockProducts = [
     reviewsCount: 89,
     category: 'SOHO',
     img: sh105,
-    thumbnails: [sh105, sh106, sh107, sh108, sh109, sh110],
+    thumbnails: [sh105, sh106, sh107, sh108],
     description: 'Premium upgrade of the Soho series. Contoured neck rest, memory foam base, adjustable tilt angle, and premium build quality.',
     availability: 'In Stock',
     material: 'Premium Memory Foam & Mesh fabric',
@@ -674,7 +668,7 @@ export const mockProducts = [
     reviewsCount: 89,
     category: 'SOHO',
     img: sh99,
-    thumbnails: [sh99, sh104, sh100, sh101, sh102, sh103],
+    thumbnails: [sh99, sh104, sh100, sh101, sh102],
     description: 'Premium upgrade of the Soho series. Contoured neck rest, memory foam base, adjustable tilt angle, and premium build quality.',
     availability: 'In Stock',
     material: 'Premium Memory Foam & Mesh fabric',
@@ -692,7 +686,7 @@ export const mockProducts = [
     reviewsCount: 89,
     category: 'SOHO',
     img: sh92,
-    thumbnails: [sh92, sh93, sh94, sh95, sh96, sh97, sh98],
+    thumbnails: [sh92, sh93, sh94, sh95, sh96, sh98],
     description: 'Premium upgrade of the Soho series. Contoured neck rest, memory foam base, adjustable tilt angle, and premium build quality.',
     availability: 'In Stock',
     material: 'Premium Memory Foam & Mesh fabric',
@@ -937,7 +931,7 @@ export const mockProducts = [
   {
     id: 'soho-23',
     patternno: 525362,
-    name: 'Soho Executive Mesh Throne',
+    name: 'Soho Executive Mesh Throne 23',
     price: 1499,
     rating: 5.0,
     Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 52 },
@@ -951,7 +945,691 @@ export const mockProducts = [
     dimensions: 'W 70cm x H 120-130cm x D 65cm',
     warranty: '3 Year Manufacturer Warranty',
     deliveryInfo: 'Free shipping. Dispatched in 1-2 business days.'
-  }
+  },
+  {
+    id: 'soho-24',
+    patternno: 525302,
+    name: 'Soho Ergonomic Seating 24',
+    price: 1299,
+    rating: 4.8,
+    Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
+    reviewsCount: 64,
+    category: 'SOHO',
+    img: sh347,
+    thumbnails: [sh347, sh348, sh349, sh350, sh351, sh352],
+    description: 'Minimalist seating design with active posture support and breathable fabric.',
+    availability: 'In Stock',
+    material: 'Ergonomic Mesh & High Density Foam',
+    dimensions: 'W 68cm x H 118-128cm x D 62cm',
+    warranty: '2 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 1-2 business days.'
+  },
+  {
+    id: 'soho-25',
+    patternno: 525303,
+    name: 'Soho Ergonomic Seating 25',
+    price: 1299,
+    rating: 4.9,
+    Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
+    reviewsCount: 71,
+    category: 'SOHO',
+    img: sh341,
+    thumbnails: [sh341, sh342, sh343, sh344, sh345, sh346],
+    description: 'Minimalist seating design with active posture support and breathable fabric.',
+    availability: 'In Stock',
+    material: 'Ergonomic Mesh & High Density Foam',
+    dimensions: 'W 68cm x H 118-128cm x D 62cm',
+    warranty: '2 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 1-2 business days.'
+  },
+  {
+    id: 'soho-26',
+    patternno: 525304,
+    name: 'Soho Ergonomic Seating 26',
+    price: 1299,
+    rating: 4.7,
+    Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
+    reviewsCount: 55,
+    category: 'SOHO',
+    img: sh335,
+    thumbnails: [sh335, sh336, sh337, sh338, sh339, sh340],
+    description: 'Minimalist seating design with active posture support and breathable fabric.',
+    availability: 'In Stock',
+    material: 'Ergonomic Mesh & High Density Foam',
+    dimensions: 'W 68cm x H 118-128cm x D 62cm',
+    warranty: '2 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 1-2 business days.'
+  },
+  {
+    id: 'soho-27',
+    patternno: 525305,
+    name: 'Soho Ergonomic Seating 27',
+    price: 1299,
+    rating: 4.8,
+    Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
+    reviewsCount: 92,
+    category: 'SOHO',
+    img: sh329,
+    thumbnails: [sh329, sh330, sh331, sh332, sh333, sh334],
+    description: 'Minimalist seating design with active posture support and breathable fabric.',
+    availability: 'In Stock',
+    material: 'Ergonomic Mesh & High Density Foam',
+    dimensions: 'W 68cm x H 118-128cm x D 62cm',
+    warranty: '2 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 1-2 business days.'
+  },
+  {
+    id: 'soho-28',
+    patternno: 525306,
+    name: 'Soho Ergonomic Seating 28',
+    price: 1299,
+    rating: 4.9,
+    Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
+    reviewsCount: 48,
+    category: 'SOHO',
+    img: sh323,
+    thumbnails: [sh323, sh324, sh325, sh326, sh327, sh328],
+    description: 'Minimalist seating design with active posture support and breathable fabric.',
+    availability: 'In Stock',
+    material: 'Ergonomic Mesh & High Density Foam',
+    dimensions: 'W 68cm x H 118-128cm x D 62cm',
+    warranty: '2 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 1-2 business days.'
+  },
+  {
+    id: 'soho-29',
+    patternno: 525307,
+    name: 'Soho Ergonomic Seating 29',
+    price: 1299,
+    rating: 5.0,
+    Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
+    reviewsCount: 110,
+    category: 'SOHO',
+    img: sh317,
+    thumbnails: [sh317, sh318, sh319, sh320, sh321, sh322],
+    description: 'Minimalist seating design with active posture support and breathable fabric.',
+    availability: 'In Stock',
+    material: 'Ergonomic Mesh & High Density Foam',
+    dimensions: 'W 68cm x H 118-128cm x D 62cm',
+    warranty: '2 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 1-2 business days.'
+  },
+  {
+    id: 'soho-30',
+    patternno: 525308,
+    name: 'Soho Ergonomic Seating 30',
+    price: 1299,
+    rating: 4.8,
+    Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
+    reviewsCount: 39,
+    category: 'SOHO',
+    img: sh311,
+    thumbnails: [sh311, sh312, sh313, sh314, sh315, sh316],
+    description: 'Minimalist seating design with active posture support and breathable fabric.',
+    availability: 'In Stock',
+    material: 'Ergonomic Mesh & High Density Foam',
+    dimensions: 'W 68cm x H 118-128cm x D 62cm',
+    warranty: '2 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 1-2 business days.'
+  },
+  {
+    id: 'soho-31',
+    patternno: 525309,
+    name: 'Soho Ergonomic Seating 31',
+    price: 1299,
+    rating: 4.9,
+    Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
+    reviewsCount: 84,
+    category: 'SOHO',
+    img: sh305,
+    thumbnails: [sh305, sh306, sh307, sh308, sh309, sh310],
+    description: 'Minimalist seating design with active posture support and breathable fabric.',
+    availability: 'In Stock',
+    material: 'Ergonomic Mesh & High Density Foam',
+    dimensions: 'W 68cm x H 118-128cm x D 62cm',
+    warranty: '2 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 1-2 business days.'
+  },
+  {
+    id: 'soho-32',
+    patternno: 525310,
+    name: 'Soho Ergonomic Seating 32',
+    price: 1299,
+    rating: 4.7,
+    Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
+    reviewsCount: 67,
+    category: 'SOHO',
+    img: sh299,
+    thumbnails: [sh299, sh300, sh301, sh302, sh303, sh304],
+    description: 'Minimalist seating design with active posture support and breathable fabric.',
+    availability: 'In Stock',
+    material: 'Ergonomic Mesh & High Density Foam',
+    dimensions: 'W 68cm x H 118-128cm x D 62cm',
+    warranty: '2 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 1-2 business days.'
+  },
+  {
+    id: 'soho-33',
+    patternno: 525311,
+    name: 'Soho Ergonomic Seating 33',
+    price: 1299,
+    rating: 4.9,
+    Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
+    reviewsCount: 53,
+    category: 'SOHO',
+    img: sh293,
+    thumbnails: [sh293, sh294, sh295, sh296, sh297, sh298],
+    description: 'Minimalist seating design with active posture support and breathable fabric.',
+    availability: 'In Stock',
+    material: 'Ergonomic Mesh & High Density Foam',
+    dimensions: 'W 68cm x H 118-128cm x D 62cm',
+    warranty: '2 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 1-2 business days.'
+  },
+  {
+    id: 'soho-34',
+    patternno: 525312,
+    name: 'Soho Ergonomic Seating 34',
+    price: 1299,
+    rating: 5.0,
+    Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
+    reviewsCount: 78,
+    category: 'SOHO',
+    img: sh287,
+    thumbnails: [sh287, sh288, sh289, sh290, sh291, sh292],
+    description: 'Minimalist seating design with active posture support and breathable fabric.',
+    availability: 'In Stock',
+    material: 'Ergonomic Mesh & High Density Foam',
+    dimensions: 'W 68cm x H 118-128cm x D 62cm',
+    warranty: '2 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 1-2 business days.'
+  },
+  {
+    id: 'soho-35',
+    patternno: 525313,
+    name: 'Soho Ergonomic Seating 35',
+    price: 1299,
+    rating: 4.8,
+    Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
+    reviewsCount: 62,
+    category: 'SOHO',
+    img: sh281,
+    thumbnails: [sh281, sh282, sh283, sh284, sh285, sh286],
+    description: 'Minimalist seating design with active posture support and breathable fabric.',
+    availability: 'In Stock',
+    material: 'Ergonomic Mesh & High Density Foam',
+    dimensions: 'W 68cm x H 118-128cm x D 62cm',
+    warranty: '2 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 1-2 business days.'
+  },
+  {
+    id: 'soho-36',
+    patternno: 525314,
+    name: 'Soho Ergonomic Seating 36',
+    price: 1299,
+    rating: 4.9,
+    Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
+    reviewsCount: 88,
+    category: 'SOHO',
+    img: sh275,
+    thumbnails: [sh275, sh276, sh277, sh278, sh279, sh280],
+    description: 'Minimalist seating design with active posture support and breathable fabric.',
+    availability: 'In Stock',
+    material: 'Ergonomic Mesh & High Density Foam',
+    dimensions: 'W 68cm x H 118-128cm x D 62cm',
+    warranty: '2 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 1-2 business days.'
+  },
+  {
+    id: 'soho-37',
+    patternno: 525315,
+    name: 'Soho Ergonomic Seating 37',
+    price: 1299,
+    rating: 4.7,
+    Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
+    reviewsCount: 41,
+    category: 'SOHO',
+    img: sh269,
+    thumbnails: [sh269, sh270, sh271, sh272, sh273, sh274],
+    description: 'Minimalist seating design with active posture support and breathable fabric.',
+    availability: 'In Stock',
+    material: 'Ergonomic Mesh & High Density Foam',
+    dimensions: 'W 68cm x H 118-128cm x D 62cm',
+    warranty: '2 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 1-2 business days.'
+  },
+  {
+    id: 'soho-38',
+    patternno: 525316,
+    name: 'Soho Ergonomic Seating 38',
+    price: 1299,
+    rating: 5.0,
+    Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
+    reviewsCount: 95,
+    category: 'SOHO',
+    img: sh263,
+    thumbnails: [sh263, sh264, sh265, sh266, sh267, sh268],
+    description: 'Minimalist seating design with active posture support and breathable fabric.',
+    availability: 'In Stock',
+    material: 'Ergonomic Mesh & High Density Foam',
+    dimensions: 'W 68cm x H 118-128cm x D 62cm',
+    warranty: '2 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 1-2 business days.'
+  },
+  {
+    id: 'soho-39',
+    patternno: 525317,
+    name: 'Soho Ergonomic Seating 39',
+    price: 1299,
+    rating: 4.8,
+    Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
+    reviewsCount: 52,
+    category: 'SOHO',
+    img: sh257,
+    thumbnails: [sh257, sh258, sh259, sh260, sh261, sh262],
+    description: 'Minimalist seating design with active posture support and breathable fabric.',
+    availability: 'In Stock',
+    material: 'Ergonomic Mesh & High Density Foam',
+    dimensions: 'W 68cm x H 118-128cm x D 62cm',
+    warranty: '2 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 1-2 business days.'
+  },
+  {
+    id: 'soho-40',
+    patternno: 525318,
+    name: 'Soho Ergonomic Seating 40',
+    price: 1299,
+    rating: 4.9,
+    Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
+    reviewsCount: 76,
+    category: 'SOHO',
+    img: sh251,
+    thumbnails: [sh251, sh252, sh253, sh254, sh255, sh256],
+    description: 'Minimalist seating design with active posture support and breathable fabric.',
+    availability: 'In Stock',
+    material: 'Ergonomic Mesh & High Density Foam',
+    dimensions: 'W 68cm x H 118-128cm x D 62cm',
+    warranty: '2 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 1-2 business days.'
+  },
+  {
+    id: 'soho-41',
+    patternno: 525319,
+    name: 'Soho Ergonomic Seating 41',
+    price: 1299,
+    rating: 4.8,
+    Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
+    reviewsCount: 82,
+    category: 'SOHO',
+    img: sh245,
+    thumbnails: [sh245, sh246, sh247, sh248, sh249, sh250],
+    description: 'Minimalist seating design with active posture support and breathable fabric.',
+    availability: 'In Stock',
+    material: 'Ergonomic Mesh & High Density Foam',
+    dimensions: 'W 68cm x H 118-128cm x D 62cm',
+    warranty: '2 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 1-2 business days.'
+  },
+  {
+    id: 'soho-42',
+    patternno: 525320,
+    name: 'Soho Ergonomic Seating 42',
+    price: 1299,
+    rating: 4.9,
+    Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
+    reviewsCount: 68,
+    category: 'SOHO',
+    img: sh239,
+    thumbnails: [sh239, sh240, sh241, sh242, sh243, sh244],
+    description: 'Minimalist seating design with active posture support and breathable fabric.',
+    availability: 'In Stock',
+    material: 'Ergonomic Mesh & High Density Foam',
+    dimensions: 'W 68cm x H 118-128cm x D 62cm',
+    warranty: '2 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 1-2 business days.'
+  },
+  {
+    id: 'soho-43',
+    patternno: 525321,
+    name: 'Soho Ergonomic Seating 43',
+    price: 1299,
+    rating: 4.7,
+    Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
+    reviewsCount: 44,
+    category: 'SOHO',
+    img: sh233,
+    thumbnails: [sh233, sh234, sh235, sh236, sh237, sh238],
+    description: 'Minimalist seating design with active posture support and breathable fabric.',
+    availability: 'In Stock',
+    material: 'Ergonomic Mesh & High Density Foam',
+    dimensions: 'W 68cm x H 118-128cm x D 62cm',
+    warranty: '2 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 1-2 business days.'
+  },
+  {
+    id: 'soho-44',
+    patternno: 525322,
+    name: 'Soho Ergonomic Seating 44',
+    price: 1299,
+    rating: 5.0,
+    Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
+    reviewsCount: 91,
+    category: 'SOHO',
+    img: sh227,
+    thumbnails: [sh227, sh228, sh229, sh230, sh231, sh232],
+    description: 'Minimalist seating design with active posture support and breathable fabric.',
+    availability: 'In Stock',
+    material: 'Ergonomic Mesh & High Density Foam',
+    dimensions: 'W 68cm x H 118-128cm x D 62cm',
+    warranty: '2 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 1-2 business days.'
+  },
+  {
+    id: 'soho-45',
+    patternno: 525323,
+    name: 'Soho Ergonomic Seating 45',
+    price: 1299,
+    rating: 4.8,
+    Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
+    reviewsCount: 73,
+    category: 'SOHO',
+    img: sh221_23,
+    thumbnails: [sh221_23, sh222_23, sh223_23, sh224_23, sh225_23, sh226_23],
+    description: 'Minimalist seating design with active posture support and breathable fabric.',
+    availability: 'In Stock',
+    material: 'Ergonomic Mesh & High Density Foam',
+    dimensions: 'W 68cm x H 118-128cm x D 62cm',
+    warranty: '2 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 1-2 business days.'
+  },
+  {
+    id: 'soho-46',
+    patternno: 525324,
+    name: 'Soho Ergonomic Seating 46',
+    price: 1299,
+    rating: 4.9,
+    Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
+    reviewsCount: 66,
+    category: 'SOHO',
+    img: sh221,
+    thumbnails: [sh221, sh222, sh223, sh224, sh225, sh226],
+    description: 'Minimalist seating design with active posture support and breathable fabric.',
+    availability: 'In Stock',
+    material: 'Ergonomic Mesh & High Density Foam',
+    dimensions: 'W 68cm x H 118-128cm x D 62cm',
+    warranty: '2 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 1-2 business days.'
+  },
+  {
+    id: 'soho-47',
+    patternno: 525325,
+    name: 'Soho Ergonomic Seating 47',
+    price: 1299,
+    rating: 4.7,
+    Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
+    reviewsCount: 49,
+    category: 'SOHO',
+    img: sh217,
+    thumbnails: [sh217, sh218, sh219, sh220],
+    description: 'Minimalist seating design with active posture support and breathable fabric.',
+    availability: 'In Stock',
+    material: 'Ergonomic Mesh & High Density Foam',
+    dimensions: 'W 68cm x H 118-128cm x D 62cm',
+    warranty: '2 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 1-2 business days.'
+  },
+  {
+    id: 'soho-48',
+    patternno: 525326,
+    name: 'Soho Ergonomic Seating 48',
+    price: 1299,
+    rating: 5.0,
+    Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
+    reviewsCount: 104,
+    category: 'SOHO',
+    img: sh211,
+    thumbnails: [sh211, sh212, sh213, sh214, sh215, sh216],
+    description: 'Minimalist seating design with active posture support and breathable fabric.',
+    availability: 'In Stock',
+    material: 'Ergonomic Mesh & High Density Foam',
+    dimensions: 'W 68cm x H 118-128cm x D 62cm',
+    warranty: '2 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 1-2 business days.'
+  },
+  {
+    id: 'soho-49',
+    patternno: 525327,
+    name: 'Soho Ergonomic Seating 49',
+    price: 1299,
+    rating: 4.8,
+    Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
+    reviewsCount: 58,
+    category: 'SOHO',
+    img: sh205,
+    thumbnails: [sh205, sh206, sh207, sh208, sh209, sh210],
+    description: 'Minimalist seating design with active posture support and breathable fabric.',
+    availability: 'In Stock',
+    material: 'Ergonomic Mesh & High Density Foam',
+    dimensions: 'W 68cm x H 118-128cm x D 62cm',
+    warranty: '2 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 1-2 business days.'
+  },
+  {
+    id: 'soho-50',
+    patternno: 525328,
+    name: 'Soho Ergonomic Seating 50',
+    price: 1299,
+    rating: 4.9,
+    Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
+    reviewsCount: 77,
+    category: 'SOHO',
+    img: sh199,
+    thumbnails: [sh199, sh200, sh201, sh202, sh203, sh204],
+    description: 'Minimalist seating design with active posture support and breathable fabric.',
+    availability: 'In Stock',
+    material: 'Ergonomic Mesh & High Density Foam',
+    dimensions: 'W 68cm x H 118-128cm x D 62cm',
+    warranty: '2 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 1-2 business days.'
+  },
+  {
+    id: 'soho-51',
+    patternno: 525329,
+    name: 'Soho Ergonomic Seating 51',
+    price: 1299,
+    rating: 4.8,
+    Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
+    reviewsCount: 83,
+    category: 'SOHO',
+    img: sh193,
+    thumbnails: [sh193, sh194, sh195, sh196, sh197, sh198],
+    description: 'Minimalist seating design with active posture support and breathable fabric.',
+    availability: 'In Stock',
+    material: 'Ergonomic Mesh & High Density Foam',
+    dimensions: 'W 68cm x H 118-128cm x D 62cm',
+    warranty: '2 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 1-2 business days.'
+  },
+  {
+    id: 'soho-52',
+    patternno: 525330,
+    name: 'Soho Ergonomic Seating 52',
+    price: 1299,
+    rating: 4.9,
+    Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
+    reviewsCount: 61,
+    category: 'SOHO',
+    img: sh187,
+    thumbnails: [sh187, sh188, sh189, sh190, sh191, sh192],
+    description: 'Minimalist seating design with active posture support and breathable fabric.',
+    availability: 'In Stock',
+    material: 'Ergonomic Mesh & High Density Foam',
+    dimensions: 'W 68cm x H 118-128cm x D 62cm',
+    warranty: '2 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 1-2 business days.'
+  },
+  {
+    id: 'soho-53',
+    patternno: 525331,
+    name: 'Soho Ergonomic Seating 53',
+    price: 1299,
+    rating: 4.7,
+    Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
+    reviewsCount: 45,
+    category: 'SOHO',
+    img: sh181,
+    thumbnails: [sh181, sh182, sh183, sh184, sh185, sh186],
+    description: 'Minimalist seating design with active posture support and breathable fabric.',
+    availability: 'In Stock',
+    material: 'Ergonomic Mesh & High Density Foam',
+    dimensions: 'W 68cm x H 118-128cm x D 62cm',
+    warranty: '2 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 1-2 business days.'
+  },
+  {
+    id: 'soho-54',
+    patternno: 525332,
+    name: 'Soho Ergonomic Seating 54',
+    price: 1299,
+    rating: 5.0,
+    Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
+    reviewsCount: 99,
+    category: 'SOHO',
+    img: sh175,
+    thumbnails: [sh175, sh176, sh177, sh178, sh179, sh180],
+    description: 'Minimalist seating design with active posture support and breathable fabric.',
+    availability: 'In Stock',
+    material: 'Ergonomic Mesh & High Density Foam',
+    dimensions: 'W 68cm x H 118-128cm x D 62cm',
+    warranty: '2 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 1-2 business days.'
+  },
+  {
+    id: 'soho-55',
+    patternno: 525233,
+    name: 'Soho Ergonomic Seating 55',
+    price: 1299,
+    rating: 4.8,
+    Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
+    reviewsCount: 70,
+    category: 'SOHO',
+    img: sh169_b,
+    thumbnails: [sh169_b, sh170_b, sh171_b, sh172_b, sh173_b, sh174_b],
+    description: 'Minimalist seating design with active posture support and breathable fabric.',
+    availability: 'In Stock',
+    material: 'Ergonomic Mesh & High Density Foam',
+    dimensions: 'W 68cm x H 118-128cm x D 62cm',
+    warranty: '2 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 1-2 business days.'
+  },
+  {
+    id: 'soho-56',
+    patternno: 525334,
+    name: 'Soho Ergonomic Seating 56',
+    price: 1299,
+    rating: 4.9,
+    Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
+    reviewsCount: 65,
+    category: 'SOHO',
+    img: sh169,
+    thumbnails: [sh169, sh170, sh171, sh172, sh173, sh174],
+    description: 'Minimalist seating design with active posture support and breathable fabric.',
+    availability: 'In Stock',
+    material: 'Ergonomic Mesh & High Density Foam',
+    dimensions: 'W 68cm x H 118-128cm x D 62cm',
+    warranty: '2 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 1-2 business days.'
+  },
+  {
+    id: 'soho-57',
+    patternno: 525335,
+    name: 'Soho Ergonomic Seating 57',
+    price: 1299,
+    rating: 4.7,
+    Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
+    reviewsCount: 51,
+    category: 'SOHO',
+    img: sh163,
+    thumbnails: [sh163, sh164, sh165, sh166, sh167, sh168],
+    description: 'Minimalist seating design with active posture support and breathable fabric.',
+    availability: 'In Stock',
+    material: 'Ergonomic Mesh & High Density Foam',
+    dimensions: 'W 68cm x H 118-128cm x D 62cm',
+    warranty: '2 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 1-2 business days.'
+  },
+  {
+    id: 'soho-58',
+    patternno: 525336,
+    name: 'Soho Ergonomic Seating 58',
+    price: 1299,
+    rating: 5.0,
+    Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
+    reviewsCount: 112,
+    category: 'SOHO',
+    img: sh157,
+    thumbnails: [sh157, sh158, sh159, sh160, sh161, sh162],
+    description: 'Minimalist seating design with active posture support and breathable fabric.',
+    availability: 'In Stock',
+    material: 'Ergonomic Mesh & High Density Foam',
+    dimensions: 'W 68cm x H 118-128cm x D 62cm',
+    warranty: '2 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 1-2 business days.'
+  },
+  {
+    id: 'soho-59',
+    patternno: 525337,
+    name: 'Soho Ergonomic Seating 59',
+    price: 1299,
+    rating: 4.8,
+    Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
+    reviewsCount: 59,
+    category: 'SOHO',
+    img: sh152,
+    thumbnails: [sh152, sh153, sh153_b, sh154, sh155, sh156],
+    description: 'Minimalist seating design with active posture support and breathable fabric.',
+    availability: 'In Stock',
+    material: 'Ergonomic Mesh & High Density Foam',
+    dimensions: 'W 68cm x H 118-128cm x D 62cm',
+    warranty: '2 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 1-2 business days.'
+  },
+  {
+    id: 'soho-60',
+    patternno: 525338,
+    name: 'Soho Ergonomic Seating 60',
+    price: 1299,
+    rating: 4.9,
+    Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
+    reviewsCount: 80,
+    category: 'SOHO',
+    img: sh146,
+    thumbnails: [sh146, sh147, sh148, sh149, sh150, sh151],
+    description: 'Minimalist seating design with active posture support and breathable fabric.',
+    availability: 'In Stock',
+    material: 'Ergonomic Mesh & High Density Foam',
+    dimensions: 'W 68cm x H 118-128cm x D 62cm',
+    warranty: '2 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 1-2 business days.'
+  },
+  {
+    id: 'soho-61',
+    patternno: 525339,
+    name: 'Soho Ergonomic Seating 61',
+    price: 1299,
+    rating: 4.9,
+    Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
+    reviewsCount: 76,
+    category: 'SOHO',
+    img: sh140,
+    thumbnails: [sh140, sh141, sh142, sh143, sh144, sh145],
+    description: 'Minimalist seating design with active posture support and breathable fabric.',
+    availability: 'In Stock',
+    material: 'Ergonomic Mesh & High Density Foam',
+    dimensions: 'W 68cm x H 118-128cm x D 62cm',
+    warranty: '2 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 1-2 business days.'
+  },
 ];
 
 //Helper Functions

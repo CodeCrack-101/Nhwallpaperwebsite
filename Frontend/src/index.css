@@ -35,3 +35,74 @@ img {
 ul {
   list-style: none;
 }
+
+/* ==========================================
+ * MODERN PREMIUM TOAST NOTIFICATIONS
+ * Features rounded corners (12px), soft shadow,
+ * and responsive typography.
+ * ========================================== */
+.Toastify__toast-container {
+  padding: 14px;
+  width: max-content;
+  min-width: 320px;
+  max-width: 440px;
+  z-index: 99999 !important;
+}
+
+.Toastify__toast {
+  border-radius: 12px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12) !important;
+  font-family: 'Poppins', system-ui, -apple-system, sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  padding: 14px 18px !important;
+  margin-bottom: 12px !important;
+  min-height: 52px !important;
+}
+
+.Toastify__toast--success {
+  background: #1f7a45 !important;
+  color: #ffffff !important;
+}
+
+.Toastify__toast--error {
+  background: #ca3e3e !important;
+  color: #ffffff !important;
+}
+
+.Toastify__toast--warning {
+  background: #ed6c02 !important;
+  color: #ffffff !important;
+}
+
+.Toastify__toast--info {
+  background: #0288d1 !important;
+  color: #ffffff !important;
+}
+
+.Toastify__toast-body {
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  line-height: 1.4 !important;
+}
+
+.Toastify__close-button {
+  opacity: 0.8 !important;
+  align-self: center !important;
+}
+
+.Toastify__close-button:hover {
+  opacity: 1 !important;
+}
+
+@media (max-width: 480px) {
+  .Toastify__toast-container {
+    width: 90% !important;
+    min-width: 280px !important;
+    right: 5% !important;
+    left: 5% !important;
+  }
+}

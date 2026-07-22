@@ -10,6 +10,7 @@
 import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { FiSearch, FiX } from 'react-icons/fi';
+import ImageLoader from '../common/ImageLoader';
 // Make sure to import FontAwesome in your main app file (e.g., App.js) like: import '@fortawesome/fontawesome-free/css/all.min.css';
 import './BestProduct.css';
 
@@ -126,11 +127,14 @@ const BestProduct = () => {
                 <>
                     <div className="categories-grid">
                         {filteredCategories.slice(0, visibleCount).map((cat) => (
-                            <Link key={cat.id} to={cat.path} className="category-card">
-                                <div 
-                                    className="category-image-wrapper"
-                                    style={{ backgroundImage: `url(${cat.img})` }}
-                                >
+                            <Link key={cat.id} to={cat.path} className="category-card" style={{ textDecoration: 'none', position: 'relative' }}>
+                                <div className="category-image-wrapper" style={{ position: 'relative', overflow: 'hidden' }}>
+                                    <ImageLoader 
+                                        src={cat.img} 
+                                        alt={cat.name} 
+                                        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                                        containerStyle={{ width: '100%', height: '100%' }}
+                                    />
                                     <div className="category-content-box">
                                         <h3 className="category-name">{cat.name}</h3>
                                         <i className="fa-solid fa-arrow-right-long category-arrow"></i>

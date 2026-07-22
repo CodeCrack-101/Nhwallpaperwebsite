@@ -12,6 +12,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { useCart } from '../context/CartContext';
 import axiosInstance from '../api/axiosInstance';
+import { orderToasts, showError } from '../utils/toast';
 import { 
     FiMapPin, 
     FiCreditCard, 
@@ -19,6 +20,8 @@ import {
     FiArrowLeft, 
     FiShoppingBag 
 } from 'react-icons/fi';
+import ButtonLoader from '../components/common/ButtonLoader';
+import SectionLoader from '../components/common/SectionLoader';
 import './Checkout.css';
 
 // Helper to load the external Razorpay checkout script dynamically
@@ -195,6 +198,7 @@ const Checkout = () => {
 
         setPaymentError(null);
         setPaymentProcessing(true);
+        triggerToast('Initializing payment gateway...', 'info');
 
         try {
             // Load Razorpay script dynamically
@@ -252,7 +256,7 @@ const Checkout = () => {
                     },
                     modal: {
                         ondismiss: function () {
-                            triggerToast('Payment transaction cancelled by user.', 'warning');
+                            orderToasts.orderCancelled();
                             setPaymentProcessing(false);
                         }
                     }
@@ -265,7 +269,7 @@ const Checkout = () => {
         } catch (error) {
             console.error('[GATEWAY INITIALIZATION ERROR]', error);
             setPaymentError(error.response?.data?.message || 'Error communicating with checkout payment servers.');
-            triggerToast('Failed to initiate transaction.', 'error');
+            orderToasts.paymentFailed();
             setPaymentProcessing(false);
         }
     };
@@ -285,6 +289,8 @@ const Checkout = () => {
                 amount: shippingRates.prepaidAmount
             });
 
+            orderToasts.paymentSuccess();
+
             // Call placeOrder to create Order and dispatch Shipment
             const placeRes = await axiosInstance.post('/order/place', {
                 paymentMethod,
@@ -297,16 +303,17 @@ const Checkout = () => {
             if (placeRes.data && placeRes.data.success) {
                 setPlacedOrder(placeRes.data.order);
                 setSimulatedModalOpen(false);
-                await clearCart();
+                await clearCart(false);
                 setStep(2);
-                triggerToast('Order placed successfully!', 'success');
+                orderToasts.orderPlaced();
             } else {
                 setPaymentError('Failed to complete order registration.');
+                orderToasts.paymentFailed();
             }
         } catch (error) {
             console.error('[ORDER REGISTRATION ERROR]', error);
             setPaymentError(error.response?.data?.message || 'Database error occurred during order dispatch.');
-            triggerToast(error.response?.data?.message || 'Failed to complete order registration.', 'error');
+            orderToasts.paymentFailed();
         } finally {
             setPaymentProcessing(false);
         }
@@ -552,15 +559,17 @@ const Checkout = () => {
                                         )}
                                     </div>
 
-                                    <button 
+                                    <ButtonLoader 
                                         type="button" 
                                         className="btn-primary" 
                                         style={{ width: '100%', padding: '15px', justifyContent: 'center', borderRadius: '12px' }}
                                         onClick={handlePlaceOrderSubmit}
-                                        disabled={paymentProcessing}
+                                        loading={paymentProcessing}
+                                        color="#ffffff"
+                                        size="small"
                                     >
-                                        {paymentProcessing ? 'Processing...' : paymentMethod === 'Online' ? 'Proceed to Online Payment' : 'Pay Charges & Confirm COD'}
-                                    </button>
+                                        {paymentMethod === 'Online' ? 'Proceed to Online Payment' : 'Pay Charges & Confirm COD'}
+                                    </ButtonLoader>
                                 </div>
                             )}
                         </div>

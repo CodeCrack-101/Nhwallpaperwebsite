@@ -16,6 +16,7 @@ import Uv from './Uv';
 import Urbano from './Urbano';
 import Ew from './Ew';
 import Workstation from './Workstation';
+import InfiniteProductGrid from './InfiniteProductGrid';
 
 const DynamicCategoryRouter = () => {
     const { categoryName } = useParams();
@@ -42,19 +43,14 @@ const DynamicCategoryRouter = () => {
             const products = getProductsByCategory(categoryName);
             if (products && products.length > 0) {
                 return (
-                    <div style={{ padding: '40px 5%', fontFamily: "'Poppins', sans-serif" }}>
+                    <div style={{ padding: '40px 5%', fontFamily: "'Poppins', sans-serif", maxWidth: '1200px', margin: '0 auto' }}>
                         <h2 style={{ textTransform: 'capitalize', marginBottom: '24px' }}>
                             {categoryName} Collection
                         </h2>
-                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '24px' }}>
-                            {products.map(product => (
-                                <div key={product.id} style={{ border: '1px solid #eee', padding: '16px', borderRadius: '8px' }}>
-                                    <img src={product.img} alt={product.name} style={{ width: '100%', height: '220px', objectFit: 'contain' }} />
-                                    <h4 style={{ margin: '12px 0 6px 0' }}>{product.name}</h4>
-                                    <p style={{ color: '#e67e22', fontWeight: 'bold' }}>₹{product.price.toLocaleString('en-IN')}</p>
-                                </div>
-                            ))}
-                        </div>
+                        <InfiniteProductGrid 
+                            products={products}
+                            emptyMessage={`No products found under ${categoryName}.`}
+                        />
                     </div>
                 );
             }
