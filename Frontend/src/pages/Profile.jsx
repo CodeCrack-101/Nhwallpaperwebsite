@@ -6,12 +6,19 @@
  */
 
 import React, { useState, useEffect } from 'react';
+import { profileToasts, showError } from '../utils/toast';
 import { useAuth } from '../context/AuthContext';
 import { updateProfile as apiUpdateProfile } from '../services/userService';
+import ButtonLoader from '../components/common/ButtonLoader';
+import PageLoader from '../components/common/PageLoader';
 import './Profile.css';
 
 const Profile = () => {
     const { user, updateProfile } = useAuth();
+    
+    if (!user) {
+        return <PageLoader message="Loading profile settings..." />;
+    }
     
     // Toggleable edit mode
     const [isEditMode, setIsEditMode] = useState(false);
@@ -61,16 +68,19 @@ const Profile = () => {
                 // Update Context state so changes render immediately
                 updateProfile(data.user);
                 setIsEditMode(false);
+                profileToasts.profileUpdated();
                 setMessage({ text: 'Profile changes saved successfully!', type: 'success' });
             }
         } catch (error) {
             console.error('[PROFILE ERROR] Update failed:', error);
+            const errMsg = error.response?.data?.message || 'Failed to update profile. Please verify your entries.';
+            showError(errMsg);
             setMessage({ 
-                text: error.response?.data?.message || 'Failed to update profile. Please verify your entries.', 
+                text: errMsg, 
                 type: 'error' 
             });
         } finally {
-            loading(false);
+            setLoading(false);
         }
     };
 
@@ -216,13 +226,15 @@ const Profile = () => {
                             </button>
                         ) : (
                             <div className="action-buttons">
-                                <button 
+                                <ButtonLoader 
                                     type="submit" 
                                     className="save-btn" 
-                                    disabled={loading}
+                                    loading={loading}
+                                    color="#ffffff"
+                                    size="small"
                                 >
-                                    {loading ? 'Saving...' : 'Save Changes'}
-                                </button>
+                                    Save Changes
+                                </ButtonLoader>
                                 <button 
                                     type="button" 
                                     className="cancel-btn" 

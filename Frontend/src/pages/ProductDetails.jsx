@@ -12,6 +12,8 @@ import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
 import { getProductById } from '../data/products';
 import { FiHeart, FiShoppingBag, FiArrowLeft, FiStar } from 'react-icons/fi';
+import ButtonLoader from '../components/common/ButtonLoader';
+import ImageLoader from '../components/common/ImageLoader';
 import './ProductDetails.css';
 
 const ProductDetails = () => {
@@ -32,6 +34,8 @@ const ProductDetails = () => {
     const [activeImage, setActiveImage] = useState('');
     const [quantity, setQuantity] = useState(1);
     const [activeTab, setActiveTab] = useState('features');
+    const [isAddingCart, setIsAddingCart] = useState(false);
+    const [isTogglingWishlist, setIsTogglingWishlist] = useState(false);
 
     // Zoom Effect states
     const [zoomPos, setZoomPos] = useState({ x: 0, y: 0 });
@@ -81,7 +85,7 @@ const ProductDetails = () => {
         setQuantity(val);
     };
 
-    const handleWishlistToggle = () => {
+    const handleWishlistToggle = async () => {
         if (!isAuthenticated) {
             // Redirect guest to login and preserve action
             navigate('/login', {
@@ -94,14 +98,19 @@ const ProductDetails = () => {
             return;
         }
 
-        if (isFav) {
-            removeFromWishlist(product.id);
-        } else {
-            addToWishlist(product);
+        setIsTogglingWishlist(true);
+        try {
+            if (isFav) {
+                await removeFromWishlist(product.id);
+            } else {
+                await addToWishlist(product);
+            }
+        } finally {
+            setIsTogglingWishlist(false);
         }
     };
 
-    const handleCartSubmit = () => {
+    const handleCartSubmit = async () => {
         if (!isAuthenticated) {
             // Redirect guest to login and preserve action
             navigate('/login', {
@@ -115,7 +124,12 @@ const ProductDetails = () => {
             return;
         }
 
-        addToCart(product, quantity);
+        setIsAddingCart(true);
+        try {
+            await addToCart(product, quantity);
+        } finally {
+            setIsAddingCart(false);
+        }
     };
 
     // Zoom Move Tracker
@@ -264,17 +278,26 @@ const ProductDetails = () => {
                         </div>
 
                         <div className="action-buttons-group">
-                            <button className="btn-add-cart" onClick={handleCartSubmit}>
+                            <ButtonLoader 
+                                className="btn-add-cart" 
+                                onClick={handleCartSubmit}
+                                loading={isAddingCart}
+                                color="#ffffff"
+                                size="small"
+                            >
                                 <FiShoppingBag /> Add To Cart
-                            </button>
+                            </ButtonLoader>
                             
-                            <button 
+                            <ButtonLoader 
                                 className={`btn-wishlist-toggle ${isFav ? 'active' : ''}`}
                                 onClick={handleWishlistToggle}
+                                loading={isTogglingWishlist}
+                                color="#ffffff"
+                                size="small"
                             >
                                 <FiHeart fill={isFav ? "#ffffff" : "none"} /> 
                                 {isFav ? 'In Wishlist' : 'Add To Wishlist'}
-                            </button>
+                            </ButtonLoader>
                         </div>
                     </div>
 

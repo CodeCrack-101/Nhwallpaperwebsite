@@ -6,6 +6,7 @@
  */
 
 import React, { createContext, useState, useEffect, useContext } from 'react';
+import { authToasts, showWarning } from '../utils/toast';
 import axiosInstance from '../api/axiosInstance';
 
 const AuthContext = createContext(null);
@@ -49,8 +50,8 @@ export const AuthProvider = ({ children }) => {
     useEffect(() => {
         const handleSessionExpired = (e) => {
             const expiredMsg = e.detail?.message || 'Session expired. Please login again.';
-            logout();
-            alert(expiredMsg);
+            logout(false);
+            showWarning(expiredMsg, 'session-expired');
         };
 
         window.addEventListener('auth-session-expired', handleSessionExpired);
@@ -72,11 +73,14 @@ export const AuthProvider = ({ children }) => {
     /**
      * Clear credentials and destroy session
      */
-    const logout = () => {
+    const logout = (showToast = true) => {
         localStorage.removeItem('token');
         setToken(null);
         setUser(null);
         setIsAuthenticated(false);
+        if (showToast) {
+            authToasts.logout();
+        }
     };
 
     /**

@@ -9,6 +9,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { FiTrash2, FiShoppingBag, FiArrowLeft } from 'react-icons/fi';
+import ImageLoader from '../components/common/ImageLoader';
 import './Cart.css';
 
 const Cart = () => {
@@ -87,7 +88,14 @@ const Cart = () => {
                 <div className="cart-items-list">
                     {cart.map((item) => (
                         <div key={item.id} className="cart-item-row">
-                            <img src={item.img || ''} alt={item.name || 'Product'} className="cart-item-image" />
+                            <div className="cart-item-image" style={{ position: 'relative', overflow: 'hidden' }}>
+                                <ImageLoader 
+                                    src={item.img || ''} 
+                                    alt={item.name || 'Product'} 
+                                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                                    containerStyle={{ width: '100%', height: '100%' }}
+                                />
+                            </div>
                             
                             <div className="cart-item-info">
                                 <span className="cart-item-category">{item.category || 'Seating'}</span>

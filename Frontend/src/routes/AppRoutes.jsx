@@ -1,40 +1,39 @@
 /**
  * React Router Configuration File
  * Location: frontend/src/routes/AppRoutes.jsx
- * Description: Sets up the browser routing hierarchy using React Router v6.
- *              Registers public layout routes and wraps protected dashboard pages.
+ * Description: Sets up the browser routing hierarchy using React Router with lazy loading,
+ *              React Suspense, and Mosaic page loaders to eliminate white screen flashes.
  */
 
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-
-// Layout
 import MainLayout from '../layouts/MainLayout';
+import PageLoader from '../components/common/PageLoader';
 
-// Components/Pages
-import Header from '../components/Header/Header';
-import Login from '../pages/Login';
-import Register from '../pages/Register';
-import ProductDetails from '../pages/ProductDetails';
-import Profile from '../pages/Profile';
-import Orders from '../pages/Orders';
+// Lazy Loaded Components/Pages for performance code-splitting
+const Header = lazy(() => import('../components/Header/Header'));
+const Login = lazy(() => import('../pages/Login'));
+const Register = lazy(() => import('../pages/Register'));
+const ProductDetails = lazy(() => import('../pages/ProductDetails'));
+const Profile = lazy(() => import('../pages/Profile'));
+const Orders = lazy(() => import('../pages/Orders'));
 
 // Category Components
-import Soho from '../components/Allproduct/Soho';
-import Sky from '../components/Allproduct/Sky';
-import Uv from '../components/Allproduct/Uv';
-import Urbano from '../components/Allproduct/Urbano';
-import Ew from '../components/Allproduct/Ew';
-import Workstation from '../components/Allproduct/Workstation';
-import DynamicCategoryRouter from '../components/Allproduct/DynamicCategoryRouter'; // Dynamic controller
+const Soho = lazy(() => import('../components/Allproduct/Soho'));
+const Sky = lazy(() => import('../components/Allproduct/Sky'));
+const Uv = lazy(() => import('../components/Allproduct/Uv'));
+const Urbano = lazy(() => import('../components/Allproduct/Urbano'));
+const Ew = lazy(() => import('../components/Allproduct/Ew'));
+const Workstation = lazy(() => import('../components/Allproduct/Workstation'));
+const DynamicCategoryRouter = lazy(() => import('../components/Allproduct/DynamicCategoryRouter'));
 
-// Placeholders for complete UX routes
-import About from '../pages/About';
-import Contact from '../pages/Contact';
-import Cart from '../pages/Cart';
-import Wishlist from '../pages/Wishlist';
-import Checkout from '../pages/Checkout';
+// Inner Pages
+const About = lazy(() => import('../pages/About'));
+const Contact = lazy(() => import('../pages/Contact'));
+const Cart = lazy(() => import('../pages/Cart'));
+const Wishlist = lazy(() => import('../pages/Wishlist'));
+const Checkout = lazy(() => import('../pages/Checkout'));
 
 /**
  * Protected Route Wrapper Component
@@ -43,19 +42,7 @@ const ProtectedRoute = ({ children }) => {
     const { isAuthenticated, loading } = useAuth();
 
     if (loading) {
-        return (
-            <div style={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                height: '80vh',
-                fontFamily: "'Poppins', sans-serif"
-            }}>
-                <div style={{ textAlign: 'center' }}>
-                    <p style={{ fontSize: '18px', color: '#666', fontWeight: '500' }}>Verifying active session...</p>
-                </div>
-            </div>
-        );
+        return <PageLoader fullScreen={false} message="Verifying active session..." />;
     }
 
     if (!isAuthenticated) {
@@ -67,66 +54,68 @@ const ProtectedRoute = ({ children }) => {
 
 const AppRoutes = () => {
     return (
-        <Routes>
-            {/* Wrap all pages inside the MainLayout (Navbar + Footer) */}
-            <Route path="/" element={<MainLayout/>}>
+        <Suspense fallback={<PageLoader fullScreen={false} message="Loading collection..." />}>
+            <Routes>
+                {/* Wrap all pages inside the MainLayout (Navbar + Footer) */}
+                <Route path="/" element={<MainLayout/>}>
 
-                {/* ================= Public Home Route ================= */}
-                <Route index element={<Header />} />
+                    {/* ================= Public Home Route ================= */}
+                    <Route index element={<Header />} />
 
-                {/* ================= Public Inner Pages ================= */}
-                <Route path="about" element={<About />} />
-                <Route path="contact" element={<Contact />} />
-                <Route path="login" element={<Login />} />
-                <Route path="register" element={<Register/>} />
-                <Route path="product/:id" element={<ProductDetails/>} />
-                
-                {/* Dynamic Parameter Router matches path patterns matching /category/anyname */}
-                <Route path="category/:categoryName" element={<DynamicCategoryRouter />} />
+                    {/* ================= Public Inner Pages ================= */}
+                    <Route path="about" element={<About />} />
+                    <Route path="contact" element={<Contact />} />
+                    <Route path="login" element={<Login />} />
+                    <Route path="register" element={<Register/>} />
+                    <Route path="product/:id" element={<ProductDetails/>} />
+                    
+                    {/* Dynamic Parameter Router matches path patterns matching /category/anyname */}
+                    <Route path="category/:categoryName" element={<DynamicCategoryRouter />} />
 
-                {/* Legacy Base Fallbacks */}
-                <Route path="soho" element={<Soho/>} />
-                <Route path="sky" element={<Sky />} />
-                <Route path="gaming" element={<Uv />} />
-                <Route path="office" element={<Urbano />} />
-                <Route path="visitor" element={<Ew />} />
-                <Route path="workstation" element={<Workstation />} />
+                    {/* Legacy Base Fallbacks */}
+                    <Route path="soho" element={<Soho/>} />
+                    <Route path="sky" element={<Sky />} />
+                    <Route path="gaming" element={<Uv />} />
+                    <Route path="office" element={<Urbano />} />
+                    <Route path="visitor" element={<Ew />} />
+                    <Route path="workstation" element={<Workstation />} />
 
-                {/* ================= Protected Routes ================= */}
-                <Route path="profile" element={
-                    <ProtectedRoute>
-                        <Profile />
-                    </ProtectedRoute>
-                } />
+                    {/* ================= Protected Routes ================= */}
+                    <Route path="profile" element={
+                        <ProtectedRoute>
+                            <Profile />
+                        </ProtectedRoute>
+                    } />
 
-                <Route path="orders" element={
-                    <ProtectedRoute>
-                        <Orders />
-                    </ProtectedRoute>
-                } />
+                    <Route path="orders" element={
+                        <ProtectedRoute>
+                            <Orders />
+                        </ProtectedRoute>
+                    } />
 
-                <Route path="cart" element={
-                    <ProtectedRoute>
-                        <Cart />
-                    </ProtectedRoute>
-                } />
+                    <Route path="cart" element={
+                        <ProtectedRoute>
+                            <Cart />
+                        </ProtectedRoute>
+                    } />
 
-                <Route path="wishlist" element={
-                    <ProtectedRoute>
-                        <Wishlist />
-                    </ProtectedRoute>
-                } />
+                    <Route path="wishlist" element={
+                        <ProtectedRoute>
+                            <Wishlist />
+                        </ProtectedRoute>
+                    } />
 
-                <Route path="checkout" element={
-                    <ProtectedRoute>
-                        <Checkout />
-                    </ProtectedRoute>
-                } />
+                    <Route path="checkout" element={
+                        <ProtectedRoute>
+                            <Checkout />
+                        </ProtectedRoute>
+                    } />
 
-                {/* Catch-all Redirect */}
-                <Route path="*" element={<Navigate to="/" replace />} />
-            </Route>
-        </Routes>
+                    {/* Catch-all Redirect */}
+                    <Route path="*" element={<Navigate to="/" replace />} />
+                </Route>
+            </Routes>
+        </Suspense>
     );
 };
 

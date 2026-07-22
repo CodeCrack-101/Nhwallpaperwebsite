@@ -1,14 +1,15 @@
 /**
  * Gaming Chair (Uv) Category Catalog Page File
  * Location: frontend/src/components/Allproduct/Uv.jsx
- * Description: Renders products under the Gaming Chair category.
- *              Allows searching and links directly to separate ProductDetails page.
+ * Description: Renders products under the Gaming Chair category with infinite scroll,
+ *              image lazy loading, and Mosaic indicators.
  */
 
 import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { getProductsByCategory } from '../../data/products';
 import { FiSearch, FiX, FiArrowLeft } from 'react-icons/fi';
+import InfiniteProductGrid from './InfiniteProductGrid';
 import './CategoryProducts.css';
 
 const products = getProductsByCategory('Gaming Chair');
@@ -55,45 +56,11 @@ const Uv = () => {
                 )}
             </div>
 
-            {/* Grid List */}
-            {filteredProducts.length > 0 ? (
-                <div className="category-products-grid">
-                    {filteredProducts.map((product) => (
-                        <Link 
-                            key={product.id} 
-                            to={`/product/${product.id}`}
-                            className="category-product-card"
-                        >
-                            <div 
-                                className="category-product-image"
-                                style={{ backgroundImage: `url(${product.img})` }} 
-                            />
-                            
-                            <div className="category-product-body">
-                                <div>
-                                    <h3 className="category-product-title">
-                                        {product.name}
-                                    </h3>
-                                    <p className="category-product-desc">
-                                        {product.description}
-                                    </p>
-                                </div>
-
-                                <div className="category-product-footer">
-                                    <span className="category-product-price">
-                                        ₹{product.price.toLocaleString('en-IN')}
-                                    </span>
-                                    <span className="category-product-btn">
-                                        View Details
-                                    </span>
-                                </div>
-                            </div>
-                        </Link>
-                    ))}
-                </div>
-            ) : (
-                <div className="category-no-results">No Gaming chairs found.</div>
-            )}
+            {/* Infinite Scroll Product Grid */}
+            <InfiniteProductGrid 
+                products={filteredProducts} 
+                emptyMessage="No Gaming chairs found." 
+            />
         </main>
     );
 };

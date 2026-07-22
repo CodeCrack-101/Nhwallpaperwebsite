@@ -7,8 +7,11 @@
 
 import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate, Link } from 'react-router-dom';
+import { FiEye, FiEyeOff } from 'react-icons/fi';
+import { authToasts, validationToasts, showError } from '../utils/toast';
 import { useAuth } from '../context/AuthContext';
 import { registerUser, verifyRegistration, resendOtp } from '../services/authService';
+import ButtonLoader from '../components/common/ButtonLoader';
 import './Login.css'; // Reuses auth layout styling
 
 const Register = () => {
@@ -18,6 +21,8 @@ const Register = () => {
 
     // View modes: 'details' | 'otp'
     const [mode, setMode] = useState('details');
+    const [showPassword, setShowPassword] = useState(false);
+    const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
     // Fields state
     const [formData, setFormData] = useState({
@@ -73,9 +78,7 @@ const Register = () => {
     };
 
     const validatePassword = (pw) => {
-        // Min 8 characters, at least one uppercase, lowercase, number, special character
-        const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&#]{8,}$/;
-        return regex.test(pw);
+        return pw && pw.length >= 6;
     };
 
     /**
@@ -88,25 +91,29 @@ const Register = () => {
         const cleanPhone = formData.phone.trim();
         const cleanEmail = formData.email.toLowerCase().trim();
 
-        if (!/^[6-9]\d{9}$/.test(cleanPhone)) {
-            setMessage({ text: 'Please enter a valid 10-digit mobile number.', type: 'error' });
+        if (!/^\+?\d{7,15}$/.test(cleanPhone)) {
+            validationToasts.invalidPhone();
+            setMessage({ text: 'Please enter a valid mobile number.', type: 'error' });
             return;
         }
 
         if (!validatePassword(formData.password)) {
+            showError('Password must be at least 6 characters.');
             setMessage({ 
-                text: 'Password must be at least 8 characters, and contain at least one uppercase letter, one lowercase letter, one number, and one special character.', 
+                text: 'Password must be at least 6 characters.', 
                 type: 'error' 
             });
             return;
         }
 
         if (formData.password !== formData.confirmPassword) {
+            showError('Passwords do not match.');
             setMessage({ text: 'Passwords do not match.', type: 'error' });
             return;
         }
 
         if (formData.pincode && !/^\d{6}$/.test(formData.pincode)) {
+            showError('Please enter a valid 6-digit pin code.');
             setMessage({ text: 'Please enter a valid 6-digit pin code.', type: 'error' });
             return;
         }
@@ -127,14 +134,17 @@ const Register = () => {
             });
 
             if (data.success) {
+                authToasts.otpSent();
                 setTimer(600); // 10 minutes validity
                 setMode('otp');
                 setMessage({ text: 'Registration details saved! OTP has been sent to your email.', type: 'success' });
             }
         } catch (error) {
             console.error('[REGISTER DETAILS ERROR] Dispatch failed:', error);
+            const errMsg = error.response?.data?.message || 'Registration failed. Email or phone number might already be in use.';
+            showError(errMsg);
             setMessage({ 
-                text: error.response?.data?.message || 'Registration failed. Email or phone number might already be in use.', 
+                text: errMsg, 
                 type: 'error' 
             });
         } finally {
@@ -152,13 +162,16 @@ const Register = () => {
         try {
             const data = await resendOtp(formData.email.toLowerCase().trim());
             if (data.success) {
+                authToasts.otpSent();
                 setTimer(600); // 10 minutes validity
                 setMessage({ text: 'A new 6-digit OTP code has been successfully sent to your registered email.', type: 'success' });
             }
         } catch (error) {
             console.error('[RESEND OTP ERROR] Fail:', error);
+            const errMsg = error.response?.data?.message || 'Failed to resend OTP. Please try again.';
+            showError(errMsg);
             setMessage({ 
-                text: error.response?.data?.message || 'Failed to resend OTP. Please try again.', 
+                text: errMsg, 
                 type: 'error' 
             });
         } finally {
@@ -177,16 +190,20 @@ const Register = () => {
         try {
             const data = await verifyRegistration(formData.email.toLowerCase().trim(), otpCode.trim());
             if (data.success) {
+                authToasts.otpVerified();
+                authToasts.registerSuccess();
                 login(data.token, data.user);
                 setMessage({ text: 'Email verification successful! Logging you in...', type: 'success' });
                 setTimeout(() => {
                     navigate('/');
-                }, 1500);
+                }, 1200);
             }
         } catch (error) {
             console.error('[REGISTER OTP ERROR] Verification failed:', error);
+            const errMsg = error.response?.data?.message || 'Invalid or expired OTP. Please try again.';
+            showError(errMsg);
             setMessage({ 
-                text: error.response?.data?.message || 'Invalid or expired OTP. Please try again.', 
+                text: errMsg, 
                 type: 'error' 
             });
         } finally {
@@ -267,29 +284,49 @@ const Register = () => {
                         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
                             <div className="form-group">
                                 <label htmlFor="password">Password</label>
-                                <input 
-                                    type="password" 
-                                    id="password" 
-                                    name="password" 
-                                    placeholder="Min 8 characters" 
-                                    required 
-                                    value={formData.password} 
-                                    onChange={handleInputChange} 
-                                    disabled={loading}
-                                />
+                                <div className="password-input-wrapper">
+                                    <input 
+                                        type={showPassword ? "text" : "password"} 
+                                        id="password" 
+                                        name="password" 
+                                        placeholder="Min 6 characters" 
+                                        required 
+                                        value={formData.password} 
+                                        onChange={handleInputChange} 
+                                        disabled={loading}
+                                    />
+                                    <button
+                                        type="button"
+                                        className="password-toggle-btn"
+                                        onClick={() => setShowPassword(!showPassword)}
+                                        tabIndex="-1"
+                                    >
+                                        {showPassword ? <FiEyeOff /> : <FiEye />}
+                                    </button>
+                                </div>
                             </div>
                             <div className="form-group">
                                 <label htmlFor="confirmPassword">Confirm Password</label>
-                                <input 
-                                    type="password" 
-                                    id="confirmPassword" 
-                                    name="confirmPassword" 
-                                    placeholder="Re-enter password" 
-                                    required 
-                                    value={formData.confirmPassword} 
-                                    onChange={handleInputChange} 
-                                    disabled={loading}
-                                />
+                                <div className="password-input-wrapper">
+                                    <input 
+                                        type={showConfirmPassword ? "text" : "password"} 
+                                        id="confirmPassword" 
+                                        name="confirmPassword" 
+                                        placeholder="Re-enter password" 
+                                        required 
+                                        value={formData.confirmPassword} 
+                                        onChange={handleInputChange} 
+                                        disabled={loading}
+                                    />
+                                    <button
+                                        type="button"
+                                        className="password-toggle-btn"
+                                        onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                                        tabIndex="-1"
+                                    >
+                                        {showConfirmPassword ? <FiEyeOff /> : <FiEye />}
+                                    </button>
+                                </div>
                             </div>
                         </div>
 
@@ -352,13 +389,15 @@ const Register = () => {
                             </div>
                         </div>
 
-                        <button 
+                        <ButtonLoader 
                             type="submit" 
                             className="submit-btn"
-                            disabled={loading}
+                            loading={loading}
+                            color="#ffffff"
+                            size="small"
                         >
-                            {loading ? 'Sending OTP...' : 'Register'}
-                        </button>
+                            Register
+                        </ButtonLoader>
 
                         <p style={{ textAlign: 'center', fontSize: '14px', color: '#666', marginTop: '15px' }}>
                             Already Registered? <Link to="/login" style={{ color: '#C89B5B', fontWeight: '600', textDecoration: 'none' }}>Sign In</Link>
@@ -388,13 +427,16 @@ const Register = () => {
                             />
                         </div>
 
-                        <button 
+                        <ButtonLoader 
                             type="submit" 
                             className="submit-btn verify-btn"
-                            disabled={loading || otpCode.length !== 6}
+                            loading={loading}
+                            disabled={otpCode.length !== 6}
+                            color="#ffffff"
+                            size="small"
                         >
-                            {loading ? 'Verifying...' : 'Verify & Register'}
-                        </button>
+                            Verify & Register
+                        </ButtonLoader>
 
                         <button 
                             type="button" 

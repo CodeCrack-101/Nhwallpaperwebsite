@@ -8,6 +8,7 @@
  */
 
 import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
+import { cartToasts, wishlistToasts, showError } from '../utils/toast';
 import { useAuth } from './AuthContext';
 import axiosInstance from '../api/axiosInstance';
 
@@ -17,7 +18,6 @@ export const CartProvider = ({ children }) => {
     const { isAuthenticated, user } = useAuth();
     const [cart, setCart] = useState([]);
     const [wishlist, setWishlist] = useState([]);
-    const [toast, setToast] = useState({ show: false, message: '', type: 'success' });
 
     /**
      * Map MongoDB backend cart items to the frontend-expected schema shape.
@@ -90,12 +90,9 @@ export const CartProvider = ({ children }) => {
     useEffect(() => {
         const syncUserData = async () => {
             if (isAuthenticated && user) {
-                // Perform initial fetch on login/mount
                 await refreshCart();
                 await refreshWishlist();
             } else {
-                // Load guest states from LocalStorage if not logged in.
-                // Clear any leftover authenticated cart/wishlist cache from memory immediately.
                 const storedGuestCart = localStorage.getItem('wallart_cart_guest');
                 setCart(storedGuestCart ? JSON.parse(storedGuestCart) : []);
 
@@ -108,21 +105,11 @@ export const CartProvider = ({ children }) => {
     }, [isAuthenticated, user, refreshCart, refreshWishlist]);
 
     /**
-     * Triggers a global animated alert toast
+     * Add selected product to the cart
      */
-    const triggerToast = (message, type = 'success') => {
-        setToast({ show: true, message, type });
-        const timer = setTimeout(() => {
-            setToast(prev => ({ ...prev, show: false }));
-        }, 3000);
-        return () => clearTimeout(timer);
-    };
-
-    /**
-     * Add selected product to the cart (MongoDB for authenticated users, localStorage for guests)
-     */
-    const addToCart = async (product, quantity = 1) => {
+    const addToCart = async (product, quantity = 1, showToastNotification = true) => {
         const prodId = product.id || product._id || product.productId;
+        const existsInCart = cart.some(item => (item.id || item.productId) === prodId);
 
         if (isAuthenticated && user) {
             try {
@@ -136,14 +123,16 @@ export const CartProvider = ({ children }) => {
                 });
                 if (res.data && res.data.success) {
                     setCart(mapBackendCart(res.data.items));
-                    triggerToast(`Added ${product.name} to Cart!`, 'success');
+                    if (showToastNotification) {
+                        if (existsInCart) cartToasts.alreadyInCart();
+                        else cartToasts.addToCart();
+                    }
                 }
             } catch (error) {
                 console.error('[CART CONTEXT ERROR] Add to MongoDB failed:', error.message);
-                triggerToast('Failed to add item to cart.', 'error');
+                showError('Failed to add item to cart.');
             }
         } else {
-            // Guest session: update state and write explicitly to guest storage
             setCart(prev => {
                 const existingIndex = prev.findIndex(item => (item.id || item.productId) === prodId);
                 let updatedCart;
@@ -170,37 +159,35 @@ export const CartProvider = ({ children }) => {
                 localStorage.setItem('wallart_cart_guest', JSON.stringify(updatedCart));
                 return updatedCart;
             });
-            triggerToast(`Added ${product.name} to Cart!`, 'success');
+            if (showToastNotification) {
+                if (existsInCart) cartToasts.alreadyInCart();
+                else cartToasts.addToCart();
+            }
         }
     };
 
     /**
      * Remove select item from cart
      */
-    const removeFromCart = async (productId) => {
-        const item = cart.find(i => (i.id || i.productId) === productId);
-
+    const removeFromCart = async (productId, showToastNotification = true) => {
         if (isAuthenticated && user) {
             try {
                 const res = await axiosInstance.delete(`/cart/${productId}`);
                 if (res.data && res.data.success) {
                     setCart(mapBackendCart(res.data.items));
-                    if (item) triggerToast(`Removed ${item.name} from Cart.`, 'error');
+                    if (showToastNotification) cartToasts.removeFromCart();
                 }
             } catch (error) {
                 console.error('[CART CONTEXT ERROR] Delete from MongoDB failed:', error.message);
-                triggerToast('Failed to remove item.', 'error');
+                showError('Failed to remove item.');
             }
         } else {
-            // Guest session removal
             setCart(prev => {
                 const updatedCart = prev.filter(item => (item.id || item.productId) !== productId);
                 localStorage.setItem('wallart_cart_guest', JSON.stringify(updatedCart));
                 return updatedCart;
             });
-            if (item) {
-                triggerToast(`Removed ${item.name} from Cart.`, 'error');
-            }
+            if (showToastNotification) cartToasts.removeFromCart();
         }
     };
 
@@ -215,12 +202,12 @@ export const CartProvider = ({ children }) => {
                 const res = await axiosInstance.put(`/cart/${productId}`, { quantity: newQuantity });
                 if (res.data && res.data.success) {
                     setCart(mapBackendCart(res.data.items));
+                    cartToasts.cartUpdated();
                 }
             } catch (error) {
                 console.error('[CART CONTEXT ERROR] Update quantity in MongoDB failed:', error.message);
             }
         } else {
-            // Guest session update
             setCart(prev => {
                 const updatedCart = prev.map(item =>
                     (item.id || item.productId) === productId
@@ -230,34 +217,37 @@ export const CartProvider = ({ children }) => {
                 localStorage.setItem('wallart_cart_guest', JSON.stringify(updatedCart));
                 return updatedCart;
             });
+            cartToasts.cartUpdated();
         }
     };
 
     /**
      * Empty all cart items
      */
-    const clearCart = async () => {
+    const clearCart = async (showToastNotification = true) => {
         if (isAuthenticated && user) {
             try {
                 const res = await axiosInstance.delete('/cart');
                 if (res.data && res.data.success) {
                     setCart([]);
+                    if (showToastNotification) cartToasts.cartCleared();
                 }
             } catch (error) {
                 console.error('[CART CONTEXT ERROR] Clear MongoDB cart failed:', error.message);
             }
         } else {
-            // Guest session clear
             setCart([]);
             localStorage.setItem('wallart_cart_guest', JSON.stringify([]));
+            if (showToastNotification) cartToasts.cartCleared();
         }
     };
 
     /**
-     * Save product to the user-specific wishlist (MongoDB when logged in, localStorage when guest)
+     * Save product to the user-specific wishlist
      */
-    const addToWishlist = async (product) => {
+    const addToWishlist = async (product, showToastNotification = true) => {
         const prodId = product.id || product._id || product.productId;
+        const existsInWishlist = wishlist.some(item => (item.id || item.productId || item._id) === prodId);
 
         if (isAuthenticated && user) {
             try {
@@ -270,14 +260,16 @@ export const CartProvider = ({ children }) => {
                 });
                 if (res.data && res.data.success) {
                     setWishlist(mapBackendWishlist(res.data.products));
-                    triggerToast(`Saved ${product.name} to Wishlist!`, 'success');
+                    if (showToastNotification) {
+                        if (existsInWishlist) wishlistToasts.alreadyInWishlist();
+                        else wishlistToasts.addToWishlist();
+                    }
                 }
             } catch (error) {
                 console.error('[CART CONTEXT ERROR] Add to Wishlist MongoDB failed:', error.message);
-                triggerToast('Failed to save wishlist item.', 'error');
+                showError('Failed to save wishlist item.');
             }
         } else {
-            // Guest session wishlist add
             setWishlist(prev => {
                 const exists = prev.some(item => (item.id || item.productId || item._id) === prodId);
                 if (exists) return prev;
@@ -293,38 +285,56 @@ export const CartProvider = ({ children }) => {
                 localStorage.setItem('wallart_wishlist_guest', JSON.stringify(updatedWishlist));
                 return updatedWishlist;
             });
-            triggerToast(`Saved ${product.name} to Wishlist!`, 'success');
+            if (showToastNotification) {
+                if (existsInWishlist) wishlistToasts.alreadyInWishlist();
+                else wishlistToasts.addToWishlist();
+            }
         }
     };
 
     /**
-     * Remove item from wishlist (MongoDB when logged in, localStorage when guest)
+     * Remove item from wishlist
      */
-    const removeFromWishlist = async (productId) => {
-        const item = wishlist.find(i => (i.id || i.productId || i._id) === productId);
-
+    const removeFromWishlist = async (productId, showToastNotification = true) => {
         if (isAuthenticated && user) {
             try {
                 const res = await axiosInstance.delete(`/wishlist/${productId}`);
                 if (res.data && res.data.success) {
                     setWishlist(mapBackendWishlist(res.data.products));
-                    if (item) triggerToast(`Removed ${item.name} from Wishlist.`, 'error');
+                    if (showToastNotification) wishlistToasts.removeFromWishlist();
                 }
             } catch (error) {
                 console.error('[CART CONTEXT ERROR] Remove from Wishlist MongoDB failed:', error.message);
-                triggerToast('Failed to remove item from wishlist.', 'error');
+                showError('Failed to remove item from wishlist.');
             }
         } else {
-            // Guest session wishlist remove
             setWishlist(prev => {
                 const updatedWishlist = prev.filter(item => (item.id || item.productId || item._id) !== productId);
                 localStorage.setItem('wallart_wishlist_guest', JSON.stringify(updatedWishlist));
                 return updatedWishlist;
             });
-            if (item) {
-                triggerToast(`Removed ${item.name} from Wishlist.`, 'error');
-            }
+            if (showToastNotification) wishlistToasts.removeFromWishlist();
         }
+    };
+
+    /**
+     * Move product from Wishlist to Cart
+     */
+    const moveWishlistToCart = async (product) => {
+        const prodId = product.id || product._id || product.productId;
+        await removeFromWishlist(prodId, false);
+        await addToCart(product, 1, false);
+        wishlistToasts.moveToCart();
+    };
+
+    /**
+     * Move product from Cart to Wishlist
+     */
+    const moveCartToWishlist = async (product) => {
+        const prodId = product.id || product._id || product.productId;
+        await removeFromCart(prodId, false);
+        await addToWishlist(product, false);
+        wishlistToasts.moveToWishlist();
     };
 
     /**
@@ -351,49 +361,16 @@ export const CartProvider = ({ children }) => {
         clearCart,
         addToWishlist,
         removeFromWishlist,
+        moveWishlistToCart,
+        moveCartToWishlist,
         isInWishlist,
         refreshCart,
-        refreshWishlist,
-        triggerToast
+        refreshWishlist
     };
 
     return (
         <CartContext.Provider value={value}>
             {children}
-
-            {/* Global floating toast notification overlay */}
-            {toast.show && (
-                <div style={{
-                    position: 'fixed',
-                    bottom: '30px',
-                    right: '30px',
-                    backgroundColor: toast.type === 'success' ? '#1f7a45' : '#ca3e3e',
-                    color: '#ffffff',
-                    padding: '14px 28px',
-                    borderRadius: '50px',
-                    boxShadow: '0 8px 30px rgba(0, 0, 0, 0.15)',
-                    zIndex: 9999,
-                    fontFamily: "'Poppins', sans-serif",
-                    fontSize: '14px',
-                    fontWeight: '600',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '10px',
-                    transform: 'translateY(0)',
-                    animation: 'slideUp 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards',
-                }}>
-                    <span style={{ fontSize: '18px' }}>
-                        {toast.type === 'success' ? '✓' : '✕'}
-                    </span>
-                    <span>{toast.message}</span>
-                    <style>{`
-                        @keyframes slideUp {
-                            from { transform: translateY(50px); opacity: 0; }
-                            to { transform: translateY(0); opacity: 1; }
-                        }
-                    `}</style>
-                </div>
-            )}
         </CartContext.Provider>
     );
 };

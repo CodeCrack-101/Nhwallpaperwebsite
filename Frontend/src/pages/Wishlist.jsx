@@ -9,6 +9,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { FiHeart, FiShoppingBag, FiTrash2, FiArrowLeft } from 'react-icons/fi';
+import ImageLoader from '../components/common/ImageLoader';
+import ButtonLoader from '../components/common/ButtonLoader';
 import './Wishlist.css';
 
 const Wishlist = () => {
@@ -74,10 +76,14 @@ const Wishlist = () => {
                 {wishlist.map((item) => (
                     <div key={item.id} className="wishlist-card">
                         <Link to={`/product/${item.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
-                            <div 
-                                className="wishlist-card-image" 
-                                style={{ backgroundImage: `url(${item.img})` }} 
-                            />
+                            <div className="wishlist-card-image" style={{ position: 'relative', overflow: 'hidden' }}>
+                                <ImageLoader 
+                                    src={item.img} 
+                                    alt={item.name} 
+                                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                                    containerStyle={{ width: '100%', height: '100%' }}
+                                />
+                            </div>
                         </Link>
                         
                         <div className="wishlist-card-content">
@@ -92,12 +98,14 @@ const Wishlist = () => {
                             </div>
 
                             <div className="wishlist-card-actions">
-                                <button 
+                                <ButtonLoader 
                                     className="btn-move-cart" 
                                     onClick={() => handleMoveToCart(item)}
+                                    color="#ffffff"
+                                    size="small"
                                 >
                                     <FiShoppingBag /> Move To Cart
-                                </button>
+                                </ButtonLoader>
                                 
                                 <button 
                                     className="btn-remove-wishlist" 

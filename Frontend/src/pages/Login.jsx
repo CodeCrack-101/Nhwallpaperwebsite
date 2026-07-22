@@ -7,8 +7,11 @@
 
 import React, { useState, useEffect } from 'react';
 import { useNavigate, Link, useLocation } from 'react-router-dom';
+import { FiEye, FiEyeOff } from 'react-icons/fi';
+import { authToasts, showError, showWarning } from '../utils/toast';
 import { useAuth } from '../context/AuthContext';
 import { loginUser, forgotPassword, resetPassword } from '../services/authService';
+import ButtonLoader from '../components/common/ButtonLoader';
 import './Login.css';
 
 const Login = () => {
@@ -22,11 +25,14 @@ const Login = () => {
     // Fields states
     const [loginId, setLoginId] = useState('');
     const [password, setPassword] = useState('');
+    const [showPassword, setShowPassword] = useState(false);
 
     const [forgotEmail, setForgotEmail] = useState('');
     const [otpCode, setOtpCode] = useState('');
     const [newPassword, setNewPassword] = useState('');
+    const [showNewPassword, setShowNewPassword] = useState(false);
     const [confirmPassword, setConfirmPassword] = useState('');
+    const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
     const [message, setMessage] = useState({ text: '', type: '' }); // type: 'success' | 'error'
     const [loading, setLoading] = useState(false);
@@ -50,6 +56,8 @@ const Login = () => {
         try {
             const data = await loginUser(loginId.trim(), password);
             if (data.success) {
+                const userName = data.user?.name || 'Valued Customer';
+                authToasts.loginSuccess(userName);
                 login(data.token, data.user);
                 const from = location.state?.from || '/';
                 const action = location.state?.action || null;
@@ -62,7 +70,7 @@ const Login = () => {
                     } else {
                         navigate('/');
                     }
-                }, 1500);
+                }, 1000);
             }
         } catch (error) {
             console.error('[LOGIN ERROR] Authentication failed:', error);
@@ -70,6 +78,7 @@ const Login = () => {
             // Check if the user is registered but unverified
             if (error.response?.data?.unverified) {
                 const unverifiedEmail = error.response.data.email;
+                showWarning('Your account is not verified yet. Redirecting to OTP activation...');
                 setMessage({
                     text: 'Your account is not verified yet. Redirecting to OTP activation page...',
                     type: 'error'
@@ -83,10 +92,11 @@ const Login = () => {
                             pendingVerification: true
                         }
                     });
-                }, 2000);
+                }, 1500);
             } else {
+                authToasts.invalidLogin();
                 setMessage({
-                    text: error.response?.data?.message || 'Invalid credentials. Please try again.',
+                    text: 'Invalid email or password.',
                     type: 'error'
                 });
             }
@@ -106,6 +116,7 @@ const Login = () => {
         try {
             const data = await forgotPassword(forgotEmail.trim());
             if (data.success) {
+                authToasts.otpSent();
                 setMessage({
                     text: 'Verification code sent to your email. Please enter details below to reset password.',
                     type: 'success'
@@ -114,8 +125,10 @@ const Login = () => {
             }
         } catch (error) {
             console.error('[FORGOT PASSWORD ERROR] Request failed:', error);
+            const errMsg = error.response?.data?.message || 'Failed to request reset OTP. Try again.';
+            showError(errMsg);
             setMessage({
-                text: error.response?.data?.message || 'Failed to request reset OTP. Try again.',
+                text: errMsg,
                 type: 'error'
             });
         } finally {
@@ -131,6 +144,7 @@ const Login = () => {
         setMessage({ text: '', type: '' });
 
         if (newPassword !== confirmPassword) {
+            showError('Passwords do not match.');
             setMessage({ text: 'Passwords do not match.', type: 'error' });
             return;
         }
@@ -140,6 +154,7 @@ const Login = () => {
         try {
             const data = await resetPassword(forgotEmail.trim(), otpCode.trim(), newPassword, confirmPassword);
             if (data.success) {
+                authToasts.passwordUpdated();
                 setMessage({ text: 'Password reset successful! You can now sign in.', type: 'success' });
                 setNewPassword('');
                 setConfirmPassword('');
@@ -148,12 +163,14 @@ const Login = () => {
                 setTimeout(() => {
                     setMode('login');
                     setMessage({ text: '', type: '' });
-                }, 2500);
+                }, 2000);
             }
         } catch (error) {
             console.error('[RESET PASSWORD ERROR] Request failed:', error);
+            const errMsg = error.response?.data?.message || 'Invalid or expired OTP. Please try again.';
+            showError(errMsg);
             setMessage({
-                text: error.response?.data?.message || 'Invalid or expired OTP. Please try again.',
+                text: errMsg,
                 type: 'error'
             });
         } finally {
@@ -210,24 +227,36 @@ const Login = () => {
                                     Forgot Password?
                                 </button>
                             </div>
-                            <input
-                                type="password"
-                                id="password"
-                                placeholder="Enter password"
-                                required
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
-                                disabled={loading}
-                            />
+                            <div className="password-input-wrapper">
+                                <input
+                                    type={showPassword ? "text" : "password"}
+                                    id="password"
+                                    placeholder="Enter password"
+                                    required
+                                    value={password}
+                                    onChange={(e) => setPassword(e.target.value)}
+                                    disabled={loading}
+                                />
+                                <button
+                                    type="button"
+                                    className="password-toggle-btn"
+                                    onClick={() => setShowPassword(!showPassword)}
+                                    tabIndex="-1"
+                                >
+                                    {showPassword ? <FiEyeOff /> : <FiEye />}
+                                </button>
+                            </div>
                         </div>
 
-                        <button
+                        <ButtonLoader
                             type="submit"
                             className="submit-btn"
-                            disabled={loading}
+                            loading={loading}
+                            color="#ffffff"
+                            size="small"
                         >
-                            {loading ? 'Signing In...' : 'Sign In'}
-                        </button>
+                            Sign In
+                        </ButtonLoader>
 
                         <p style={{ textAlign: 'center', fontSize: '14px', color: '#666', marginTop: '15px' }}>
                             New Customer? <Link to="/register" style={{ color: '#C89B5B', fontWeight: '600', textDecoration: 'none' }}>Register</Link>
@@ -302,28 +331,48 @@ const Login = () => {
 
                         <div className="form-group">
                             <label htmlFor="newPassword">New Password</label>
-                            <input
-                                type="password"
-                                id="newPassword"
-                                placeholder="Minimum 8 characters"
-                                required
-                                value={newPassword}
-                                onChange={(e) => setNewPassword(e.target.value)}
-                                disabled={loading}
-                            />
+                            <div className="password-input-wrapper">
+                                <input
+                                    type={showNewPassword ? "text" : "password"}
+                                    id="newPassword"
+                                    placeholder="Minimum 6 characters"
+                                    required
+                                    value={newPassword}
+                                    onChange={(e) => setNewPassword(e.target.value)}
+                                    disabled={loading}
+                                />
+                                <button
+                                    type="button"
+                                    className="password-toggle-btn"
+                                    onClick={() => setShowNewPassword(!showNewPassword)}
+                                    tabIndex="-1"
+                                >
+                                    {showNewPassword ? <FiEyeOff /> : <FiEye />}
+                                </button>
+                            </div>
                         </div>
 
                         <div className="form-group">
                             <label htmlFor="confirmPassword">Confirm Password</label>
-                            <input
-                                type="password"
-                                id="confirmPassword"
-                                placeholder="Re-enter password"
-                                required
-                                value={confirmPassword}
-                                onChange={(e) => setConfirmPassword(e.target.value)}
-                                disabled={loading}
-                            />
+                            <div className="password-input-wrapper">
+                                <input
+                                    type={showConfirmPassword ? "text" : "password"}
+                                    id="confirmPassword"
+                                    placeholder="Re-enter password"
+                                    required
+                                    value={confirmPassword}
+                                    onChange={(e) => setConfirmPassword(e.target.value)}
+                                    disabled={loading}
+                                />
+                                <button
+                                    type="button"
+                                    className="password-toggle-btn"
+                                    onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                                    tabIndex="-1"
+                                >
+                                    {showConfirmPassword ? <FiEyeOff /> : <FiEye />}
+                                </button>
+                            </div>
                         </div>
 
                         <button

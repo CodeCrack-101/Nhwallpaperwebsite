@@ -6,6 +6,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { getMyOrders } from '../services/orderService';
+import PageLoader from '../components/common/PageLoader';
 import './Orders.css';
 
 const Orders = () => {
@@ -50,11 +51,7 @@ const Orders = () => {
     };
 
     if (loading) {
-        return (
-            <div className="orders-container loading-state">
-                <p>Retrieving your order history...</p>
-            </div>
-        );
+        return <PageLoader message="Retrieving your order history..." />;
     }
 
     if (error) {
