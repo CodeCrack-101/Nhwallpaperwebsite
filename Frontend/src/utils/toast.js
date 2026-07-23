@@ -130,6 +130,20 @@ export const validationToasts = {
     invalidPhone: () => showWarning('Enter a valid phone number.', 'invalid-phone')
 };
 
+export const triggerToast = (message, type = 'info', id) => {
+    switch (type) {
+        case 'success':
+            return showSuccess(message, id);
+        case 'error':
+            return showError(message, id);
+        case 'warning':
+            return showWarning(message, id);
+        case 'info':
+        default:
+            return showInfo(message, id);
+    }
+};
+
 export default {
     showSuccess,
     showError,
@@ -137,6 +151,7 @@ export default {
     showWarning,
     showLoading,
     dismissToast,
+    triggerToast,
     authToasts,
     cartToasts,
     wishlistToasts,

@@ -22,6 +22,7 @@ const Orders = lazy(() => import('../pages/Orders'));
 // Category Components
 const Soho = lazy(() => import('../components/Allproduct/Soho'));
 const Sky = lazy(() => import('../components/Allproduct/Sky'));
+const RoyalTexture = lazy(() => import('../components/Allproduct/RoyalTexture'));
 const Uv = lazy(() => import('../components/Allproduct/Uv'));
 // const Urbano = lazy(() => import('../components/Allproduct/Urbano'));
 const Ew = lazy(() => import('../components/Allproduct/Ew'));
@@ -75,6 +76,7 @@ const AppRoutes = () => {
                     {/* Legacy Base Fallbacks */}
                     <Route path="soho" element={<Soho/>} />
                     <Route path="sky" element={<Sky />} />
+                    <Route path="royaltexture" element={<RoyalTexture />} />
                     <Route path="gaming" element={<Uv />} />
                     {/* <Route path="office" element={<Urbano />} /> */}
                     <Route path="visitor" element={<Ew />} />

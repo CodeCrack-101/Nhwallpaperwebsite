@@ -18,7 +18,7 @@ import './ProductDetails.css';
 
 const ProductDetails = () => {
     const { id } = useParams();
-    
+
     // ======================================
     // FUTURE DATABASE CODE
     // TODO: Fetch Product details from MongoDB
@@ -30,7 +30,7 @@ const ProductDetails = () => {
     const { isAuthenticated } = useAuth();
     const navigate = useNavigate();
     const location = useLocation();
-    
+
     const [activeImage, setActiveImage] = useState('');
     const [quantity, setQuantity] = useState(1);
     const [activeTab, setActiveTab] = useState('features');
@@ -149,23 +149,26 @@ const ProductDetails = () => {
             <div className="product-grid">
                 {/* Left side: Premium Image block with zoom and thumbnails */}
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-                    <div 
+                    <div
                         className="product-image-section"
                         onMouseMove={handleMouseMove}
                         onMouseEnter={() => setIsZoomed(true)}
                         onMouseLeave={() => setIsZoomed(false)}
                         style={{ overflow: 'hidden', cursor: 'zoom-in', position: 'relative' }}
                     >
-                        <img 
-                            src={activeImage || product.img} 
-                            alt={product.name} 
-                            className="product-main-image" 
+                        <img
+                            src={activeImage || product.img}
+                            alt={product.name}
+                            className="product-main-image"
                             style={{
                                 transformOrigin: `${zoomPos.x}% ${zoomPos.y}%`,
                                 transform: isZoomed ? 'scale(2)' : 'scale(1)',
-                                width: '100%',
-                                height: '100%',
-                                objectFit: 'cover',
+                                maxWidth: '100%',
+                                maxHeight: '100%',
+                                width: 'auto',
+                                height: 'auto',
+                                objectFit: 'contain',
+                                borderRadius: '12px',
                                 transition: isZoomed ? 'none' : 'transform 0.3s ease'
                             }}
                         />
@@ -175,7 +178,7 @@ const ProductDetails = () => {
                     {product.thumbnails && product.thumbnails.length > 0 && (
                         <div style={{ display: 'flex', gap: '15px', justifyContent: 'flex-start' }}>
                             {product.thumbnails.map((thumb, idx) => (
-                                <div 
+                                <div
                                     key={idx}
                                     onClick={() => setActiveImage(thumb)}
                                     style={{
@@ -199,14 +202,14 @@ const ProductDetails = () => {
                 <div className="product-info-section">
                     <span className="product-category">{product.category} Collection</span>
                     <h1 className="product-name">{product.name}</h1>
-                    
+
                     <div className="product-rating">
                         <div className="stars">
                             {[...Array(5)].map((_, i) => (
-                                <FiStar 
-                                    key={i} 
-                                    fill={i < Math.floor(product.rating) ? "#C89B5B" : "none"} 
-                                    color="#C89B5B" 
+                                <FiStar
+                                    key={i}
+                                    fill={i < Math.floor(product.rating) ? "#C89B5B" : "none"}
+                                    color="#C89B5B"
                                 />
                             ))}
                         </div>
@@ -220,33 +223,33 @@ const ProductDetails = () => {
                     <p className="product-desc">{product.description}</p>
 
                     {/* Specifications grid section */}
-                    <div style={{ 
-                        display: 'grid', 
-                        gridTemplateColumns: '1fr 1fr', 
-                        gap: '15px', 
-                        marginBottom: '30px', 
-                        backgroundColor: '#fafafa', 
-                        padding: '20px', 
+                    <div style={{
+                        display: 'grid',
+                        gridTemplateColumns: '1fr 1fr',
+                        gap: '15px',
+                        marginBottom: '30px',
+                        backgroundColor: '#fafafa',
+                        padding: '20px',
                         borderRadius: '12px',
                         border: '1px solid #f0f0f0',
                         fontSize: '13px'
                     }}>
                         <div>
-                            <strong style={{ color: '#333' }}>Availability:</strong> 
+                            <strong style={{ color: '#333' }}>Availability:</strong>
                             <span style={{ marginLeft: '6px', color: product.availability.includes('stock') && !product.availability.includes('Out') ? '#1f7a45' : '#ca3e3e', fontWeight: '600' }}>
                                 {product.availability}
                             </span>
                         </div>
                         <div>
-                            <strong style={{ color: '#333' }}>Material:</strong> 
+                            <strong style={{ color: '#333' }}>Material:</strong>
                             <span style={{ marginLeft: '6px', color: '#666' }}>{product.material}</span>
                         </div>
                         <div>
-                            <strong style={{ color: '#333' }}>Dimensions:</strong> 
+                            <strong style={{ color: '#333' }}>Dimensions:</strong>
                             <span style={{ marginLeft: '6px', color: '#666' }}>{product.dimensions}</span>
                         </div>
                         <div>
-                            <strong style={{ color: '#333' }}>Warranty:</strong> 
+                            <strong style={{ color: '#333' }}>Warranty:</strong>
                             <span style={{ marginLeft: '6px', color: '#666' }}>{product.warranty}</span>
                         </div>
                     </div>
@@ -255,21 +258,21 @@ const ProductDetails = () => {
                         <div className="quantity-control">
                             <span className="quantity-label">Quantity</span>
                             <div className="qty-btn-group">
-                                <button 
-                                    className="qty-adjust-btn" 
+                                <button
+                                    className="qty-adjust-btn"
                                     onClick={() => handleQuantityChange(quantity - 1)}
                                     disabled={quantity <= 1}
                                 >
                                     -
                                 </button>
-                                <input 
-                                    type="number" 
-                                    value={quantity} 
+                                <input
+                                    type="number"
+                                    value={quantity}
                                     onChange={(e) => handleQuantityChange(parseInt(e.target.value) || 1)}
                                     className="qty-input"
                                 />
-                                <button 
-                                    className="qty-adjust-btn" 
+                                <button
+                                    className="qty-adjust-btn"
                                     onClick={() => handleQuantityChange(quantity + 1)}
                                 >
                                     +
@@ -278,8 +281,8 @@ const ProductDetails = () => {
                         </div>
 
                         <div className="action-buttons-group">
-                            <ButtonLoader 
-                                className="btn-add-cart" 
+                            <ButtonLoader
+                                className="btn-add-cart"
                                 onClick={handleCartSubmit}
                                 loading={isAddingCart}
                                 color="#ffffff"
@@ -287,15 +290,15 @@ const ProductDetails = () => {
                             >
                                 <FiShoppingBag /> Add To Cart
                             </ButtonLoader>
-                            
-                            <ButtonLoader 
+
+                            <ButtonLoader
                                 className={`btn-wishlist-toggle ${isFav ? 'active' : ''}`}
                                 onClick={handleWishlistToggle}
                                 loading={isTogglingWishlist}
                                 color="#ffffff"
                                 size="small"
                             >
-                                <FiHeart fill={isFav ? "#ffffff" : "none"} /> 
+                                <FiHeart fill={isFav ? "#ffffff" : "none"} />
                                 {isFav ? 'In Wishlist' : 'Add To Wishlist'}
                             </ButtonLoader>
                         </div>
@@ -304,13 +307,13 @@ const ProductDetails = () => {
                     {/* Shipping & features tabs */}
                     <div className="tabs-section">
                         <div className="tab-headers">
-                            <button 
+                            <button
                                 className={`tab-btn ${activeTab === 'features' ? 'active' : ''}`}
                                 onClick={() => setActiveTab('features')}
                             >
                                 Key Features
                             </button>
-                            <button 
+                            <button
                                 className={`tab-btn ${activeTab === 'delivery' ? 'active' : ''}`}
                                 onClick={() => setActiveTab('delivery')}
                             >

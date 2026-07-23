@@ -21,7 +21,7 @@ const shiprocketService = require('../services/shiprocketService');
 const formatOrderForFrontend = (order) => {
     if (!order) return null;
     const orderObj = typeof order.toObject === 'function' ? order.toObject() : order;
-    
+
     orderObj.products = (order.items || []).map(item => {
         const prod = item.product;
         return {
@@ -50,7 +50,7 @@ exports.placeOrder = async (req, res) => {
             return res.status(400).json({ success: false, message: 'Valid payment method (Online or COD) is required.' });
         }
 
-        if (!shippingAddress || !shippingAddress.fullName || !shippingAddress.mobileNumber || 
+        if (!shippingAddress || !shippingAddress.fullName || !shippingAddress.mobileNumber ||
             !shippingAddress.address || !shippingAddress.city || !shippingAddress.state || !shippingAddress.pincode) {
             return res.status(400).json({ success: false, message: 'Complete shipping address details are required.' });
         }
@@ -68,7 +68,7 @@ exports.placeOrder = async (req, res) => {
         // Resolve product weights and dimensions
         let totalWeight = 0;
         let itemTotal = 0;
-        
+
         let maxLength = 0;
         let maxWidth = 0;
         let totalHeight = 0;
@@ -82,9 +82,9 @@ exports.placeOrder = async (req, res) => {
             }
 
             if (product.stock < item.quantity) {
-                return res.status(400).json({ 
-                    success: false, 
-                    message: `Insufficient stock for product: ${product.name}.` 
+                return res.status(400).json({
+                    success: false,
+                    message: `Insufficient stock for product: ${product.name}.`
                 });
             }
 
@@ -108,7 +108,7 @@ exports.placeOrder = async (req, res) => {
 
             itemTotal += Number(product.price) * item.quantity;
             totalWeight += weightVal * item.quantity;
-            
+
             maxLength = Math.max(maxLength, lengthVal);
             maxWidth = Math.max(maxWidth, widthVal);
             totalHeight += heightVal * item.quantity;
@@ -412,12 +412,12 @@ exports.getOrderById = async (req, res) => {
             _id: req.params.id,
             user: req.user._id
         })
-        .populate('shippingAddress')
-        .populate('payment')
-        .populate({
-            path: 'items',
-            populate: { path: 'product' }
-        });
+            .populate('shippingAddress')
+            .populate('payment')
+            .populate({
+                path: 'items',
+                populate: { path: 'product' }
+            });
 
         if (!order) {
             return res.status(404).json({ success: false, message: 'Order not found.' });

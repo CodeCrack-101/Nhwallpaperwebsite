@@ -12,6 +12,7 @@ import { getProductsByCategory } from '../../data/products';
 // If you have distinct explicit view files for each, you can switch render here:
 import Soho from './Soho';
 import Sky from './Sky';
+import RoyalTexture from './RoyalTexture';
 import Uv from './Uv';
 // import Urbano from './Urbano';
 import Ew from './Ew';
@@ -28,6 +29,9 @@ const DynamicCategoryRouter = () => {
             return <Soho />;
         case 'sky':
             return <Sky />;
+        case 'royaltexture':
+        case 'royal-texture':
+            return <RoyalTexture />;
         case 'gaming':
             return <Uv />;
         case 'epicwall':

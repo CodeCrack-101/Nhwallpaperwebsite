@@ -78,7 +78,7 @@ ProductSchema.statics.findOrCreate = async function (productId) {
     let product = await this.findById(productId);
     if (!product) {
         console.log(`[AUTO-SEED] Product ${productId} not found. Attempting to seed...`);
-        
+
         const mockCatalog = {
             'soho-1': {
                 name: 'Soho Classic Ergonomic Chair',
@@ -154,7 +154,7 @@ ProductSchema.statics.findOrCreate = async function (productId) {
                 description: 'Premium furniture item.'
             });
         }
-        
+
         await product.save();
         console.log(`[AUTO-SEED] Product ${productId} auto-seeded successfully.`);
     }

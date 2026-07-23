@@ -12,13 +12,13 @@ import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { useCart } from '../context/CartContext';
 import axiosInstance from '../api/axiosInstance';
-import { orderToasts, showError } from '../utils/toast';
-import { 
-    FiMapPin, 
-    FiCreditCard, 
-    FiCheckCircle, 
-    FiArrowLeft, 
-    FiShoppingBag 
+import { orderToasts, showError, triggerToast } from '../utils/toast';
+import {
+    FiMapPin,
+    FiCreditCard,
+    FiCheckCircle,
+    FiArrowLeft,
+    FiShoppingBag
 } from 'react-icons/fi';
 import ButtonLoader from '../components/common/ButtonLoader';
 import SectionLoader from '../components/common/SectionLoader';
@@ -41,7 +41,7 @@ const loadRazorpayScript = () => {
 
 const Checkout = () => {
     const { user } = useAuth();
-    const { cart, clearCart, triggerToast } = useCart();
+    const { cart, clearCart } = useCart();
     const navigate = useNavigate();
 
     // Steps: 1 (Checkout Form), 2 (Success Screen)
@@ -71,7 +71,7 @@ const Checkout = () => {
     const [paymentAmount, setPaymentAmount] = useState(0);
     const [razorpayOrderId, setRazorpayOrderId] = useState('');
     const [simulatedPaymentId, setSimulatedPaymentId] = useState('');
-    
+
     const [paymentProcessing, setPaymentProcessing] = useState(false);
     const [paymentError, setPaymentError] = useState(null);
 
@@ -90,7 +90,7 @@ const Checkout = () => {
     useEffect(() => {
         const pinStr = shippingAddress.pincode.toString().trim();
         const addrStr = shippingAddress.address.trim();
-        
+
         // Auto-trigger rate lookup only when PIN Code has exactly 6 digits and address has at least 5 characters
         if (pinStr.length === 6 && addrStr.length >= 5) {
             calculateShippingCost();
@@ -111,7 +111,7 @@ const Checkout = () => {
     // Calculate rates via backend
     const calculateShippingCost = async () => {
         const pinStr = shippingAddress.pincode.toString().trim();
-        
+
         const pincodeRegex = /^[1-9][0-9]{5}$/;
         if (!pincodeRegex.test(pinStr)) {
             return;
@@ -128,7 +128,7 @@ const Checkout = () => {
 
             if (response.data && response.data.success) {
                 setShippingRates(response.data);
-                
+
                 // If user selected COD but Shiprocket returns that COD is unavailable,
                 // automatically reset to Online and inform the user
                 if (!response.data.isCodAvailable && paymentMethod === 'COD') {
@@ -158,7 +158,7 @@ const Checkout = () => {
             triggerToast('Please enter mobile number.', 'error');
             return false;
         }
-        
+
         const phoneRegex = /^[0-9]{10}$/;
         if (!phoneRegex.test(shippingAddress.mobileNumber.replace(/[\s-]/g, ''))) {
             triggerToast('Please enter a valid 10-digit mobile number.', 'error');
@@ -177,7 +177,7 @@ const Checkout = () => {
             triggerToast('Please enter state name.', 'error');
             return false;
         }
-        
+
         const pincodeRegex = /^[1-9][0-9]{5}$/;
         if (!pincodeRegex.test(shippingAddress.pincode.toString().trim())) {
             triggerToast('Please enter a valid 6-digit Indian PIN code.', 'error');
@@ -346,28 +346,28 @@ const Checkout = () => {
                     <div className="checkout-form-column">
                         <div className="checkout-card">
                             <h2 className="checkout-card-title"><FiMapPin style={{ marginRight: '8px' }} /> Shipping Address</h2>
-                            
+
                             <div className="form-grid-2">
                                 <div className="checkout-form-group">
                                     <label htmlFor="fullName">Full Name</label>
-                                    <input 
-                                        type="text" 
-                                        id="fullName" 
-                                        name="fullName" 
+                                    <input
+                                        type="text"
+                                        id="fullName"
+                                        name="fullName"
                                         required
-                                        placeholder="Enter your full name" 
+                                        placeholder="Enter your full name"
                                         value={shippingAddress.fullName}
                                         onChange={handleAddressChange}
                                     />
                                 </div>
                                 <div className="checkout-form-group">
                                     <label htmlFor="mobileNumber">Mobile Number</label>
-                                    <input 
-                                        type="tel" 
-                                        id="mobileNumber" 
-                                        name="mobileNumber" 
+                                    <input
+                                        type="tel"
+                                        id="mobileNumber"
+                                        name="mobileNumber"
                                         required
-                                        placeholder="10-digit mobile number" 
+                                        placeholder="10-digit mobile number"
                                         value={shippingAddress.mobileNumber}
                                         onChange={handleAddressChange}
                                     />
@@ -376,12 +376,12 @@ const Checkout = () => {
 
                             <div className="checkout-form-group">
                                 <label htmlFor="address">Street Address</label>
-                                <input 
-                                    type="text" 
-                                    id="address" 
-                                    name="address" 
+                                <input
+                                    type="text"
+                                    id="address"
+                                    name="address"
                                     required
-                                    placeholder="Flat/House No, Colony, Street details (Min 5 chars to trigger rates)" 
+                                    placeholder="Flat/House No, Colony, Street details (Min 5 chars to trigger rates)"
                                     value={shippingAddress.address}
                                     onChange={handleAddressChange}
                                 />
@@ -390,24 +390,24 @@ const Checkout = () => {
                             <div className="form-grid-2">
                                 <div className="checkout-form-group">
                                     <label htmlFor="city">City</label>
-                                    <input 
-                                        type="text" 
-                                        id="city" 
-                                        name="city" 
+                                    <input
+                                        type="text"
+                                        id="city"
+                                        name="city"
                                         required
-                                        placeholder="City/Town" 
+                                        placeholder="City/Town"
                                         value={shippingAddress.city}
                                         onChange={handleAddressChange}
                                     />
                                 </div>
                                 <div className="checkout-form-group">
                                     <label htmlFor="state">State</label>
-                                    <input 
-                                        type="text" 
-                                        id="state" 
-                                        name="state" 
+                                    <input
+                                        type="text"
+                                        id="state"
+                                        name="state"
                                         required
-                                        placeholder="State" 
+                                        placeholder="State"
                                         value={shippingAddress.state}
                                         onChange={handleAddressChange}
                                     />
@@ -417,23 +417,23 @@ const Checkout = () => {
                             <div className="form-grid-2">
                                 <div className="checkout-form-group">
                                     <label htmlFor="pincode">PIN Code</label>
-                                    <input 
-                                        type="text" 
-                                        id="pincode" 
-                                        name="pincode" 
+                                    <input
+                                        type="text"
+                                        id="pincode"
+                                        name="pincode"
                                         required
                                         maxLength="6"
-                                        placeholder="6-digit Indian PIN code" 
+                                        placeholder="6-digit Indian PIN code"
                                         value={shippingAddress.pincode}
                                         onChange={handleAddressChange}
                                     />
                                 </div>
                                 <div className="checkout-form-group">
                                     <label htmlFor="country">Country</label>
-                                    <input 
-                                        type="text" 
-                                        id="country" 
-                                        name="country" 
+                                    <input
+                                        type="text"
+                                        id="country"
+                                        name="country"
                                         disabled
                                         value={shippingAddress.country}
                                     />
@@ -447,7 +447,7 @@ const Checkout = () => {
 
                             <div className="payment-methods-grid">
                                 {/* ONLINE OPTION */}
-                                <div 
+                                <div
                                     className={`payment-method-card ${paymentMethod === 'Online' ? 'selected' : ''}`}
                                     onClick={() => setPaymentMethod('Online')}
                                 >
@@ -459,7 +459,7 @@ const Checkout = () => {
                                 </div>
 
                                 {/* COD OPTION */}
-                                <div 
+                                <div
                                     className={`payment-method-card ${paymentMethod === 'COD' ? 'selected' : ''} ${shippingRates && !shippingRates.isCodAvailable ? 'disabled' : ''}`}
                                     onClick={() => {
                                         if (shippingRates && !shippingRates.isCodAvailable) return;
@@ -559,9 +559,9 @@ const Checkout = () => {
                                         )}
                                     </div>
 
-                                    <ButtonLoader 
-                                        type="button" 
-                                        className="btn-primary" 
+                                    <ButtonLoader
+                                        type="button"
+                                        className="btn-primary"
                                         style={{ width: '100%', padding: '15px', justifyContent: 'center', borderRadius: '12px' }}
                                         onClick={handlePlaceOrderSubmit}
                                         loading={paymentProcessing}
@@ -588,7 +588,7 @@ const Checkout = () => {
 
                         <div className="success-order-details">
                             <h4 style={{ margin: '0 0 15px 0', fontSize: '15px', borderBottom: '1px solid #f0f0f0', paddingBottom: '10px' }}>Order Details</h4>
-                            
+
                             <div className="success-detail-row">
                                 <span className="success-detail-label">Order Number</span>
                                 <span className="success-detail-val" style={{ fontFamily: 'monospace', fontWeight: 'bold' }}>{placedOrder.orderNumber}</span>
@@ -671,19 +671,19 @@ const Checkout = () => {
                                     <p className="gateway-text" style={{ marginBottom: '25px' }}>
                                         Complete the prepaid checkout online payment of <strong>₹{paymentAmount.toLocaleString('en-IN')}</strong>.
                                     </p>
-                                    
+
                                     <div className="gateway-options-title">Select simulated payment response:</div>
-                                    
+
                                     <div className="gateway-options-buttons">
-                                        <button 
-                                            type="button" 
+                                        <button
+                                            type="button"
                                             className="btn-gateway-success"
                                             onClick={simulatePaymentSuccess}
                                         >
                                             Simulate Successful Payment
                                         </button>
-                                        <button 
-                                            type="button" 
+                                        <button
+                                            type="button"
                                             className="btn-gateway-fail"
                                             onClick={simulatePaymentFailure}
                                         >

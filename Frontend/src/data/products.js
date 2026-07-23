@@ -2,7 +2,7 @@
  * Mock Products Database File
  * Location: frontend/src/data/products.js
  * Description: Statically imports furniture assets directly from SOHO, SKY, SP,
- *              and URBANO asset directories and exposes a unified products catalog.
+ *              and Royaltexture asset directories and exposes a unified products catalog.
  */
 
 // ==========================================
@@ -420,7 +420,7 @@ import sh294 from '../assets/SOHO/soho11.1.png'
 import sh295 from '../assets/SOHO/soho11.2.png'
 import sh296 from '../assets/SOHO/soho11.3.png'
 import sh297 from '../assets/SOHO/soho11.4.png'
-import sh298  from '../assets/SOHO/soho11.5.png'
+import sh298 from '../assets/SOHO/soho11.5.png'
 
 //525310
 import sh299 from '../assets/SOHO/soho10.png'
@@ -428,7 +428,7 @@ import sh300 from '../assets/SOHO/soho10.1.png'
 import sh301 from '../assets/SOHO/soho10.2.png'
 import sh302 from '../assets/SOHO/soho10.3.png'
 import sh303 from '../assets/SOHO/soho10.4.png'
-import sh304  from '../assets/SOHO/soho10.5.png'
+import sh304 from '../assets/SOHO/soho10.5.png'
 
 //525309
 import sh305 from '../assets/SOHO/soho9.png'
@@ -436,7 +436,7 @@ import sh306 from '../assets/SOHO/soho9.1.png'
 import sh307 from '../assets/SOHO/soho9.2.png'
 import sh308 from '../assets/SOHO/soho9.3.png'
 import sh309 from '../assets/SOHO/soho9.4.png'
-import sh310  from '../assets/SOHO/soho9.5.png'
+import sh310 from '../assets/SOHO/soho9.5.png'
 
 //525308
 import sh311 from '../assets/SOHO/soho8.png'
@@ -444,7 +444,7 @@ import sh312 from '../assets/SOHO/soho8.1.png'
 import sh313 from '../assets/SOHO/soho8.2.png'
 import sh314 from '../assets/SOHO/soho8.3.png'
 import sh315 from '../assets/SOHO/soho8.4.png'
-import sh316  from '../assets/SOHO/soho8.5.png'
+import sh316 from '../assets/SOHO/soho8.5.png'
 
 //525307
 import sh317 from '../assets/SOHO/soho7.png'
@@ -452,7 +452,7 @@ import sh318 from '../assets/SOHO/soho7.1.png'
 import sh319 from '../assets/SOHO/soho7.2.png'
 import sh320 from '../assets/SOHO/soho7.3.png'
 import sh321 from '../assets/SOHO/soho7.4.png'
-import sh322  from '../assets/SOHO/soho7.5.png'
+import sh322 from '../assets/SOHO/soho7.5.png'
 
 //525306
 import sh323 from '../assets/SOHO/soho6.png'
@@ -460,7 +460,7 @@ import sh324 from '../assets/SOHO/soho6.1.png'
 import sh325 from '../assets/SOHO/soho6.2.png'
 import sh326 from '../assets/SOHO/soho6.3.png'
 import sh327 from '../assets/SOHO/soho6.4.png'
-import sh328  from '../assets/SOHO/soho6.5.png'
+import sh328 from '../assets/SOHO/soho6.5.png'
 
 //525305
 import sh329 from '../assets/SOHO/soho5.png'
@@ -468,7 +468,7 @@ import sh330 from '../assets/SOHO/soho5.1.png'
 import sh331 from '../assets/SOHO/soho5.2.png'
 import sh332 from '../assets/SOHO/soho5.3.png'
 import sh333 from '../assets/SOHO/soho5.4.png'
-import sh334  from '../assets/SOHO/soho5.5.png'
+import sh334 from '../assets/SOHO/soho5.5.png'
 
 //525304
 import sh335 from '../assets/SOHO/soho4.png'
@@ -476,7 +476,7 @@ import sh336 from '../assets/SOHO/soho4.1.png'
 import sh337 from '../assets/SOHO/soho4.2.png'
 import sh338 from '../assets/SOHO/soho4.3.png'
 import sh339 from '../assets/SOHO/soho4.4.png'
-import sh340  from '../assets/SOHO/soho4.5.png'
+import sh340 from '../assets/SOHO/soho4.5.png'
 
 //525303
 import sh341 from '../assets/SOHO/soho3.png'
@@ -484,7 +484,7 @@ import sh342 from '../assets/SOHO/soho3.1.png'
 import sh343 from '../assets/SOHO/soho3.2.png'
 import sh344 from '../assets/SOHO/soho3.3.png'
 import sh345 from '../assets/SOHO/soho3.4.png'
-import sh346  from '../assets/SOHO/soho3.5.png'
+import sh346 from '../assets/SOHO/soho3.5.png'
 
 //525302
 import sh347 from '../assets/SOHO/soho2.png'
@@ -492,7 +492,7 @@ import sh348 from '../assets/SOHO/soho2.1.png'
 import sh349 from '../assets/SOHO/soho2.2.png'
 import sh350 from '../assets/SOHO/soho2.3.png'
 import sh351 from '../assets/SOHO/soho2.4.png'
-import sh352  from '../assets/SOHO/soho2.5.png'
+import sh352 from '../assets/SOHO/soho2.5.png'
 
 //EpicWalls Start Here
 
@@ -856,7 +856,246 @@ import sp5 from '../assets/SP/sp5.png';
 import sp6 from '../assets/SP/sp6.png';
 
 
+// Royaltexture Imports
+import rt1 from '../assets/Royaltexture/rt1.png';
+import rt2 from '../assets/Royaltexture/rt1.2.png';
+import rt3 from '../assets/Royaltexture/rt1.3.png';
+import rt4 from '../assets/Royaltexture/rt1.4.png';
+import rt5 from '../assets/Royaltexture/rt1.5.png';
 
+import rt6 from '../assets/Royaltexture/rt2.png';
+import rt7 from '../assets/Royaltexture/rt2.2.png';
+import rt8 from '../assets/Royaltexture/rt2.3.png';
+import rt9 from '../assets/Royaltexture/rt2.4.png';
+import rt10 from '../assets/Royaltexture/rt2.5.png';
+
+import rt11 from '../assets/Royaltexture/rt3.png';
+import rt12 from '../assets/Royaltexture/rt3.2.png';
+import rt13 from '../assets/Royaltexture/rt3.3.png';
+import rt14 from '../assets/Royaltexture/rt3.4.png';
+import rt15 from '../assets/Royaltexture/rt3.5.png';
+
+import rt16 from '../assets/Royaltexture/rt4.png';
+import rt17 from '../assets/Royaltexture/rt4.2.png';
+import rt18 from '../assets/Royaltexture/rt4.3.png';
+import rt19 from '../assets/Royaltexture/rt4.4.png';
+import rt20 from '../assets/Royaltexture/rt4.5.png';
+
+import rt21 from '../assets/Royaltexture/rt5.png';
+import rt22 from '../assets/Royaltexture/rt5.2.png';
+import rt23 from '../assets/Royaltexture/rt5.3.png';
+import rt24 from '../assets/Royaltexture/rt5.4.png';
+import rt25 from '../assets/Royaltexture/rt5.5.png';
+
+import rt26 from '../assets/Royaltexture/rt6.png';
+import rt27 from '../assets/Royaltexture/rt6.2.png';
+import rt28 from '../assets/Royaltexture/rt6.3.png';
+import rt29 from '../assets/Royaltexture/rt6.4.png';
+import rt30 from '../assets/Royaltexture/rt6.5.png';
+
+import rt31 from '../assets/Royaltexture/rt7.png';
+import rt32 from '../assets/Royaltexture/rt7.2.png';
+import rt33 from '../assets/Royaltexture/rt7.3.png';
+import rt34 from '../assets/Royaltexture/rt7.4.png';
+import rt35 from '../assets/Royaltexture/rt7.5.png';
+
+import rt36 from '../assets/Royaltexture/rt8.png';
+import rt37 from '../assets/Royaltexture/rt8.2.png';
+import rt38 from '../assets/Royaltexture/rt8.3.png';
+import rt39 from '../assets/Royaltexture/rt8.4.png';
+import rt40 from '../assets/Royaltexture/rt8.5.png';
+
+import rt41 from '../assets/Royaltexture/rt9.png';
+import rt42 from '../assets/Royaltexture/rt9.2.png';
+import rt43 from '../assets/Royaltexture/rt9.3.png';
+import rt44 from '../assets/Royaltexture/rt9.4.png';
+import rt45 from '../assets/Royaltexture/rt9.5.png';
+
+import rt46 from '../assets/Royaltexture/rt10.png';
+import rt47 from '../assets/Royaltexture/rt10.2.png';
+import rt48 from '../assets/Royaltexture/rt10.3.png';
+import rt49 from '../assets/Royaltexture/rt10.4.png';
+import rt50 from '../assets/Royaltexture/rt10.5.png';
+
+import rt51 from '../assets/Royaltexture/rt11.png';
+import rt52 from '../assets/Royaltexture/rt11.2.png';
+import rt53 from '../assets/Royaltexture/rt11.3.png';
+import rt54 from '../assets/Royaltexture/rt11.4.png';
+import rt55 from '../assets/Royaltexture/rt11.5.png';
+
+import rt56 from '../assets/Royaltexture/rt12.png';
+import rt57 from '../assets/Royaltexture/rt12.2.png';
+import rt58 from '../assets/Royaltexture/rt12.3.png';
+import rt59 from '../assets/Royaltexture/rt12.4.png';
+import rt60 from '../assets/Royaltexture/rt12.5.png';
+
+import rt61 from '../assets/Royaltexture/rt13.png';
+import rt62 from '../assets/Royaltexture/rt13.2.png';
+import rt63 from '../assets/Royaltexture/rt13.3.png';
+import rt64 from '../assets/Royaltexture/rt13.4.png';
+import rt65 from '../assets/Royaltexture/rt13.5.png';
+
+import rt66 from '../assets/Royaltexture/rt14.png';
+import rt67 from '../assets/Royaltexture/rt14.2.png';
+import rt68 from '../assets/Royaltexture/rt14.3.png';
+import rt69 from '../assets/Royaltexture/rt14.4.png';
+import rt70 from '../assets/Royaltexture/rt14.5.png';
+
+import rt71 from '../assets/Royaltexture/rt15.png';
+import rt72 from '../assets/Royaltexture/rt15.2.png';
+import rt73 from '../assets/Royaltexture/rt15.3.png';
+import rt74 from '../assets/Royaltexture/rt15.4.png';
+import rt75 from '../assets/Royaltexture/rt15.5.png';
+
+import rt76 from '../assets/Royaltexture/rt16.png';
+import rt77 from '../assets/Royaltexture/rt16.2.png';
+import rt78 from '../assets/Royaltexture/rt16.3.png';
+import rt79 from '../assets/Royaltexture/rt16.4.png';
+import rt80 from '../assets/Royaltexture/rt16.5.png';
+
+import rt81 from '../assets/Royaltexture/rt17.png';
+import rt82 from '../assets/Royaltexture/rt17.2.png';
+import rt83 from '../assets/Royaltexture/rt17.3.png';
+import rt84 from '../assets/Royaltexture/rt17.4.png';
+import rt85 from '../assets/Royaltexture/rt17.5.png';
+
+import rt86 from '../assets/Royaltexture/rt18.png';
+import rt87 from '../assets/Royaltexture/rt18.2.png';
+import rt88 from '../assets/Royaltexture/rt18.3.png';
+import rt89 from '../assets/Royaltexture/rt18.4.png';
+import rt90 from '../assets/Royaltexture/rt18.5.png';
+
+import rt91 from '../assets/Royaltexture/rt19.png';
+import rt92 from '../assets/Royaltexture/rt19.2.png';
+import rt93 from '../assets/Royaltexture/rt19.3.png';
+import rt94 from '../assets/Royaltexture/rt19.4.png';
+import rt95 from '../assets/Royaltexture/rt19.5.png';
+
+import rt96 from '../assets/Royaltexture/rt20.png';
+import rt97 from '../assets/Royaltexture/rt20.2.png';
+import rt98 from '../assets/Royaltexture/rt20.3.png';
+import rt99 from '../assets/Royaltexture/rt20.4.png';
+import rt100 from '../assets/Royaltexture/rt20.5.png';
+
+import rt101 from '../assets/Royaltexture/rt21.png';
+import rt102 from '../assets/Royaltexture/rt21.2.png';
+import rt103 from '../assets/Royaltexture/rt21.3.png';
+import rt104 from '../assets/Royaltexture/rt21.4.png';
+import rt105 from '../assets/Royaltexture/rt21.5.png';
+
+import rt106 from '../assets/Royaltexture/rt22.png';
+import rt107 from '../assets/Royaltexture/rt22.2.png';
+import rt108 from '../assets/Royaltexture/rt22.3.png';
+import rt109 from '../assets/Royaltexture/rt22.4.png';
+import rt110 from '../assets/Royaltexture/rt22.5.png';
+
+import rt111 from '../assets/Royaltexture/rt23.png';
+import rt112 from '../assets/Royaltexture/rt23.2.png';
+import rt113 from '../assets/Royaltexture/rt23.3.png';
+import rt114 from '../assets/Royaltexture/rt23.4.png';
+import rt115 from '../assets/Royaltexture/rt23.5.png';
+
+import rt116 from '../assets/Royaltexture/rt24.png';
+import rt117 from '../assets/Royaltexture/rt24.2.png';
+import rt118 from '../assets/Royaltexture/rt24.3.png';
+import rt119 from '../assets/Royaltexture/rt24.4.png';
+import rt120 from '../assets/Royaltexture/rt24.5.png';
+
+import rt121 from '../assets/Royaltexture/rt25.png';
+import rt122 from '../assets/Royaltexture/rt25.2.png';
+import rt123 from '../assets/Royaltexture/rt25.3.png';
+import rt124 from '../assets/Royaltexture/rt25.4.png';
+import rt125 from '../assets/Royaltexture/rt25.5.png';
+
+import rt126 from '../assets/Royaltexture/rt26.png';
+import rt127 from '../assets/Royaltexture/rt26.2.png';
+import rt128 from '../assets/Royaltexture/rt26.3.png';
+import rt129 from '../assets/Royaltexture/rt26.4.png';
+import rt130 from '../assets/Royaltexture/rt26.5.png';
+
+import rt131 from '../assets/Royaltexture/rt27.png';
+import rt132 from '../assets/Royaltexture/rt27.2.png';
+import rt133 from '../assets/Royaltexture/rt27.3.png';
+import rt134 from '../assets/Royaltexture/rt27.4.png';
+import rt135 from '../assets/Royaltexture/rt27.5.png';
+
+import rt136 from '../assets/Royaltexture/rt28.png';
+import rt137 from '../assets/Royaltexture/rt28.2.png';
+import rt138 from '../assets/Royaltexture/rt28.3.png';
+import rt139 from '../assets/Royaltexture/rt28.4.png';
+import rt140 from '../assets/Royaltexture/rt28.5.png';
+
+import rt141 from '../assets/Royaltexture/rt29.png';
+import rt142 from '../assets/Royaltexture/rt29.2.png';
+import rt143 from '../assets/Royaltexture/rt29.3.png';
+import rt144 from '../assets/Royaltexture/rt29.4.png';
+import rt145 from '../assets/Royaltexture/rt29.5.png';
+
+import rt146 from '../assets/Royaltexture/rt30.png';
+import rt147 from '../assets/Royaltexture/rt30.2.png';
+import rt148 from '../assets/Royaltexture/rt30.3.png';
+import rt149 from '../assets/Royaltexture/rt30.4.png';
+import rt150 from '../assets/Royaltexture/rt30.5.png';
+
+import rt151 from '../assets/Royaltexture/rt31.png';
+import rt152 from '../assets/Royaltexture/rt31.2.png';
+import rt153 from '../assets/Royaltexture/rt31.3.png';
+import rt154 from '../assets/Royaltexture/rt31.4.png';
+import rt155 from '../assets/Royaltexture/rt31.5.png';
+
+import rt156 from '../assets/Royaltexture/rt32.png';
+import rt157 from '../assets/Royaltexture/rt32.2.png';
+import rt158 from '../assets/Royaltexture/rt32.3.png';
+import rt159 from '../assets/Royaltexture/rt32.4.png';
+import rt160 from '../assets/Royaltexture/rt32.5.png';
+
+import rt161 from '../assets/Royaltexture/rt33.png';
+import rt162 from '../assets/Royaltexture/rt33.2.png';
+import rt163 from '../assets/Royaltexture/rt33.3.png';
+import rt164 from '../assets/Royaltexture/rt33.4.png';
+import rt165 from '../assets/Royaltexture/rt33.5.png';
+
+import rt166 from '../assets/Royaltexture/rt34.png';
+import rt167 from '../assets/Royaltexture/rt34.2.png';
+import rt168 from '../assets/Royaltexture/rt34.3.png';
+import rt169 from '../assets/Royaltexture/rt34.4.png';
+import rt170 from '../assets/Royaltexture/rt34.5.png';
+
+import rt171 from '../assets/Royaltexture/rt35.png';
+import rt172 from '../assets/Royaltexture/rt35.2.png';
+import rt173 from '../assets/Royaltexture/rt35.3.png';
+import rt174 from '../assets/Royaltexture/rt35.4.png';
+import rt175 from '../assets/Royaltexture/rt35.5.png';
+
+import rt176 from '../assets/Royaltexture/rt36.png';
+import rt177 from '../assets/Royaltexture/rt36.2.png';
+import rt178 from '../assets/Royaltexture/rt36.3.png';
+import rt179 from '../assets/Royaltexture/rt36.4.png';
+import rt180 from '../assets/Royaltexture/rt36.5.png';
+
+import rt181 from '../assets/Royaltexture/rt37.png';
+import rt182 from '../assets/Royaltexture/rt37.2.png';
+import rt183 from '../assets/Royaltexture/rt37.3.png';
+import rt184 from '../assets/Royaltexture/rt37.4.png';
+import rt185 from '../assets/Royaltexture/rt37.5.png';
+
+import rt186 from '../assets/Royaltexture/rt38.png';
+import rt187 from '../assets/Royaltexture/rt38.2.png';
+import rt188 from '../assets/Royaltexture/rt38.3.png';
+import rt189 from '../assets/Royaltexture/rt38.4.png';
+import rt190 from '../assets/Royaltexture/rt38.5.png';
+
+import rt191 from '../assets/Royaltexture/rt39.png';
+import rt192 from '../assets/Royaltexture/rt39.2.png';
+import rt193 from '../assets/Royaltexture/rt39.3.png';
+import rt194 from '../assets/Royaltexture/rt39.4.png';
+import rt195 from '../assets/Royaltexture/rt39.5.png';
+
+// import rt196 from '../assets/Royaltexture/rt40.png';
+// import rt197 from '../assets/Royaltexture/rt40.2.png';
+// import rt198 from '../assets/Royaltexture/rt40.3.png';
+// import rt199 from '../assets/Royaltexture/rt40.4.png';
+// import rt200 from '../assets/Royaltexture/rt40.5.png';
 
 // ==========================================
 // PRODUCTS CATALOG DATA
@@ -951,7 +1190,7 @@ export const mockProducts = [
     reviewsCount: 89,
     category: 'SOHO',
     img: sh120,
-    thumbnails: [sh117, sh118, sh119,  sh121, sh122],
+    thumbnails: [sh117, sh118, sh119, sh121, sh122],
     description: 'Premium upgrade of the Soho series. Contoured neck rest, memory foam base, adjustable tilt angle, and premium build quality.',
     availability: 'In Stock',
     material: 'Premium Memory Foam & Mesh fabric',
@@ -1041,7 +1280,7 @@ export const mockProducts = [
     reviewsCount: 89,
     category: 'SOHO',
     img: sh89,
-    thumbnails: [sh86, sh87, sh88,  sh90, sh91],
+    thumbnails: [sh86, sh87, sh88, sh90, sh91],
     description: 'Premium upgrade of the Soho series. Contoured neck rest, memory foam base, adjustable tilt angle, and premium build quality.',
     availability: 'In Stock',
     material: 'Premium Memory Foam & Mesh fabric',
@@ -1059,7 +1298,7 @@ export const mockProducts = [
     reviewsCount: 89,
     category: 'SOHO',
     img: sh84,
-    thumbnails: [sh80, sh81, sh82, sh83,sh85],
+    thumbnails: [sh80, sh81, sh82, sh83, sh85],
     description: 'Premium upgrade of the Soho series. Contoured neck rest, memory foam base, adjustable tilt angle, and premium build quality.',
     availability: 'In Stock',
     material: 'Premium Memory Foam & Mesh fabric',
@@ -1131,7 +1370,7 @@ export const mockProducts = [
     reviewsCount: 89,
     category: 'SOHO',
     img: sh61,
-    thumbnails: [sh56, sh57, sh58, sh59, sh62, ],
+    thumbnails: [sh56, sh57, sh58, sh59, sh62,],
     description: 'Premium upgrade of the Soho series. Contoured neck rest, memory foam base, adjustable tilt angle, and premium build quality.',
     availability: 'In Stock',
     material: 'Premium Memory Foam & Mesh fabric',
@@ -1167,7 +1406,7 @@ export const mockProducts = [
     reviewsCount: 89,
     category: 'SOHO',
     img: sh49,
-    thumbnails: [sh44, sh45, sh46, sh47, sh48, ],
+    thumbnails: [sh44, sh45, sh46, sh47, sh48,],
     description: 'Premium upgrade of the Soho series. Contoured neck rest, memory foam base, adjustable tilt angle, and premium build quality.',
     availability: 'In Stock',
     material: 'Premium Memory Foam & Mesh fabric',
@@ -1401,7 +1640,7 @@ export const mockProducts = [
     reviewsCount: 39,
     category: 'SOHO',
     img: sh316,
-    thumbnails: [sh311, sh312, sh313, sh314, sh315, ],
+    thumbnails: [sh311, sh312, sh313, sh314, sh315,],
     description: 'Minimalist seating design with active posture support and breathable fabric.',
     availability: 'In Stock',
     material: 'Ergonomic Mesh & High Density Foam',
@@ -1437,7 +1676,7 @@ export const mockProducts = [
     reviewsCount: 67,
     category: 'SOHO',
     img: sh304,
-    thumbnails: [sh299, sh300, sh301, sh302, sh303, ],
+    thumbnails: [sh299, sh300, sh301, sh302, sh303,],
     description: 'Minimalist seating design with active posture support and breathable fabric.',
     availability: 'In Stock',
     material: 'Ergonomic Mesh & High Density Foam',
@@ -1968,27 +2207,1420 @@ export const mockProducts = [
     deliveryInfo: 'Free shipping. Dispatched in 1-2 business days.'
   },
 
+
+  // ================= royaltexture CATEGORY =================
+
+  {
+    id: 'rt-1',
+    patternno: 8003,
+    name: 'Royaltexture Premium Royalweave Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'ROYALTEXTURE',
+    img: rt1,
+    thumbnails: [rt1, rt2, rt3, rt4, rt5],
+    description: 'Experience luxury with our Royalweave collection. Superior durability and elegant design make every room stand out.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'rt-2',
+    patternno: 8004,
+    name: 'Royaltexture Premium Royalweave Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'ROYALTEXTURE',
+    img: rt6,
+    thumbnails: [rt6, rt7, rt8, rt9, rt10],
+    description: 'Experience luxury with our Royalweave collection. Superior durability and elegant design make every room stand out.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+
+  {
+    id: 'rt-3',
+    patternno: 8005,
+    name: 'Royaltexture Premium Royalweave Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'ROYALTEXTURE',
+    img: rt11,
+    thumbnails: [rt11, rt12, rt13, rt14, rt15],
+    description: 'Experience luxury with our Royalweave collection. Superior durability and elegant design make every room stand out.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'rt-4',
+    patternno: 8005,
+    name: 'Royaltexture Premium Royalweave Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'ROYALTEXTURE',
+    img: rt16,
+    thumbnails: [rt16, rt17, rt18, rt19, rt20],
+    description: 'Experience luxury with our Royalweave collection. Superior durability and elegant design make every room stand out.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'rt-5',
+    patternno: 8005,
+    name: 'Royaltexture Premium Royalweave Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'ROYALTEXTURE',
+    img: rt21,
+    thumbnails: [rt21, rt22, rt23, rt24, rt25],
+    description: 'Experience luxury with our Royalweave collection. Superior durability and elegant design make every room stand out.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'rt-6',
+    patternno: 8005,
+    name: 'Royaltexture Premium Royalweave Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'ROYALTEXTURE',
+    img: rt26,
+    thumbnails: [rt26, rt27, rt28, rt29, rt30],
+    description: 'Experience luxury with our Royalweave collection. Superior durability and elegant design make every room stand out.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'rt-7',
+    patternno: 8005,
+    name: 'Royaltexture Premium Royalweave Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'ROYALTEXTURE',
+    img: rt31,
+    thumbnails: [rt31, rt32, rt33, rt34, rt35],
+    description: 'Experience luxury with our Royalweave collection. Superior durability and elegant design make every room stand out.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'rt-8',
+    patternno: 8005,
+    name: 'Royaltexture Premium Royalweave Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'ROYALTEXTURE',
+    img: rt36,
+    thumbnails: [rt36, rt37, rt38, rt39, rt40],
+    description: 'Experience luxury with our Royalweave collection. Superior durability and elegant design make every room stand out.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'rt-9',
+    patternno: 8005,
+    name: 'Royaltexture Premium Royalweave Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'ROYALTEXTURE',
+    img: rt41,
+    thumbnails: [rt41, rt42, rt43, rt44, rt45],
+    description: 'Experience luxury with our Royalweave collection. Superior durability and elegant design make every room stand out.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'rt-10',
+    patternno: 8005,
+    name: 'Royaltexture Premium Royalweave Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'ROYALTEXTURE',
+    img: rt46,
+    thumbnails: [rt46, rt47, rt48, rt49, rt50],
+    description: 'Experience luxury with our Royalweave collection. Superior durability and elegant design make every room stand out.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'rt-11',
+    patternno: 8005,
+    name: 'Royaltexture Premium Royalweave Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'ROYALTEXTURE',
+    img: rt51,
+    thumbnails: [rt51, rt52, rt53, rt54, rt55],
+    description: 'Experience luxury with our Royalweave collection. Superior durability and elegant design make every room stand out.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'rt-12',
+    patternno: 8005,
+    name: 'Royaltexture Premium Royalweave Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'ROYALTEXTURE',
+    img: rt56,
+    thumbnails: [rt56, rt57, rt58, rt59, rt60],
+    description: 'Experience luxury with our Royalweave collection. Superior durability and elegant design make every room stand out.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'rt-13',
+    patternno: 8005,
+    name: 'Royaltexture Premium Royalweave Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'ROYALTEXTURE',
+    img: rt61,
+    thumbnails: [rt61, rt62, rt63, rt64, rt65],
+    description: 'Experience luxury with our Royalweave collection. Superior durability and elegant design make every room stand out.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'rt-14',
+    patternno: 8005,
+    name: 'Royaltexture Premium Royalweave Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'ROYALTEXTURE',
+    img: rt66,
+    thumbnails: [rt66, rt67, rt68, rt69, rt70],
+    description: 'Experience luxury with our Royalweave collection. Superior durability and elegant design make every room stand out.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'rt-15',
+    patternno: 8005,
+    name: 'Royaltexture Premium Royalweave Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'ROYALTEXTURE',
+    img: rt71,
+    thumbnails: [rt71, rt72, rt73, rt74, rt75],
+    description: 'Experience luxury with our Royalweave collection. Superior durability and elegant design make every room stand out.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'rt-16',
+    patternno: 8005,
+    name: 'Royaltexture Premium Royalweave Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'ROYALTEXTURE',
+    img: rt76,
+    thumbnails: [rt76, rt77, rt78, rt79, rt80],
+    description: 'Experience luxury with our Royalweave collection. Superior durability and elegant design make every room stand out.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  }, {
+    id: 'rt-17',
+    patternno: 8005,
+    name: 'Royaltexture Premium Royalweave Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'ROYALTEXTURE',
+    img: rt81,
+    thumbnails: [rt81, rt82, rt83, rt84, rt85],
+    description: 'Experience luxury with our Royalweave collection. Superior durability and elegant design make every room stand out.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'rt-18',
+    patternno: 8005,
+    name: 'Royaltexture Premium Royalweave Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'ROYALTEXTURE',
+    img: rt86,
+    thumbnails: [rt86, rt87, rt88, rt89, rt90],
+    description: 'Experience luxury with our Royalweave collection. Superior durability and elegant design make every room stand out.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'rt-19',
+    patternno: 8005,
+    name: 'Royaltexture Premium Royalweave Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'ROYALTEXTURE',
+    img: rt91,
+    thumbnails: [rt91, rt92, rt93, rt94, rt95],
+    description: 'Experience luxury with our Royalweave collection. Superior durability and elegant design make every room stand out.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'rt-20',
+    patternno: 8005,
+    name: 'Royaltexture Premium Royalweave Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'ROYALTEXTURE',
+    img: rt96,
+    thumbnails: [rt96, rt97, rt98, rt99, rt100],
+    description: 'Experience luxury with our Royalweave collection. Superior durability and elegant design make every room stand out.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'rt-21',
+    patternno: 8005,
+    name: 'Royaltexture Premium Royalweave Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'ROYALTEXTURE',
+    img: rt101,
+    thumbnails: [rt101, rt102, rt103, rt104, rt105],
+    description: 'Experience luxury with our Royalweave collection. Superior durability and elegant design make every room stand out.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'rt-22',
+    patternno: 8005,
+    name: 'Royaltexture Premium Royalweave Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'ROYALTEXTURE',
+    img: rt106,
+    thumbnails: [rt106, rt107, rt108, rt109, rt110],
+    description: 'Experience luxury with our Royalweave collection. Superior durability and elegant design make every room stand out.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'rt-23',
+    patternno: 8005,
+    name: 'Royaltexture Premium Royalweave Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'ROYALTEXTURE',
+    img: rt111,
+    thumbnails: [rt111, rt112, rt113, rt114, rt115],
+    description: 'Experience luxury with our Royalweave collection. Superior durability and elegant design make every room stand out.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'rt-24',
+    patternno: 8005,
+    name: 'Royaltexture Premium Royalweave Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'ROYALTEXTURE',
+    img: rt116,
+    thumbnails: [rt116, rt117, rt118, rt119, rt120],
+    description: 'Experience luxury with our Royalweave collection. Superior durability and elegant design make every room stand out.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'rt-25',
+    patternno: 8005,
+    name: 'Royaltexture Premium Royalweave Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'ROYALTEXTURE',
+    img: rt121,
+    thumbnails: [rt121, rt122, rt123, rt124, rt125],
+    description: 'Experience luxury with our Royalweave collection. Superior durability and elegant design make every room stand out.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'rt-26',
+    patternno: 8005,
+    name: 'Royaltexture Premium Royalweave Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'ROYALTEXTURE',
+    img: rt126,
+    thumbnails: [rt126, rt127, rt128, rt129, rt130],
+    description: 'Experience luxury with our Royalweave collection. Superior durability and elegant design make every room stand out.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'rt-27',
+    patternno: 8005,
+    name: 'Royaltexture Premium Royalweave Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'ROYALTEXTURE',
+    img: rt131,
+    thumbnails: [rt131, rt132, rt133, rt134, rt135],
+    description: 'Experience luxury with our Royalweave collection. Superior durability and elegant design make every room stand out.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'rt-28',
+    patternno: 8005,
+    name: 'Royaltexture Premium Royalweave Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'ROYALTEXTURE',
+    img: rt136,
+    thumbnails: [rt136, rt137, rt138, rt139, rt140],
+    description: 'Experience luxury with our Royalweave collection. Superior durability and elegant design make every room stand out.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'rt-29',
+    patternno: 8005,
+    name: 'Royaltexture Premium Royalweave Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'ROYALTEXTURE',
+    img: rt141,
+    thumbnails: [rt141, rt142, rt143, rt144, rt145],
+    description: 'Experience luxury with our Royalweave collection. Superior durability and elegant design make every room stand out.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'rt-30',
+    patternno: 8005,
+    name: 'Royaltexture Premium Royalweave Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'ROYALTEXTURE',
+    img: rt146,
+    thumbnails: [rt146, rt147, rt148, rt149, rt150],
+    description: 'Experience luxury with our Royalweave collection. Superior durability and elegant design make every room stand out.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'rt-31',
+    patternno: 8005,
+    name: 'Royaltexture Premium Royalweave Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'ROYALTEXTURE',
+    img: rt151,
+    thumbnails: [rt151, rt152, rt153, rt154, rt155],
+    description: 'Experience luxury with our Royalweave collection. Superior durability and elegant design make every room stand out.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'rt-32',
+    patternno: 8005,
+    name: 'Royaltexture Premium Royalweave Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'ROYALTEXTURE',
+    img: rt156,
+    thumbnails: [rt156, rt157, rt158, rt159, rt160],
+    description: 'Experience luxury with our Royalweave collection. Superior durability and elegant design make every room stand out.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'rt-33',
+    patternno: 8005,
+    name: 'Royaltexture Premium Royalweave Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'ROYALTEXTURE',
+    img: rt161,
+    thumbnails: [rt161, rt162, rt163, rt164, rt165],
+    description: 'Experience luxury with our Royalweave collection. Superior durability and elegant design make every room stand out.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'rt-34',
+    patternno: 8005,
+    name: 'Royaltexture Premium Royalweave Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'ROYALTEXTURE',
+    img: rt166,
+    thumbnails: [rt166, rt167, rt168, rt169, rt170],
+    description: 'Experience luxury with our Royalweave collection. Superior durability and elegant design make every room stand out.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'rt-35',
+    patternno: 8005,
+    name: 'Royaltexture Premium Royalweave Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'ROYALTEXTURE',
+    img: rt171,
+    thumbnails: [rt171, rt172, rt173, rt174, rt175],
+    description: 'Experience luxury with our Royalweave collection. Superior durability and elegant design make every room stand out.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'rt-36',
+    patternno: 8005,
+    name: 'Royaltexture Premium Royalweave Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'ROYALTEXTURE',
+    img: rt176,
+    thumbnails: [rt176, rt177, rt178, rt179, rt180],
+    description: 'Experience luxury with our Royalweave collection. Superior durability and elegant design make every room stand out.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'rt-37',
+    patternno: 8005,
+    name: 'Royaltexture Premium Royalweave Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'ROYALTEXTURE',
+    img: rt181,
+    thumbnails: [rt181, rt182, rt183, rt184, rt185],
+    description: 'Experience luxury with our Royalweave collection. Superior durability and elegant design make every room stand out.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'rt-38',
+    patternno: 8005,
+    name: 'Royaltexture Premium Royalweave Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'ROYALTEXTURE',
+    img: rt186,
+    thumbnails: [rt186, rt187, rt188, rt189, rt190],
+    description: 'Experience luxury with our Royalweave collection. Superior durability and elegant design make every room stand out.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'rt-39',
+    patternno: 8005,
+    name: 'Royaltexture Premium Royalweave Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'ROYALTEXTURE',
+    img: rt191,
+    thumbnails: [rt191, rt192, rt193, rt194, rt195],
+    description: 'Experience luxury with our Royalweave collection. Superior durability and elegant design make every room stand out.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+
+
+
+
   //Epic Wall
   {
     id: 'epicwall-1',
-    patternno:78601,
-    name: 'EpicWall',
-    price: 499,
-    rating: 4.9,
-    Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
-    reviewsCount: 76,
+    patternno: 78601,
+    name: 'EpicWall Premium Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
     category: 'EpicWall',
-    img: ew3,
-    thumbnails: [ew2,ew1,ew4,ew5],
-    description: 'Minimalist seating design with active posture support and breathable fabric.',
+    img: ew1,
+    thumbnails: [ew1, ew2, ew3, ew4, ew5],
+    description: 'Transform your walls with our EpicWall collection. Premium textures and vibrant designs built for modern spaces.',
     availability: 'In Stock',
-    material: 'Ergonomic Mesh & High Density Foam',
-    dimensions: 'W 68cm x H 118-128cm x D 62cm',
-    warranty: '2 Year Manufacturer Warranty',
-    deliveryInfo: 'Free shipping. Dispatched in 1-2 business days.'
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
   },
-
+  {
+    id: 'epicwall-2',
+    patternno: 78602,
+    name: 'EpicWall Premium Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'EpicWall',
+    img: ew6,
+    thumbnails: [ew6, ew7, ew8, ew9, ew10],
+    description: 'Transform your walls with our EpicWall collection. Premium textures and vibrant designs built for modern spaces.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'epicwall-3',
+    patternno: 78603,
+    name: 'EpicWall Premium Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'EpicWall',
+    img: ew12,
+    thumbnails: [ew12, ew13, ew14, ew15, ew16],
+    description: 'Transform your walls with our EpicWall collection. Premium textures and vibrant designs built for modern spaces.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'epicwall-4',
+    patternno: 78604,
+    name: 'EpicWall Premium Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'EpicWall',
+    img: ew17,
+    thumbnails: [ew17, ew18, ew19, ew20, ew21],
+    description: 'Transform your walls with our EpicWall collection. Premium textures and vibrant designs built for modern spaces.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'epicwall-5',
+    patternno: 78605,
+    name: 'EpicWall Premium Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'EpicWall',
+    img: ew22,
+    thumbnails: [ew22, ew23, ew24, ew25, ew26],
+    description: 'Transform your walls with our EpicWall collection. Premium textures and vibrant designs built for modern spaces.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'epicwall-6',
+    patternno: 78606,
+    name: 'EpicWall Premium Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'EpicWall',
+    img: ew27,
+    thumbnails: [ew27, ew28, ew29, ew30, ew31],
+    description: 'Transform your walls with our EpicWall collection. Premium textures and vibrant designs built for modern spaces.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'epicwall-7',
+    patternno: 78607,
+    name: 'EpicWall Premium Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'EpicWall',
+    img: ew32,
+    thumbnails: [ew32, ew33, ew34, ew35, ew36],
+    description: 'Transform your walls with our EpicWall collection. Premium textures and vibrant designs built for modern spaces.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'epicwall-8',
+    patternno: 78608,
+    name: 'EpicWall Premium Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'EpicWall',
+    img: ew37,
+    thumbnails: [ew37, ew38, ew39, ew40, ew41],
+    description: 'Transform your walls with our EpicWall collection. Premium textures and vibrant designs built for modern spaces.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'epicwall-9',
+    patternno: 78609,
+    name: 'EpicWall Premium Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'EpicWall',
+    img: ew42,
+    thumbnails: [ew42, ew43, ew44, ew45, ew46],
+    description: 'Transform your walls with our EpicWall collection. Premium textures and vibrant designs built for modern spaces.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'epicwall-10',
+    patternno: 78610,
+    name: 'EpicWall Premium Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'EpicWall',
+    img: ew47,
+    thumbnails: [ew47, ew48, ew49, ew50, ew51],
+    description: 'Transform your walls with our EpicWall collection. Premium textures and vibrant designs built for modern spaces.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'epicwall-11',
+    patternno: 78611,
+    name: 'EpicWall Premium Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'EpicWall',
+    img: ew52,
+    thumbnails: [ew52, ew53, ew54, ew55, ew56],
+    description: 'Transform your walls with our EpicWall collection. Premium textures and vibrant designs built for modern spaces.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'epicwall-12',
+    patternno: 78612,
+    name: 'EpicWall Premium Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'EpicWall',
+    img: ew57,
+    thumbnails: [ew57, ew58, ew59, ew60, ew61],
+    description: 'Transform your walls with our EpicWall collection. Premium textures and vibrant designs built for modern spaces.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'epicwall-13',
+    patternno: 78613,
+    name: 'EpicWall Premium Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'EpicWall',
+    img: ew62,
+    thumbnails: [ew62, ew63, ew64, ew65, ew66],
+    description: 'Transform your walls with our EpicWall collection. Premium textures and vibrant designs built for modern spaces.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'epicwall-14',
+    patternno: 78614,
+    name: 'EpicWall Premium Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'EpicWall',
+    img: ew67,
+    thumbnails: [ew67, ew68, ew69, ew70, ew71],
+    description: 'Transform your walls with our EpicWall collection. Premium textures and vibrant designs built for modern spaces.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'epicwall-15',
+    patternno: 78615,
+    name: 'EpicWall Premium Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'EpicWall',
+    img: ew72,
+    thumbnails: [ew72, ew73, ew74, ew75, ew76],
+    description: 'Transform your walls with our EpicWall collection. Premium textures and vibrant designs built for modern spaces.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'epicwall-16',
+    patternno: 78616,
+    name: 'EpicWall Premium Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'EpicWall',
+    img: ew77,
+    thumbnails: [ew77, ew78, ew79, ew80, ew81],
+    description: 'Transform your walls with our EpicWall collection. Premium textures and vibrant designs built for modern spaces.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'epicwall-17',
+    patternno: 78617,
+    name: 'EpicWall Premium Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'EpicWall',
+    img: ew82,
+    thumbnails: [ew82, ew83, ew84, ew85, ew86],
+    description: 'Transform your walls with our EpicWall collection. Premium textures and vibrant designs built for modern spaces.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'epicwall-18',
+    patternno: 78618,
+    name: 'EpicWall Premium Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'EpicWall',
+    img: ew87,
+    thumbnails: [ew87, ew88, ew89, ew90, ew91],
+    description: 'Transform your walls with our EpicWall collection. Premium textures and vibrant designs built for modern spaces.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'epicwall-19',
+    patternno: 78619,
+    name: 'EpicWall Premium Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'EpicWall',
+    img: ew92,
+    thumbnails: [ew92, ew93, ew94, ew95, ew96],
+    description: 'Transform your walls with our EpicWall collection. Premium textures and vibrant designs built for modern spaces.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'epicwall-20',
+    patternno: 78620,
+    name: 'EpicWall Premium Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'EpicWall',
+    img: ew97,
+    thumbnails: [ew97, ew98, ew99, ew100, ew101],
+    description: 'Transform your walls with our EpicWall collection. Premium textures and vibrant designs built for modern spaces.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'epicwall-21',
+    patternno: 78621,
+    name: 'EpicWall Premium Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'EpicWall',
+    img: ew102,
+    thumbnails: [ew102, ew103, ew104, ew105, ew106],
+    description: 'Transform your walls with our EpicWall collection. Premium textures and vibrant designs built for modern spaces.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'epicwall-22',
+    patternno: 78622,
+    name: 'EpicWall Premium Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'EpicWall',
+    img: ew107,
+    thumbnails: [ew107, ew108, ew109, ew110, ew111],
+    description: 'Transform your walls with our EpicWall collection. Premium textures and vibrant designs built for modern spaces.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'epicwall-23',
+    patternno: 78623,
+    name: 'EpicWall Premium Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'EpicWall',
+    img: ew112,
+    thumbnails: [ew112, ew113, ew114, ew115, ew116],
+    description: 'Transform your walls with our EpicWall collection. Premium textures and vibrant designs built for modern spaces.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'epicwall-24',
+    patternno: 78624,
+    name: 'EpicWall Premium Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'EpicWall',
+    img: ew117,
+    thumbnails: [ew117, ew118, ew119, ew120, ew121],
+    description: 'Transform your walls with our EpicWall collection. Premium textures and vibrant designs built for modern spaces.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'epicwall-25',
+    patternno: 78625,
+    name: 'EpicWall Premium Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'EpicWall',
+    img: ew122,
+    thumbnails: [ew122, ew123, ew124, ew125, ew126],
+    description: 'Transform your walls with our EpicWall collection. Premium textures and vibrant designs built for modern spaces.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'epicwall-26',
+    patternno: 78626,
+    name: 'EpicWall Premium Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'EpicWall',
+    img: ew127,
+    thumbnails: [ew127, ew128, ew129, ew130, ew131],
+    description: 'Transform your walls with our EpicWall collection. Premium textures and vibrant designs built for modern spaces.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'epicwall-27',
+    patternno: 78627,
+    name: 'EpicWall Premium Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'EpicWall',
+    img: ew132,
+    thumbnails: [ew132, ew133, ew134, ew135, ew136],
+    description: 'Transform your walls with our EpicWall collection. Premium textures and vibrant designs built for modern spaces.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'epicwall-28',
+    patternno: 78628,
+    name: 'EpicWall Premium Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'EpicWall',
+    img: ew137,
+    thumbnails: [ew137, ew138, ew139, ew140, ew141],
+    description: 'Transform your walls with our EpicWall collection. Premium textures and vibrant designs built for modern spaces.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'epicwall-29',
+    patternno: 78629,
+    name: 'EpicWall Premium Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'EpicWall',
+    img: ew142,
+    thumbnails: [ew142, ew143, ew144, ew145, ew146],
+    description: 'Transform your walls with our EpicWall collection. Premium textures and vibrant designs built for modern spaces.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'epicwall-30',
+    patternno: 78630,
+    name: 'EpicWall Premium Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'EpicWall',
+    img: ew147,
+    thumbnails: [ew147, ew148, ew149, ew150, ew151],
+    description: 'Transform your walls with our EpicWall collection. Premium textures and vibrant designs built for modern spaces.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'epicwall-31',
+    patternno: 78631,
+    name: 'EpicWall Premium Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'EpicWall',
+    img: ew152,
+    thumbnails: [ew152, ew153, ew154, ew155, ew156],
+    description: 'Transform your walls with our EpicWall collection. Premium textures and vibrant designs built for modern spaces.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'epicwall-32',
+    patternno: 78632,
+    name: 'EpicWall Premium Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'EpicWall',
+    img: ew157,
+    thumbnails: [ew157, ew158, ew159, ew160, ew161],
+    description: 'Transform your walls with our EpicWall collection. Premium textures and vibrant designs built for modern spaces.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'epicwall-33',
+    patternno: 78633,
+    name: 'EpicWall Premium Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'EpicWall',
+    img: ew162,
+    thumbnails: [ew162, ew163, ew164, ew165, ew166],
+    description: 'Transform your walls with our EpicWall collection. Premium textures and vibrant designs built for modern spaces.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'epicwall-34',
+    patternno: 78634,
+    name: 'EpicWall Premium Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'EpicWall',
+    img: ew167,
+    thumbnails: [ew167, ew168, ew169, ew170, ew171],
+    description: 'Transform your walls with our EpicWall collection. Premium textures and vibrant designs built for modern spaces.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'epicwall-35',
+    patternno: 78635,
+    name: 'EpicWall Premium Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'EpicWall',
+    img: ew172,
+    thumbnails: [ew172, ew173, ew174, ew175, ew176],
+    description: 'Transform your walls with our EpicWall collection. Premium textures and vibrant designs built for modern spaces.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'epicwall-36',
+    patternno: 78636,
+    name: 'EpicWall Premium Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'EpicWall',
+    img: ew177,
+    thumbnails: [ew177, ew178, ew179, ew180, ew181],
+    description: 'Transform your walls with our EpicWall collection. Premium textures and vibrant designs built for modern spaces.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'epicwall-37',
+    patternno: 78637,
+    name: 'EpicWall Premium Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'EpicWall',
+    img: ew182,
+    thumbnails: [ew182, ew183, ew184, ew185, ew186],
+    description: 'Transform your walls with our EpicWall collection. Premium textures and vibrant designs built for modern spaces.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'epicwall-38',
+    patternno: 78638,
+    name: 'EpicWall Premium Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'EpicWall',
+    img: ew187,
+    thumbnails: [ew187, ew188, ew189, ew200, ew201],
+    description: 'Transform your walls with our EpicWall collection. Premium textures and vibrant designs built for modern spaces.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
+  {
+    id: 'epicwall-39',
+    patternno: 78639,
+    name: 'EpicWall Premium Collection',
+    price: 350,
+    rating: 5.0,
+    Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 55 },
+    reviewsCount: 122,
+    category: 'EpicWall',
+    img: ew202,
+    thumbnails: [ew202, ew203, ew204, ew205, ew206],
+    description: 'Transform your walls with our EpicWall collection. Premium textures and vibrant designs built for modern spaces.',
+    availability: 'In Stock',
+    material: 'High-Durability PVC Vinyl',
+    dimensions: '106cm width x 15.6m length per roll',
+    warranty: '1 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 2-3 business days.'
+  },
 ];
+
 
 //Helper Functions
 export const getProductById = (id) => {

@@ -15,9 +15,9 @@ import './CategoryProducts.css';
 
 const BATCH_SIZE = 12;
 
-const InfiniteProductGrid = ({ 
-    products = [], 
-    emptyMessage = "No products found." 
+const InfiniteProductGrid = ({
+    products = [],
+    emptyMessage = "No products found."
 }) => {
     const [visibleCount, setVisibleCount] = useState(BATCH_SIZE);
     const [isLoadingMore, setIsLoadingMore] = useState(false);
@@ -77,8 +77,8 @@ const InfiniteProductGrid = ({
             {/* Main Product Cards Grid */}
             <div className="category-products-grid">
                 {currentBatch.map((product) => (
-                    <Link 
-                        key={product.id} 
+                    <Link
+                        key={product.id}
                         to={`/product/${product.id}`}
                         className="category-product-card"
                         style={{ textDecoration: 'none' }}
@@ -91,7 +91,7 @@ const InfiniteProductGrid = ({
                                 containerStyle={{ width: '100%', height: '100%' }}
                             />
                         </div>
-                        
+
                         <div className="category-product-body">
                             <div>
                                 <h3 className="category-product-title">
@@ -137,15 +137,15 @@ const InfiniteProductGrid = ({
 
             {/* Sentinel element observed by IntersectionObserver */}
             {hasMore && !isLoadingMore && (
-                <div 
-                    ref={observerTarget} 
-                    style={{ 
-                        height: '40px', 
-                        display: 'flex', 
-                        justifyContent: 'center', 
-                        alignItems: 'center', 
-                        marginTop: '20px' 
-                    }} 
+                <div
+                    ref={observerTarget}
+                    style={{
+                        height: '40px',
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        marginTop: '20px'
+                    }}
                 >
                     <Mosaic color="#111511" size="small" text="" textColor="" />
                 </div>
