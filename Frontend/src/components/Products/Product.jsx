@@ -1,56 +1,141 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import { FiChevronLeft, FiChevronRight, FiArrowUpRight } from 'react-icons/fi';
 import './Product.css';
 
-const Product = () => {
-  const collections = [
-    {
-      id: 1,
-      title: 'PREMIUM NON ADHESIVE WALLPAPER',
-      image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=600&auto=format&fit=crop', // Replace with your actual image path
-    },
-    {
-      id: 2,
-      title: 'SELF-ADHESIVE WALLPAPER (2M) — STARTER SIZE',
-      image: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=600&auto=format&fit=crop', // Replace with your actual image path
-    },
-    {
-      id: 3,
-      title: 'PREMIUM SELF-ADHESIVE WALLPAPER ROLLS (10M)',
-      image: 'https://images.unsplash.com/photo-1617806118233-18e1db207f62?q=80&w=600&auto=format&fit=crop', // Replace with your actual image path
-    },
-    {
-      id: 4,
-      title: 'UV FOAM SHEET 2X2FT',
-      image: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=600&auto=format&fit=crop', // Replace with your actual image path
-    },
-  ];
+const products = [
+  {
+    id: 1,
+    name: '',
+    price: '499Rs',
+    deliveryBadge: 'Fast Delivery',
+    tags: ['Washable', 'Premium', 'DustProof'],
+    image: '',
+    link: '#',
+  },
+  {
+    id: 2,
+    name: '',
+    price: '70Rs.',
+    deliveryBadge: 'Fast Delivery',
+    tags: ['Fresh', 'Milk', 'Honey'],
+    image: '',
+    link: '#',
+  },
+  {
+    id: 3,
+    name: 'Mango Smoothie',
+    price: '60Rs.',
+    deliveryBadge: 'Fast Delivery',
+    tags: ['Mango', 'Yogurt', 'Ice'],
+    image: '',
+    link: '#',
+  },
+  {
+    id: 4,
+    name: 'Berry Blast',
+    price: '80Rs.',
+    deliveryBadge: 'Fast Delivery',
+    tags: ['Berries', 'Ice', 'Mint'],
+    image: '',
+    link: '#',
+  },
+  {
+    id: 5,
+    name: 'Green Detox',
+    price: '65Rs.',
+    deliveryBadge: 'Fast Delivery',
+    tags: ['Spinach', 'Apple', 'Lemon'],
+    image: '',
+    link: '#',
+  },
+  {
+    id: 6,
+    name: 'Citrus Fresh',
+    price: '55Rs.',
+    deliveryBadge: 'Fast Delivery',
+    tags: ['Orange', 'Mint', 'Ice'],
+    image: '',
+    link: '#',
+  }
+];
+
+const ProductSlider = () => {
+  const scrollRef = useRef(null);
+
+  const scroll = (direction) => {
+    if (scrollRef.current) {
+      const scrollAmount = direction === 'left' ? -280 : 280;
+      scrollRef.current.scrollBy({
+        left: scrollAmount,
+        behavior: 'smooth',
+      });
+    }
+  };
 
   return (
-    <section className="collection-section">
-      {/* Header Info */}
-      <div className="collection-header">
-        <h2 className="collection-title">Shop by our Premium Wall Collection</h2>
-        <p className="collection-subtitle">Explore a Wide Range of varieties Across</p>
-      </div>
+    <div className="product-slider-wrapper">
+      <h2 className="slider-header-title">Trending Wallpaper</h2>
 
-      {/* Grid Container */}
-      <div className="collection-grid">
-        {collections.map((item) => (
-          <div key={item.id} className="collection-card">
-            <div className="card-image-wrapper">
-              <img src={item.image} alt={item.title} className="card-image" />
+      <div className="slider-container">
+        {/* Left Navigation Arrow */}
+        <button
+          className="nav-arrow nav-arrow-left"
+          onClick={() => scroll('left')}
+          aria-label="Previous Products"
+        >
+          <FiChevronLeft />
+        </button>
+
+        {/* Right Navigation Arrow */}
+        <button
+          className="nav-arrow nav-arrow-right"
+          onClick={() => scroll('right')}
+          aria-label="Next Products"
+        >
+          <FiChevronRight />
+        </button>
+
+        {/* Card Track Container */}
+        <div className="product-track" ref={scrollRef}>
+          {products.map((item) => (
+            <div key={item.id} className="juice-card">
+              {/* Top Light-Green Inner Box */}
+              <div className="card-inner-top">
+                <div className="image-container">
+                  <img src={item.image} alt={item.name} className="product-img" />
+                </div>
+                <div className="delivery-badge">{item.deliveryBadge}</div>
+              </div>
+
+              {/* Bottom Dark Section */}
+              <div className="card-bottom-info">
+                <div className="left-info">
+                  <h3 className="product-title">{item.name}</h3>
+                  <div className="tags-wrapper">
+                    {item.tags.map((tag, idx) => (
+                      <span key={idx} className="tag-pill">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Vertical Divider Line */}
+                <div className="vertical-divider"></div>
+
+                <div className="right-info">
+                  <div className="product-price">{item.price}</div>
+                  <a href={item.link} className="order-link">
+                    Order Now <FiArrowUpRight className="link-arrow" />
+                  </a>
+                </div>
+              </div>
             </div>
-            
-            {/* Overlay Tag Button */}
-            <div className="card-tag">
-              <span className="tag-text">{item.title}</span>
-              <span className="tag-arrow">→</span>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </section>
+    </div>
   );
 };
 
-export default Product;
+export default ProductSlider;

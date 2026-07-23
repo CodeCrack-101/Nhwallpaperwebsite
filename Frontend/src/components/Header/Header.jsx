@@ -38,7 +38,7 @@ function Header() {
       {/* Yeh saare sections ab Hero section ke thik niche render honge */}
       <BookSlider />
       <ImageSlider />
-      <Product />
+      <Product/>
       <BestProduct />
       <Google/>
     </div>

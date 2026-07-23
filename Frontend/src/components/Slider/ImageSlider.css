@@ -53,7 +53,7 @@
     transform: translate(-50%, -50%);
     width: 44px;
     height: 44px;
-    background-color: #ffffff;
+    background-color: #000000;
     border-radius: 50%;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
     display: flex;

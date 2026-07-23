@@ -1,24 +1,23 @@
 /**
  * BestProduct Component File
  * Location: frontend/src/components/Allproduct/BestProduct.jsx
- * Description: Renders the primary categories catalog page showing various collections.
- *              Includes a live search bar to filter categories dynamically.
- *              Displays 6 cards initially with full "View More" and "View Less" functionality.
- *              Card design matches the floating box layout from the reference image.
+ * Description: Redesigned based on glassmorphic card design with verified badge,
+ *              description, and pill CTA buttons.
  */
 
 import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { FiSearch, FiX } from 'react-icons/fi';
+import { FaCheckCircle, FaUser, FaLayerGroup } from 'react-icons/fa';
 import ImageLoader from '../common/ImageLoader';
-// Make sure to import FontAwesome in your main app file (e.g., App.js) like: import '@fortawesome/fontawesome-free/css/all.min.css';
 import './BestProduct.css';
 
-// Direct Assets Imports mapped properly from the public structure
+// Direct Assets Imports
+import rt1 from '/rt.png'
 import sh1 from '/Soho.png';
+import wa1 from '/wa1.png';
 import sk1 from '/Sky.png';
-import ur1 from '/Urbano.png';
-import wa1 from '/Wallfloral.png';
+import sp1 from '/Selfiepoint.png'
 import ew1 from '/Epicwall.png';
 
 const categories = [
@@ -27,57 +26,55 @@ const categories = [
         name: 'Soho',
         path: '/category/soho',
         img: sh1,
-        desc: 'Premium home office seats blending Scandinavian minimalism with posture ergonomics.'
+        desc: 'Product Designer who focuses on simplicity & usability.',
+        itemsCount: 'Best Choice',
+        rating: '60'
     },
     {
         id: 'sky',
         name: 'Sky',
         path: '/category/sky',
         img: sk1,
-        desc: 'Cabin-worthy top grain leather thrones built for leaders and visionaries.'
+        desc: 'Cabin-worthy top grain leather thrones built for leaders.',
+        itemsCount: 'Best Choice',
+        rating: '42'
     },
     {
         id: 'royaltexture',
         name: 'Royal Texture',
         path: '/category/royaltexture',
-        img: ur1,
-        desc: 'Experience luxury with our Royalweave collection. Superior durability and elegant design.'
+        img: rt1,
+        desc: 'Experience luxury with superior durability and design.',
+        itemsCount: 'Best Choice',
+        rating: '50'
     },
     {
         id: 'Wallflora',
         name: 'Wall Flora',
         path: '/category/wallfloral',
         img: wa1, 
-        desc: 'Durable taskmesh chairs perfect for high-traffic office floors and shared desks.'
+        desc: 'Durable taskmesh chairs perfect for high-traffic office floors.',
+        itemsCount: 'Best Choice',
+        rating: '39'
     },
     {
         id: 'epicwall',
         name: 'Epic Wall',
         path: '/category/epicwall',
         img: ew1,
-        desc: 'Durable taskmesh chairs perfect for high-traffic office floors and shared desks.'
-    },
-    {
-        id: 'Mirabel',
-        name: 'Mirabel',
-        path: '/category/mirabel',
-        img: sh1, 
-        desc: 'Sleek guest chairs tailored for modern reception areas and meeting rooms.'
+        desc: 'Premium artistic wallpaper & furniture accents.',
+        itemsCount: 'Best Choice',
+        rating: '49'
     },
     {
         id: 'SelfiePoint',
         name: 'Selfie Point',
         path: '/category/selfiepoint',
-        img: ur1, 
-        desc: 'Comfortable seating engineered optimized for productivity and tech desks.'
+        img: sp1, 
+        desc: 'Comfortable seating optimized for tech desks & productivity.',
+        itemsCount: 'Best Choice',
+        rating: '47'
     },
-    {
-        id: 'urbano',
-        name: 'Urbano',
-        path: '/category/urbano',
-        img: sk1, 
-        desc: 'Relaxed designer chairs bringing high-end comfort to breakout spaces.'
-    }
 ];
 
 const BestProduct = () => {
@@ -127,20 +124,36 @@ const BestProduct = () => {
                 <>
                     <div className="categories-grid">
                         {filteredCategories.slice(0, visibleCount).map((cat) => (
-                            <Link key={cat.id} to={cat.path} className="category-card" style={{ textDecoration: 'none', position: 'relative' }}>
-                                <div className="category-image-wrapper" style={{ position: 'relative', overflow: 'hidden' }}>
-                                    <ImageLoader 
-                                        src={cat.img} 
-                                        alt={cat.name} 
-                                        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                                        containerStyle={{ width: '100%', height: '100%' }}
-                                    />
-                                    <div className="category-content-box">
-                                        <h3 className="category-name">{cat.name}</h3>
-                                        <i className="fa-solid fa-arrow-right-long category-arrow"></i>
+                            <div key={cat.id} className="category-card-outer">
+                                <Link to={cat.path} className="category-card">
+                                    <div className="category-image-wrapper">
+                                        <ImageLoader 
+                                            src={cat.img} 
+                                            alt={cat.name} 
+                                            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                                            containerStyle={{ width: '100%', height: '100%' }}
+                                        />
+                                        
+                                        {/* Bottom Glass Overlay Content */}
+                                        <div className="card-glass-content">
+                                            <div className="card-header-row">
+                                                <h3 className="category-name">{cat.name}</h3>
+                                                <FaCheckCircle className="verified-badge" />
+                                            </div>
+                                            
+                                            <p className="category-desc">{cat.desc}</p>
+                                            
+                                            <div className="card-footer-row">
+                                                <div className="card-stats">
+                                                    <span className="stat-item"><FaUser className="stat-icon" /> {cat.itemsCount}</span>
+                                                    <span className="stat-item"><FaLayerGroup className="stat-icon" /> {cat.rating}</span>
+                                                </div>
+                                                <button className="follow-pill-btn">View +</button>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </Link>
+                                </Link>
+                            </div>
                         ))}
                     </div>
 
