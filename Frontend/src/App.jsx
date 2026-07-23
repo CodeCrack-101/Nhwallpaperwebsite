@@ -12,7 +12,7 @@ import { LoadingProvider } from './context/LoadingContext';
 import { AuthProvider } from './context/AuthContext';
 import { CartProvider } from './context/CartContext';
 import AppRoutes from './routes/AppRoutes';
-//obee
+//obeeeeee
 const App = () => {
     return (
         <LoadingProvider>
