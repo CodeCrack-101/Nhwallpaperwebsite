@@ -12,14 +12,14 @@ import { FiSearch, FiX, FiArrowLeft } from 'react-icons/fi';
 import InfiniteProductGrid from './InfiniteProductGrid';
 import './CategoryProducts.css';
 
-const products = getProductsByCategory('SOHO').slice(2, 4);
+const products = getProductsByCategory('EpicWall');
 
 const Ew = () => {
     const [searchTerm, setSearchTerm] = useState('');
 
     const filteredProducts = useMemo(() => {
         return products.filter((p) =>
-            `${p.name} ${p.category}`
+            `${p.name} ${p.category} ${p.patternno}`
                 .toLowerCase()
                 .includes(searchTerm.toLowerCase())
         );
@@ -34,7 +34,7 @@ const Ew = () => {
 
             {/* Page Header */}
             <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-                <h1 className="category-heading-title">Visitor Chairs</h1>
+                <h1 className="category-heading-title">Epic Walls Catalougue</h1>
                 <p className="category-heading-desc">Comfortable, compact seating choices for reception areas and meeting rooms.</p>
             </div>
 
@@ -59,7 +59,7 @@ const Ew = () => {
             {/* Infinite Scroll Product Grid */}
             <InfiniteProductGrid 
                 products={filteredProducts} 
-                emptyMessage="No Visitor chairs found." 
+                emptyMessage="No Epic Wall Product found." 
             />
         </main>
     );

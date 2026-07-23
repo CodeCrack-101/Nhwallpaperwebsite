@@ -23,7 +23,7 @@ const Orders = lazy(() => import('../pages/Orders'));
 const Soho = lazy(() => import('../components/Allproduct/Soho'));
 const Sky = lazy(() => import('../components/Allproduct/Sky'));
 const Uv = lazy(() => import('../components/Allproduct/Uv'));
-const Urbano = lazy(() => import('../components/Allproduct/Urbano'));
+// const Urbano = lazy(() => import('../components/Allproduct/Urbano'));
 const Ew = lazy(() => import('../components/Allproduct/Ew'));
 const Workstation = lazy(() => import('../components/Allproduct/Workstation'));
 const DynamicCategoryRouter = lazy(() => import('../components/Allproduct/DynamicCategoryRouter'));
@@ -76,7 +76,7 @@ const AppRoutes = () => {
                     <Route path="soho" element={<Soho/>} />
                     <Route path="sky" element={<Sky />} />
                     <Route path="gaming" element={<Uv />} />
-                    <Route path="office" element={<Urbano />} />
+                    {/* <Route path="office" element={<Urbano />} /> */}
                     <Route path="visitor" element={<Ew />} />
                     <Route path="workstation" element={<Workstation />} />
 

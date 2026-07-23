@@ -98,7 +98,7 @@ const InfiniteProductGrid = ({
                                     {product.name}
                                 </h3>
                                 <p className="category-product-desc">
-                                    {product.description}
+                                    {product.patternno}
                                 </p>
                             </div>
 

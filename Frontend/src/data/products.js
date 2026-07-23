@@ -494,9 +494,352 @@ import sh350 from '../assets/SOHO/soho2.3.png'
 import sh351 from '../assets/SOHO/soho2.4.png'
 import sh352  from '../assets/SOHO/soho2.5.png'
 
-//5253
+//EpicWalls Start Here
 
-// SKY Imports
+//EW78601
+import ew1 from '../assets/EW/ew1.png'
+import ew2 from '../assets/EW/ew1.1.png'
+import ew3 from '../assets/EW/ew1.2.png'
+import ew4 from '../assets/EW/ew1.3.png'
+import ew5 from '../assets/EW/ew1.4.png'
+
+//78602
+import ew6 from '../assets/EW/ew2.png'
+import ew7 from '../assets/EW/ew2.1.png'
+import ew8 from '../assets/EW/ew2.2.png'
+import ew9 from '../assets/EW/ew2.3.png'
+import ew10 from '../assets/EW/ew2.4.png'
+
+
+//78603
+import ew12 from '../assets/EW/ew3.png'
+import ew13 from '../assets/EW/ew3.1.png'
+import ew14 from '../assets/EW/ew3.2.png'
+import ew15 from '../assets/EW/ew3.3.png'
+import ew16 from '../assets/EW/ew3.4.png'
+
+//78604
+import ew17 from '../assets/EW/ew4.png'
+import ew18 from '../assets/EW/ew4.1.png'
+import ew19 from '../assets/EW/ew4.2.png'
+import ew20 from '../assets/EW/ew4.3.png'
+import ew21 from '../assets/EW/ew4.4.png'
+
+//78605
+import ew22 from '../assets/EW/ew5.png'
+import ew23 from '../assets/EW/ew5.1.png'
+import ew24 from '../assets/EW/ew5.2.png'
+import ew25 from '../assets/EW/ew5.3.png'
+import ew26 from '../assets/EW/ew5.4.png'
+
+//78606
+import ew27 from '../assets/EW/ew6.png'
+import ew28 from '../assets/EW/ew6.1.png'
+import ew29 from '../assets/EW/ew6.2.png'
+import ew30 from '../assets/EW/ew6.3.png'
+import ew31 from '../assets/EW/ew6.4.png'
+
+//78607
+import ew32 from '../assets/EW/ew7.png'
+import ew33 from '../assets/EW/ew7.1.png'
+import ew34 from '../assets/EW/ew7.2.png'
+import ew35 from '../assets/EW/ew7.3.png'
+import ew36 from '../assets/EW/ew7.4.png'
+
+//78608
+import ew37 from '../assets/EW/ew8.png'
+import ew38 from '../assets/EW/ew8.1.png'
+import ew39 from '../assets/EW/ew8.2.png'
+import ew40 from '../assets/EW/ew8.3.png'
+import ew41 from '../assets/EW/ew8.4.png'
+
+
+//78609
+import ew42 from '../assets/EW/ew9.png'
+import ew43 from '../assets/EW/ew9.1.png'
+import ew44 from '../assets/EW/ew9.2.png'
+import ew45 from '../assets/EW/ew9.3.png'
+import ew46 from '../assets/EW/ew9.4.png'
+
+//78610
+import ew47 from '../assets/EW/ew10.png'
+import ew48 from '../assets/EW/ew10.1.png'
+import ew49 from '../assets/EW/ew10.2.png'
+import ew50 from '../assets/EW/ew10.3.png'
+import ew51 from '../assets/EW/ew10.4.png'
+
+//78611
+import ew52 from '../assets/EW/ew11.png'
+import ew53 from '../assets/EW/ew11.1.png'
+import ew54 from '../assets/EW/ew11.2.png'
+import ew55 from '../assets/EW/ew11.3.png'
+import ew56 from '../assets/EW/ew11.4.png'
+
+//78612
+import ew57 from '../assets/EW/ew12.png'
+import ew58 from '../assets/EW/ew12.1.png'
+import ew59 from '../assets/EW/ew12.2.png'
+import ew60 from '../assets/EW/ew12.3.png'
+import ew61 from '../assets/EW/ew12.4.png'
+
+//78613
+import ew62 from '../assets/EW/ew13.png'
+import ew63 from '../assets/EW/ew13.1.png'
+import ew64 from '../assets/EW/ew13.2.png'
+import ew65 from '../assets/EW/ew13.3.png'
+import ew66 from '../assets/EW/ew13.4.png'
+
+//78614
+import ew67 from '../assets/EW/ew14.png'
+import ew68 from '../assets/EW/ew14.1.png'
+import ew69 from '../assets/EW/ew14.2.png'
+import ew70 from '../assets/EW/ew14.3.png'
+import ew71 from '../assets/EW/ew14.4.png'
+
+//78615
+import ew72 from '../assets/EW/ew15.png'
+import ew73 from '../assets/EW/ew15.1.png'
+import ew74 from '../assets/EW/ew15.2.png'
+import ew75 from '../assets/EW/ew15.3.png'
+import ew76 from '../assets/EW/ew15.4.png'
+
+//78616
+import ew77 from '../assets/EW/ew16.png'
+import ew78 from '../assets/EW/ew16.1.png'
+import ew79 from '../assets/EW/ew16.2.png'
+import ew80 from '../assets/EW/ew16.3.png'
+import ew81 from '../assets/EW/ew16.4.png'
+
+//78617
+import ew82 from '../assets/EW/ew17.png'
+import ew83 from '../assets/EW/ew17.1.png'
+import ew84 from '../assets/EW/ew17.2.png'
+import ew85 from '../assets/EW/ew17.3.png'
+import ew86 from '../assets/EW/ew17.4.png'
+
+//78618
+import ew87 from '../assets/EW/ew18.png'
+import ew88 from '../assets/EW/ew18.1.png'
+import ew89 from '../assets/EW/ew18.2.png'
+import ew90 from '../assets/EW/ew18.3.png'
+import ew91 from '../assets/EW/ew18.4.png'
+
+//78619
+import ew92 from '../assets/EW/ew19.png'
+import ew93 from '../assets/EW/ew19.1.png'
+import ew94 from '../assets/EW/ew19.2.png'
+import ew95 from '../assets/EW/ew19.3.png'
+import ew96 from '../assets/EW/ew19.4.png'
+
+//78620
+import ew97 from '../assets/EW/ew20.png'
+import ew98 from '../assets/EW/ew20.1.png'
+import ew99 from '../assets/EW/ew20.2.png'
+import ew100 from '../assets/EW/ew20.3.png'
+import ew101 from '../assets/EW/ew20.4.png'
+
+//78621
+import ew102 from '../assets/EW/ew21.png'
+import ew103 from '../assets/EW/ew21.1.png'
+import ew104 from '../assets/EW/ew21.2.png'
+import ew105 from '../assets/EW/ew21.3.png'
+import ew106 from '../assets/EW/ew21.4.png'
+
+//78622
+import ew107 from '../assets/EW/ew22.png'
+import ew108 from '../assets/EW/ew22.1.png'
+import ew109 from '../assets/EW/ew22.2.png'
+import ew110 from '../assets/EW/ew22.3.png'
+import ew111 from '../assets/EW/ew22.4.png'
+
+//78623
+import ew112 from '../assets/EW/ew23.png'
+import ew113 from '../assets/EW/ew23.1.png'
+import ew114 from '../assets/EW/ew23.2.png'
+import ew115 from '../assets/EW/ew23.3.png'
+import ew116 from '../assets/EW/ew23.4.png'
+
+//78624
+import ew117 from '../assets/EW/ew24.png'
+import ew118 from '../assets/EW/ew24.1.png'
+import ew119 from '../assets/EW/ew24.2.png'
+import ew120 from '../assets/EW/ew24.3.png'
+import ew121 from '../assets/EW/ew24.4.png'
+
+//78625
+import ew122 from '../assets/EW/ew25.png'
+import ew123 from '../assets/EW/ew25.1.png'
+import ew124 from '../assets/EW/ew25.2.png'
+import ew125 from '../assets/EW/ew25.3.png'
+import ew126 from '../assets/EW/ew25.4.png'
+
+//78626
+import ew127 from '../assets/EW/ew26.png'
+import ew128 from '../assets/EW/ew26.1.png'
+import ew129 from '../assets/EW/ew26.2.png'
+import ew130 from '../assets/EW/ew26.3.png'
+import ew131 from '../assets/EW/ew26.4.png'
+
+
+//78627
+import ew132 from '../assets/EW/ew27.png'
+import ew133 from '../assets/EW/ew27.1.png'
+import ew134 from '../assets/EW/ew27.2.png'
+import ew135 from '../assets/EW/ew27.3.png'
+import ew136 from '../assets/EW/ew27.4.png'
+
+//78628
+import ew137 from '../assets/EW/ew28.png'
+import ew138 from '../assets/EW/ew28.1.png'
+import ew139 from '../assets/EW/ew28.2.png'
+import ew140 from '../assets/EW/ew28.3.png'
+import ew141 from '../assets/EW/ew28.4.png'
+
+//78629
+import ew142 from '../assets/EW/ew29.png'
+import ew143 from '../assets/EW/ew29.1.png'
+import ew144 from '../assets/EW/ew29.2.png'
+import ew145 from '../assets/EW/ew29.3.png'
+import ew146 from '../assets/EW/ew29.4.png'
+
+
+//78630
+import ew147 from '../assets/EW/ew30.png'
+import ew148 from '../assets/EW/ew30.1.png'
+import ew149 from '../assets/EW/ew30.2.png'
+import ew150 from '../assets/EW/ew30.3.png'
+import ew151 from '../assets/EW/ew30.4.png'
+
+//75631
+import ew152 from '../assets/EW/ew31.png'
+import ew153 from '../assets/EW/ew31.1.png'
+import ew154 from '../assets/EW/ew31.2.png'
+import ew155 from '../assets/EW/ew31.3.png'
+import ew156 from '../assets/EW/ew31.4.png'
+
+//78632
+import ew157 from '../assets/EW/ew32.png'
+import ew158 from '../assets/EW/ew32.1.png'
+import ew159 from '../assets/EW/ew32.2.png'
+import ew160 from '../assets/EW/ew32.3.png'
+import ew161 from '../assets/EW/ew32.4.png'
+
+//78633
+import ew162 from '../assets/EW/ew33.png'
+import ew163 from '../assets/EW/ew33.1.png'
+import ew164 from '../assets/EW/ew33.2.png'
+import ew165 from '../assets/EW/ew33.3.png'
+import ew166 from '../assets/EW/ew33.4.png'
+
+//78634
+import ew167 from '../assets/EW/ew34.png'
+import ew168 from '../assets/EW/ew34.1.png'
+import ew169 from '../assets/EW/ew34.2.png'
+import ew170 from '../assets/EW/ew34.3.png'
+import ew171 from '../assets/EW/ew34.4.png'
+
+//78635
+import ew172 from '../assets/EW/ew35.png'
+import ew173 from '../assets/EW/ew35.1.png'
+import ew174 from '../assets/EW/ew35.2.png'
+import ew175 from '../assets/EW/ew35.3.png'
+import ew176 from '../assets/EW/ew35.4.png'
+
+//78636
+import ew177 from '../assets/EW/ew36.png'
+import ew178 from '../assets/EW/ew36.1.png'
+import ew179 from '../assets/EW/ew36.2.png'
+import ew180 from '../assets/EW/ew36.3.png'
+import ew181 from '../assets/EW/ew36.4.png'
+
+//78637
+import ew182 from '../assets/EW/ew37.png'
+import ew183 from '../assets/EW/ew37.1.png'
+import ew184 from '../assets/EW/ew37.2.png'
+import ew185 from '../assets/EW/ew37.3.png'
+import ew186 from '../assets/EW/ew37.4.png'
+
+//78638
+import ew187 from '../assets/EW/ew38.png'
+import ew188 from '../assets/EW/ew38.1.png'
+import ew189 from '../assets/EW/ew38.2.png'
+import ew200 from '../assets/EW/ew38.3.png'
+import ew201 from '../assets/EW/ew38.4.png'
+
+//78639
+import ew202 from '../assets/EW/ew39.png'
+import ew203 from '../assets/EW/ew39.1.png'
+import ew204 from '../assets/EW/ew39.2.png'
+import ew205 from '../assets/EW/ew39.3.png'
+import ew206 from '../assets/EW/ew39.4.png'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// SKY Start Here
 import sk1 from '../assets/SKY/sk1.png';
 import sk2 from '../assets/SKY/sk2.png';
 import sk3 from '../assets/SKY/sk3.png';
@@ -512,13 +855,7 @@ import sp4 from '../assets/SP/sp4.png';
 import sp5 from '../assets/SP/sp5.png';
 import sp6 from '../assets/SP/sp6.png';
 
-// URBANO Imports
-import ur1 from '../assets/URBANO/ur1.png';
-import ur2 from '../assets/URBANO/ur2.png';
-import ur3 from '../assets/URBANO/ur3.png';
-import ur4 from '../assets/URBANO/ur4.png';
-import ur5 from '../assets/URBANO/ur5.png';
-import ur6 from '../assets/URBANO/ur6.png';
+
 
 
 // ==========================================
@@ -531,7 +868,7 @@ export const mockProducts = [
     id: 'soho-1',
     patternno: 525301,
     name: 'Soho Classic Ergonomic Chair',
-    price: 999,
+    price: 499,
     rating: 5.0,
     Info: {
       Weight: 1.3,
@@ -541,8 +878,8 @@ export const mockProducts = [
     },
     reviewsCount: 142,
     category: 'SOHO',
-    img: sh1,
-    thumbnails: [sh1, sh2, sh3, sh4, sh5, sh6],
+    img: sh6,
+    thumbnails: [sh1, sh2, sh3, sh4, sh5],
     description: 'Experience maximum support with the Soho Classic Ergonomic Chair. Engineered with contoured mesh backing, adjustable armrests, and smart lumbar support.',
     availability: 'In Stock',
     material: 'Premium Mesh fabric & Nylon base',
@@ -553,14 +890,14 @@ export const mockProducts = [
   {
     id: 'soho-2',
     patternno: 525340,
-    name: 'Soho Executive Mesh Throne',
-    price: 1499,
+    name: 'Soho',
+    price: 499,
     rating: 5.0,
     Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 52 },
     reviewsCount: 89,
     category: 'SOHO',
-    img: sh135,
-    thumbnails: [sh135, sh136, sh137, sh138, sh139, sh140],
+    img: sh138,
+    thumbnails: [sh135, sh136, sh137, sh139],
     description: 'Premium upgrade of the Soho series. Contoured neck rest, memory foam base, adjustable tilt angle, and premium build quality.',
     availability: 'In Stock',
     material: 'Premium Memory Foam & Mesh fabric',
@@ -571,14 +908,14 @@ export const mockProducts = [
   {
     id: 'soho-3',
     patternno: 525341,
-    name: 'Soho Executive Mesh Throne',
-    price: 1499,
+    name: 'Soho',
+    price: 499,
     rating: 5.0,
     Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 52 },
     reviewsCount: 89,
     category: 'SOHO',
-    img: sh129,
-    thumbnails: [sh129, sh130, sh131, sh132, sh133, sh134],
+    img: sh132,
+    thumbnails: [sh129, sh130, sh131, sh133, sh134],
     description: 'Premium upgrade of the Soho series. Contoured neck rest, memory foam base, adjustable tilt angle, and premium build quality.',
     availability: 'In Stock',
     material: 'Premium Memory Foam & Mesh fabric',
@@ -589,14 +926,14 @@ export const mockProducts = [
   {
     id: 'soho-4',
     patternno: 525342,
-    name: 'Soho Executive Mesh Throne',
-    price: 1499,
+    name: 'Soho',
+    price: 499,
     rating: 5.0,
     Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 52 },
     reviewsCount: 89,
     category: 'SOHO',
-    img: sh123,
-    thumbnails: [sh123, sh124, sh125, sh126, sh127, sh128],
+    img: sh126,
+    thumbnails: [sh123, sh124, sh125, sh127, sh128],
     description: 'Premium upgrade of the Soho series. Contoured neck rest, memory foam base, adjustable tilt angle, and premium build quality.',
     availability: 'In Stock',
     material: 'Premium Memory Foam & Mesh fabric',
@@ -607,14 +944,14 @@ export const mockProducts = [
   {
     id: 'soho-5',
     patternno: 525343,
-    name: 'Soho Executive Mesh Throne',
-    price: 1499,
+    name: 'Soho',
+    price: 499,
     rating: 5.0,
     Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 52 },
     reviewsCount: 89,
     category: 'SOHO',
-    img: sh117,
-    thumbnails: [sh117, sh118, sh119, sh120, sh121, sh122],
+    img: sh120,
+    thumbnails: [sh117, sh118, sh119,  sh121, sh122],
     description: 'Premium upgrade of the Soho series. Contoured neck rest, memory foam base, adjustable tilt angle, and premium build quality.',
     availability: 'In Stock',
     material: 'Premium Memory Foam & Mesh fabric',
@@ -625,14 +962,14 @@ export const mockProducts = [
   {
     id: 'soho-6',
     patternno: 525344,
-    name: 'Soho Executive Mesh Throne',
-    price: 1499,
+    name: 'Soho',
+    price: 499,
     rating: 5.0,
     Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 52 },
     reviewsCount: 89,
     category: 'SOHO',
-    img: sh111,
-    thumbnails: [sh111, sh112, sh113, sh114, sh115, sh116],
+    img: sh113,
+    thumbnails: [sh111, sh112, sh114, sh115, sh116],
     description: 'Premium upgrade of the Soho series. Contoured neck rest, memory foam base, adjustable tilt angle, and premium build quality.',
     availability: 'In Stock',
     material: 'Premium Memory Foam & Mesh fabric',
@@ -643,8 +980,8 @@ export const mockProducts = [
   {
     id: 'soho-7',
     patternno: 525345,
-    name: 'Soho Executive Mesh Throne',
-    price: 1499,
+    name: 'Soho',
+    price: 499,
     rating: 5.0,
     Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 52 },
     reviewsCount: 89,
@@ -661,14 +998,14 @@ export const mockProducts = [
   {
     id: 'soho-8',
     patternno: 525346,
-    name: 'Soho Executive Mesh Throne',
-    price: 1499,
+    name: 'Soho',
+    price: 499,
     rating: 5.0,
     Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 52 },
     reviewsCount: 89,
     category: 'SOHO',
-    img: sh99,
-    thumbnails: [sh99, sh104, sh100, sh101, sh102],
+    img: sh101,
+    thumbnails: [sh99, sh104, sh100, sh102],
     description: 'Premium upgrade of the Soho series. Contoured neck rest, memory foam base, adjustable tilt angle, and premium build quality.',
     availability: 'In Stock',
     material: 'Premium Memory Foam & Mesh fabric',
@@ -679,14 +1016,14 @@ export const mockProducts = [
   {
     id: 'soho-9',
     patternno: 525347,
-    name: 'Soho Executive Mesh Throne',
-    price: 1499,
+    name: 'Soho',
+    price: 499,
     rating: 5.0,
     Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 52 },
     reviewsCount: 89,
     category: 'SOHO',
-    img: sh92,
-    thumbnails: [sh92, sh93, sh94, sh95, sh96, sh98],
+    img: sh95,
+    thumbnails: [sh92, sh93, sh94, sh96, sh98],
     description: 'Premium upgrade of the Soho series. Contoured neck rest, memory foam base, adjustable tilt angle, and premium build quality.',
     availability: 'In Stock',
     material: 'Premium Memory Foam & Mesh fabric',
@@ -697,14 +1034,14 @@ export const mockProducts = [
   {
     id: 'soho-10',
     patternno: 525348,
-    name: 'Soho Executive Mesh Throne',
-    price: 1499,
+    name: 'Soho',
+    price: 499,
     rating: 5.0,
     Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 52 },
     reviewsCount: 89,
     category: 'SOHO',
-    img: sh86,
-    thumbnails: [sh86, sh87, sh88, sh89, sh90, sh91],
+    img: sh89,
+    thumbnails: [sh86, sh87, sh88,  sh90, sh91],
     description: 'Premium upgrade of the Soho series. Contoured neck rest, memory foam base, adjustable tilt angle, and premium build quality.',
     availability: 'In Stock',
     material: 'Premium Memory Foam & Mesh fabric',
@@ -714,15 +1051,15 @@ export const mockProducts = [
   },
   {
     id: 'soho-11',
-    patternno: 525350,
-    name: 'Soho Executive Mesh Throne',
-    price: 1499,
+    patternno: 525349,
+    name: 'Soho',
+    price: 499,
     rating: 5.0,
     Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 52 },
     reviewsCount: 89,
     category: 'SOHO',
-    img: sh80,
-    thumbnails: [sh80, sh81, sh82, sh83, sh84, sh85],
+    img: sh84,
+    thumbnails: [sh80, sh81, sh82, sh83,sh85],
     description: 'Premium upgrade of the Soho series. Contoured neck rest, memory foam base, adjustable tilt angle, and premium build quality.',
     availability: 'In Stock',
     material: 'Premium Memory Foam & Mesh fabric',
@@ -732,15 +1069,15 @@ export const mockProducts = [
   },
   {
     id: 'soho-12',
-    patternno: 525351,
-    name: 'Soho Executive Mesh Throne',
-    price: 1499,
+    patternno: 525350,
+    name: 'Soho',
+    price: 499,
     rating: 5.0,
     Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 52 },
     reviewsCount: 89,
     category: 'SOHO',
-    img: sh74,
-    thumbnails: [sh74, sh78, sh77, sh76, sh75, sh79],
+    img: sh76,
+    thumbnails: [sh74, sh78, sh77, sh79],
     description: 'Premium upgrade of the Soho series. Contoured neck rest, memory foam base, adjustable tilt angle, and premium build quality.',
     availability: 'In Stock',
     material: 'Premium Memory Foam & Mesh fabric',
@@ -750,15 +1087,15 @@ export const mockProducts = [
   },
   {
     id: 'soho-13',
-    patternno: 525352,
-    name: 'Soho Executive Mesh Throne',
-    price: 1499,
+    patternno: 525351,
+    name: 'Soho',
+    price: 499,
     rating: 5.0,
     Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 52 },
     reviewsCount: 89,
     category: 'SOHO',
-    img: sh69,
-    thumbnails: [sh69, sh70, sh71, sh72, sh73],
+    img: sh73,
+    thumbnails: [sh69, sh70, sh71, sh72],
     description: 'Premium upgrade of the Soho series. Contoured neck rest, memory foam base, adjustable tilt angle, and premium build quality.',
     availability: 'In Stock',
     material: 'Premium Memory Foam & Mesh fabric',
@@ -768,15 +1105,15 @@ export const mockProducts = [
   },
   {
     id: 'soho-14',
-    patternno: 525353,
-    name: 'Soho Executive Mesh Throne',
-    price: 1499,
+    patternno: 525352,
+    name: 'Soho',
+    price: 499,
     rating: 5.0,
     Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 52 },
     reviewsCount: 89,
     category: 'SOHO',
-    img: sh63,
-    thumbnails: [sh63, sh64, sh66, sh67, sh68],
+    img: sh67,
+    thumbnails: [sh63, sh64, sh66, sh68],
     description: 'Premium upgrade of the Soho series. Contoured neck rest, memory foam base, adjustable tilt angle, and premium build quality.',
     availability: 'In Stock',
     material: 'Premium Memory Foam & Mesh fabric',
@@ -786,15 +1123,15 @@ export const mockProducts = [
   },
   {
     id: 'soho-15',
-    patternno: 525354,
-    name: 'Soho Executive Mesh Throne',
-    price: 1499,
+    patternno: 525353,
+    name: 'Soho',
+    price: 499,
     rating: 5.0,
     Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 52 },
     reviewsCount: 89,
     category: 'SOHO',
-    img: sh56,
-    thumbnails: [sh56, sh57, sh58, sh59, sh62, sh61],
+    img: sh61,
+    thumbnails: [sh56, sh57, sh58, sh59, sh62, ],
     description: 'Premium upgrade of the Soho series. Contoured neck rest, memory foam base, adjustable tilt angle, and premium build quality.',
     availability: 'In Stock',
     material: 'Premium Memory Foam & Mesh fabric',
@@ -804,15 +1141,15 @@ export const mockProducts = [
   },
   {
     id: 'soho-16',
-    patternno: 525355,
-    name: 'Soho Executive Mesh Throne',
-    price: 1499,
+    patternno: 525354,
+    name: 'Soho',
+    price: 499,
     rating: 5.0,
     Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 52 },
     reviewsCount: 89,
     category: 'SOHO',
-    img: sh50,
-    thumbnails: [sh50, sh51, sh52, sh53, sh54, sh55],
+    img: sh52,
+    thumbnails: [sh50, sh51, sh53, sh54, sh55],
     description: 'Premium upgrade of the Soho series. Contoured neck rest, memory foam base, adjustable tilt angle, and premium build quality.',
     availability: 'In Stock',
     material: 'Premium Memory Foam & Mesh fabric',
@@ -822,15 +1159,15 @@ export const mockProducts = [
   },
   {
     id: 'soho-17',
-    patternno: 525356,
-    name: 'Soho Executive Mesh Throne',
-    price: 1499,
+    patternno: 525355,
+    name: 'Soho',
+    price: 499,
     rating: 5.0,
     Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 52 },
     reviewsCount: 89,
     category: 'SOHO',
-    img: sh44,
-    thumbnails: [sh44, sh45, sh46, sh47, sh48, sh49],
+    img: sh49,
+    thumbnails: [sh44, sh45, sh46, sh47, sh48, ],
     description: 'Premium upgrade of the Soho series. Contoured neck rest, memory foam base, adjustable tilt angle, and premium build quality.',
     availability: 'In Stock',
     material: 'Premium Memory Foam & Mesh fabric',
@@ -840,15 +1177,15 @@ export const mockProducts = [
   },
   {
     id: 'soho-18',
-    patternno: 525357,
-    name: 'Soho Executive Mesh Throne',
-    price: 1499,
+    patternno: 525356,
+    name: 'Soho',
+    price: 499,
     rating: 5.0,
     Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 52 },
     reviewsCount: 89,
     category: 'SOHO',
-    img: sh38,
-    thumbnails: [sh38, sh39, sh40, sh41, sh42, sh43],
+    img: sh40,
+    thumbnails: [sh38, sh39, sh41, sh42, sh43],
     description: 'Premium upgrade of the Soho series. Contoured neck rest, memory foam base, adjustable tilt angle, and premium build quality.',
     availability: 'In Stock',
     material: 'Premium Memory Foam & Mesh fabric',
@@ -858,15 +1195,15 @@ export const mockProducts = [
   },
   {
     id: 'soho-19',
-    patternno: 525358,
-    name: 'Soho Executive Mesh Throne',
-    price: 1499,
+    patternno: 525357,
+    name: 'Soho',
+    price: 499,
     rating: 5.0,
     Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 52 },
     reviewsCount: 89,
     category: 'SOHO',
-    img: sh32,
-    thumbnails: [sh32, sh33, sh34, sh37, sh35, sh36],
+    img: sh36,
+    thumbnails: [sh32, sh33, sh34, sh37, sh35],
     description: 'Premium upgrade of the Soho series. Contoured neck rest, memory foam base, adjustable tilt angle, and premium build quality.',
     availability: 'In Stock',
     material: 'Premium Memory Foam & Mesh fabric',
@@ -876,15 +1213,15 @@ export const mockProducts = [
   },
   {
     id: 'soho-20',
-    patternno: 525359,
-    name: 'Soho Executive Mesh Throne',
-    price: 1499,
+    patternno: 525358,
+    name: 'Soho',
+    price: 499,
     rating: 5.0,
     Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 52 },
     reviewsCount: 89,
     category: 'SOHO',
-    img: sh25,
-    thumbnails: [sh25, sh26, sh27, sh28, sh29, sh30, sh31],
+    img: sh31,
+    thumbnails: [sh25, sh26, sh27, sh28, sh29, sh30,],
     description: 'Premium upgrade of the Soho series. Contoured neck rest, memory foam base, adjustable tilt angle, and premium build quality.',
     availability: 'In Stock',
     material: 'Premium Memory Foam & Mesh fabric',
@@ -894,15 +1231,15 @@ export const mockProducts = [
   },
   {
     id: 'soho-21',
-    patternno: 525360,
-    name: 'Soho Executive Mesh Throne',
-    price: 1499,
+    patternno: 525359,
+    name: 'Soho',
+    price: 499,
     rating: 5.0,
     Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 52 },
     reviewsCount: 89,
     category: 'SOHO',
-    img: sh19,
-    thumbnails: [sh19, sh20, sh21, sh22, sh23, sh24],
+    img: sh24,
+    thumbnails: [sh19, sh20, sh21, sh22, sh23],
     description: 'Premium upgrade of the Soho series. Contoured neck rest, memory foam base, adjustable tilt angle, and premium build quality.',
     availability: 'In Stock',
     material: 'Premium Memory Foam & Mesh fabric',
@@ -912,9 +1249,9 @@ export const mockProducts = [
   },
   {
     id: 'soho-22',
-    patternno: 525361,
-    name: 'Soho Executive Mesh Throne',
-    price: 1499,
+    patternno: 525362,
+    name: 'Soho',
+    price: 499,
     rating: 5.0,
     Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 52 },
     reviewsCount: 89,
@@ -930,15 +1267,15 @@ export const mockProducts = [
   },
   {
     id: 'soho-23',
-    patternno: 525362,
-    name: 'Soho Executive Mesh Throne 23',
-    price: 1499,
+    patternno: 525361,
+    name: 'Soho ',
+    price: 499,
     rating: 5.0,
     Info: { Weight: 1.5, Lenghtcm: 8, breadth: 8, heightcm: 52 },
     reviewsCount: 89,
     category: 'SOHO',
-    img: sh11,
-    thumbnails: [sh11, sh12, sh13, sh14, sh15, sh17, sh18],
+    img: sh15,
+    thumbnails: [sh11, sh12, sh13, sh14, sh17, sh18],
     description: 'Premium upgrade of the Soho series. Contoured neck rest, memory foam base, adjustable tilt angle, and premium build quality.',
     availability: 'In Stock',
     material: 'Premium Memory Foam & Mesh fabric',
@@ -949,14 +1286,14 @@ export const mockProducts = [
   {
     id: 'soho-24',
     patternno: 525302,
-    name: 'Soho Ergonomic Seating 24',
-    price: 1299,
+    name: 'Soho',
+    price: 499,
     rating: 4.8,
     Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
     reviewsCount: 64,
     category: 'SOHO',
-    img: sh347,
-    thumbnails: [sh347, sh348, sh349, sh350, sh351, sh352],
+    img: sh348,
+    thumbnails: [sh347, sh349, sh350, sh351, sh352],
     description: 'Minimalist seating design with active posture support and breathable fabric.',
     availability: 'In Stock',
     material: 'Ergonomic Mesh & High Density Foam',
@@ -967,14 +1304,14 @@ export const mockProducts = [
   {
     id: 'soho-25',
     patternno: 525303,
-    name: 'Soho Ergonomic Seating 25',
-    price: 1299,
+    name: 'Soho',
+    price: 499,
     rating: 4.9,
     Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
     reviewsCount: 71,
     category: 'SOHO',
-    img: sh341,
-    thumbnails: [sh341, sh342, sh343, sh344, sh345, sh346],
+    img: sh345,
+    thumbnails: [sh341, sh342, sh343, sh344, sh346],
     description: 'Minimalist seating design with active posture support and breathable fabric.',
     availability: 'In Stock',
     material: 'Ergonomic Mesh & High Density Foam',
@@ -985,14 +1322,14 @@ export const mockProducts = [
   {
     id: 'soho-26',
     patternno: 525304,
-    name: 'Soho Ergonomic Seating 26',
-    price: 1299,
+    name: 'Soho',
+    price: 499,
     rating: 4.7,
     Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
     reviewsCount: 55,
     category: 'SOHO',
-    img: sh335,
-    thumbnails: [sh335, sh336, sh337, sh338, sh339, sh340],
+    img: sh338,
+    thumbnails: [sh335, sh336, sh337, sh339, sh340],
     description: 'Minimalist seating design with active posture support and breathable fabric.',
     availability: 'In Stock',
     material: 'Ergonomic Mesh & High Density Foam',
@@ -1003,14 +1340,14 @@ export const mockProducts = [
   {
     id: 'soho-27',
     patternno: 525305,
-    name: 'Soho Ergonomic Seating 27',
-    price: 1299,
+    name: 'Soho',
+    price: 499,
     rating: 4.8,
     Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
     reviewsCount: 92,
     category: 'SOHO',
-    img: sh329,
-    thumbnails: [sh329, sh330, sh331, sh332, sh333, sh334],
+    img: sh332,
+    thumbnails: [sh329, sh330, sh331, sh333, sh334],
     description: 'Minimalist seating design with active posture support and breathable fabric.',
     availability: 'In Stock',
     material: 'Ergonomic Mesh & High Density Foam',
@@ -1021,14 +1358,14 @@ export const mockProducts = [
   {
     id: 'soho-28',
     patternno: 525306,
-    name: 'Soho Ergonomic Seating 28',
-    price: 1299,
+    name: 'Soho',
+    price: 499,
     rating: 4.9,
     Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
     reviewsCount: 48,
     category: 'SOHO',
-    img: sh323,
-    thumbnails: [sh323, sh324, sh325, sh326, sh327, sh328],
+    img: sh325,
+    thumbnails: [sh323, sh324, sh326, sh327, sh328],
     description: 'Minimalist seating design with active posture support and breathable fabric.',
     availability: 'In Stock',
     material: 'Ergonomic Mesh & High Density Foam',
@@ -1039,14 +1376,14 @@ export const mockProducts = [
   {
     id: 'soho-29',
     patternno: 525307,
-    name: 'Soho Ergonomic Seating 29',
-    price: 1299,
+    name: 'Soho',
+    price: 499,
     rating: 5.0,
     Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
     reviewsCount: 110,
     category: 'SOHO',
-    img: sh317,
-    thumbnails: [sh317, sh318, sh319, sh320, sh321, sh322],
+    img: sh319,
+    thumbnails: [sh317, sh318, sh320, sh321, sh322],
     description: 'Minimalist seating design with active posture support and breathable fabric.',
     availability: 'In Stock',
     material: 'Ergonomic Mesh & High Density Foam',
@@ -1057,14 +1394,14 @@ export const mockProducts = [
   {
     id: 'soho-30',
     patternno: 525308,
-    name: 'Soho Ergonomic Seating 30',
-    price: 1299,
+    name: 'Soho',
+    price: 499,
     rating: 4.8,
     Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
     reviewsCount: 39,
     category: 'SOHO',
-    img: sh311,
-    thumbnails: [sh311, sh312, sh313, sh314, sh315, sh316],
+    img: sh316,
+    thumbnails: [sh311, sh312, sh313, sh314, sh315, ],
     description: 'Minimalist seating design with active posture support and breathable fabric.',
     availability: 'In Stock',
     material: 'Ergonomic Mesh & High Density Foam',
@@ -1075,14 +1412,14 @@ export const mockProducts = [
   {
     id: 'soho-31',
     patternno: 525309,
-    name: 'Soho Ergonomic Seating 31',
-    price: 1299,
+    name: 'Soho',
+    price: 499,
     rating: 4.9,
     Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
     reviewsCount: 84,
     category: 'SOHO',
-    img: sh305,
-    thumbnails: [sh305, sh306, sh307, sh308, sh309, sh310],
+    img: sh308,
+    thumbnails: [sh305, sh306, sh307, sh309, sh310],
     description: 'Minimalist seating design with active posture support and breathable fabric.',
     availability: 'In Stock',
     material: 'Ergonomic Mesh & High Density Foam',
@@ -1093,14 +1430,14 @@ export const mockProducts = [
   {
     id: 'soho-32',
     patternno: 525310,
-    name: 'Soho Ergonomic Seating 32',
-    price: 1299,
+    name: 'Soho',
+    price: 499,
     rating: 4.7,
     Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
     reviewsCount: 67,
     category: 'SOHO',
-    img: sh299,
-    thumbnails: [sh299, sh300, sh301, sh302, sh303, sh304],
+    img: sh304,
+    thumbnails: [sh299, sh300, sh301, sh302, sh303, ],
     description: 'Minimalist seating design with active posture support and breathable fabric.',
     availability: 'In Stock',
     material: 'Ergonomic Mesh & High Density Foam',
@@ -1111,14 +1448,14 @@ export const mockProducts = [
   {
     id: 'soho-33',
     patternno: 525311,
-    name: 'Soho Ergonomic Seating 33',
-    price: 1299,
+    name: 'Soho',
+    price: 499,
     rating: 4.9,
     Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
     reviewsCount: 53,
     category: 'SOHO',
-    img: sh293,
-    thumbnails: [sh293, sh294, sh295, sh296, sh297, sh298],
+    img: sh296,
+    thumbnails: [sh293, sh294, sh295, sh297, sh298],
     description: 'Minimalist seating design with active posture support and breathable fabric.',
     availability: 'In Stock',
     material: 'Ergonomic Mesh & High Density Foam',
@@ -1129,8 +1466,8 @@ export const mockProducts = [
   {
     id: 'soho-34',
     patternno: 525312,
-    name: 'Soho Ergonomic Seating 34',
-    price: 1299,
+    name: 'Soho',
+    price: 499,
     rating: 5.0,
     Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
     reviewsCount: 78,
@@ -1147,8 +1484,8 @@ export const mockProducts = [
   {
     id: 'soho-35',
     patternno: 525313,
-    name: 'Soho Ergonomic Seating 35',
-    price: 1299,
+    name: 'Soho',
+    price: 499,
     rating: 4.8,
     Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
     reviewsCount: 62,
@@ -1165,8 +1502,8 @@ export const mockProducts = [
   {
     id: 'soho-36',
     patternno: 525314,
-    name: 'Soho Ergonomic Seating 36',
-    price: 1299,
+    name: 'Soho',
+    price: 499,
     rating: 4.9,
     Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
     reviewsCount: 88,
@@ -1183,8 +1520,8 @@ export const mockProducts = [
   {
     id: 'soho-37',
     patternno: 525315,
-    name: 'Soho Ergonomic Seating 37',
-    price: 1299,
+    name: 'Soho',
+    price: 499,
     rating: 4.7,
     Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
     reviewsCount: 41,
@@ -1201,8 +1538,8 @@ export const mockProducts = [
   {
     id: 'soho-38',
     patternno: 525316,
-    name: 'Soho Ergonomic Seating 38',
-    price: 1299,
+    name: 'Soho',
+    price: 499,
     rating: 5.0,
     Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
     reviewsCount: 95,
@@ -1219,8 +1556,8 @@ export const mockProducts = [
   {
     id: 'soho-39',
     patternno: 525317,
-    name: 'Soho Ergonomic Seating 39',
-    price: 1299,
+    name: 'Soho',
+    price: 499,
     rating: 4.8,
     Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
     reviewsCount: 52,
@@ -1237,8 +1574,8 @@ export const mockProducts = [
   {
     id: 'soho-40',
     patternno: 525318,
-    name: 'Soho Ergonomic Seating 40',
-    price: 1299,
+    name: 'Soho',
+    price: 499,
     rating: 4.9,
     Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
     reviewsCount: 76,
@@ -1255,8 +1592,8 @@ export const mockProducts = [
   {
     id: 'soho-41',
     patternno: 525319,
-    name: 'Soho Ergonomic Seating 41',
-    price: 1299,
+    name: 'Soho',
+    price: 499,
     rating: 4.8,
     Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
     reviewsCount: 82,
@@ -1273,8 +1610,8 @@ export const mockProducts = [
   {
     id: 'soho-42',
     patternno: 525320,
-    name: 'Soho Ergonomic Seating 42',
-    price: 1299,
+    name: 'Soho',
+    price: 499,
     rating: 4.9,
     Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
     reviewsCount: 68,
@@ -1291,8 +1628,8 @@ export const mockProducts = [
   {
     id: 'soho-43',
     patternno: 525321,
-    name: 'Soho Ergonomic Seating 43',
-    price: 1299,
+    name: 'Soho',
+    price: 499,
     rating: 4.7,
     Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
     reviewsCount: 44,
@@ -1309,8 +1646,8 @@ export const mockProducts = [
   {
     id: 'soho-44',
     patternno: 525322,
-    name: 'Soho Ergonomic Seating 44',
-    price: 1299,
+    name: 'Soho',
+    price: 499,
     rating: 5.0,
     Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
     reviewsCount: 91,
@@ -1327,8 +1664,8 @@ export const mockProducts = [
   {
     id: 'soho-45',
     patternno: 525323,
-    name: 'Soho Ergonomic Seating 45',
-    price: 1299,
+    name: 'Soho',
+    price: 499,
     rating: 4.8,
     Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
     reviewsCount: 73,
@@ -1345,8 +1682,8 @@ export const mockProducts = [
   {
     id: 'soho-46',
     patternno: 525324,
-    name: 'Soho Ergonomic Seating 46',
-    price: 1299,
+    name: 'Soho',
+    price: 499,
     rating: 4.9,
     Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
     reviewsCount: 66,
@@ -1363,8 +1700,8 @@ export const mockProducts = [
   {
     id: 'soho-47',
     patternno: 525325,
-    name: 'Soho Ergonomic Seating 47',
-    price: 1299,
+    name: 'Soho',
+    price: 499,
     rating: 4.7,
     Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
     reviewsCount: 49,
@@ -1381,8 +1718,8 @@ export const mockProducts = [
   {
     id: 'soho-48',
     patternno: 525326,
-    name: 'Soho Ergonomic Seating 48',
-    price: 1299,
+    name: 'Soho',
+    price: 499,
     rating: 5.0,
     Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
     reviewsCount: 104,
@@ -1399,8 +1736,8 @@ export const mockProducts = [
   {
     id: 'soho-49',
     patternno: 525327,
-    name: 'Soho Ergonomic Seating 49',
-    price: 1299,
+    name: 'Soho',
+    price: 499,
     rating: 4.8,
     Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
     reviewsCount: 58,
@@ -1417,8 +1754,8 @@ export const mockProducts = [
   {
     id: 'soho-50',
     patternno: 525328,
-    name: 'Soho Ergonomic Seating 50',
-    price: 1299,
+    name: 'Soho',
+    price: 499,
     rating: 4.9,
     Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
     reviewsCount: 77,
@@ -1435,8 +1772,8 @@ export const mockProducts = [
   {
     id: 'soho-51',
     patternno: 525329,
-    name: 'Soho Ergonomic Seating 51',
-    price: 1299,
+    name: 'Soho',
+    price: 499,
     rating: 4.8,
     Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
     reviewsCount: 83,
@@ -1453,8 +1790,8 @@ export const mockProducts = [
   {
     id: 'soho-52',
     patternno: 525330,
-    name: 'Soho Ergonomic Seating 52',
-    price: 1299,
+    name: 'Soho',
+    price: 499,
     rating: 4.9,
     Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
     reviewsCount: 61,
@@ -1471,8 +1808,8 @@ export const mockProducts = [
   {
     id: 'soho-53',
     patternno: 525331,
-    name: 'Soho Ergonomic Seating 53',
-    price: 1299,
+    name: 'Soho',
+    price: 499,
     rating: 4.7,
     Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
     reviewsCount: 45,
@@ -1489,8 +1826,8 @@ export const mockProducts = [
   {
     id: 'soho-54',
     patternno: 525332,
-    name: 'Soho Ergonomic Seating 54',
-    price: 1299,
+    name: 'Soho',
+    price: 499,
     rating: 5.0,
     Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
     reviewsCount: 99,
@@ -1507,8 +1844,8 @@ export const mockProducts = [
   {
     id: 'soho-55',
     patternno: 525233,
-    name: 'Soho Ergonomic Seating 55',
-    price: 1299,
+    name: 'Soho',
+    price: 499,
     rating: 4.8,
     Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
     reviewsCount: 70,
@@ -1525,8 +1862,8 @@ export const mockProducts = [
   {
     id: 'soho-56',
     patternno: 525334,
-    name: 'Soho Ergonomic Seating 56',
-    price: 1299,
+    name: 'Soho',
+    price: 499,
     rating: 4.9,
     Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
     reviewsCount: 65,
@@ -1543,8 +1880,8 @@ export const mockProducts = [
   {
     id: 'soho-57',
     patternno: 525335,
-    name: 'Soho Ergonomic Seating 57',
-    price: 1299,
+    name: 'Soho',
+    price: 499,
     rating: 4.7,
     Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
     reviewsCount: 51,
@@ -1561,8 +1898,8 @@ export const mockProducts = [
   {
     id: 'soho-58',
     patternno: 525336,
-    name: 'Soho Ergonomic Seating 58',
-    price: 1299,
+    name: 'Soho',
+    price: 499,
     rating: 5.0,
     Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
     reviewsCount: 112,
@@ -1579,8 +1916,8 @@ export const mockProducts = [
   {
     id: 'soho-59',
     patternno: 525337,
-    name: 'Soho Ergonomic Seating 59',
-    price: 1299,
+    name: 'Soho',
+    price: 499,
     rating: 4.8,
     Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
     reviewsCount: 59,
@@ -1597,8 +1934,8 @@ export const mockProducts = [
   {
     id: 'soho-60',
     patternno: 525338,
-    name: 'Soho Ergonomic Seating 60',
-    price: 1299,
+    name: 'Soho',
+    price: 499,
     rating: 4.9,
     Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
     reviewsCount: 80,
@@ -1615,8 +1952,8 @@ export const mockProducts = [
   {
     id: 'soho-61',
     patternno: 525339,
-    name: 'Soho Ergonomic Seating 61',
-    price: 1299,
+    name: 'Soho',
+    price: 499,
     rating: 4.9,
     Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
     reviewsCount: 76,
@@ -1630,6 +1967,27 @@ export const mockProducts = [
     warranty: '2 Year Manufacturer Warranty',
     deliveryInfo: 'Free shipping. Dispatched in 1-2 business days.'
   },
+
+  //Epic Wall
+  {
+    id: 'epicwall-1',
+    patternno:78601,
+    name: 'EpicWall',
+    price: 499,
+    rating: 4.9,
+    Info: { Weight: 1.4, Lenghtcm: 7.5, breadth: 7.5, heightcm: 50 },
+    reviewsCount: 76,
+    category: 'EpicWall',
+    img: ew3,
+    thumbnails: [ew2,ew1,ew4,ew5],
+    description: 'Minimalist seating design with active posture support and breathable fabric.',
+    availability: 'In Stock',
+    material: 'Ergonomic Mesh & High Density Foam',
+    dimensions: 'W 68cm x H 118-128cm x D 62cm',
+    warranty: '2 Year Manufacturer Warranty',
+    deliveryInfo: 'Free shipping. Dispatched in 1-2 business days.'
+  },
+
 ];
 
 //Helper Functions
