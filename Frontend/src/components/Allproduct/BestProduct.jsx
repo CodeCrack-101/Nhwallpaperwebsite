@@ -37,11 +37,11 @@ const categories = [
         desc: 'Cabin-worthy top grain leather thrones built for leaders and visionaries.'
     },
     {
-        id: 'urbano',
-        name: 'Urbano',
-        path: '/category/urbano',
+        id: 'royaltexture',
+        name: 'Royal Texture',
+        path: '/category/royaltexture',
         img: ur1,
-        desc: 'Reclining high-back racing seats designed to support endless intense gaming sessions.'
+        desc: 'Experience luxury with our Royalweave collection. Superior durability and elegant design.'
     },
     {
         id: 'Wallflora',
@@ -72,9 +72,9 @@ const categories = [
         desc: 'Comfortable seating engineered optimized for productivity and tech desks.'
     },
     {
-        id: 'Royaltexture',
-        name: 'Royal Texture',
-        path: '/category/royaltexture',
+        id: 'urbano',
+        name: 'Urbano',
+        path: '/category/urbano',
         img: sk1, 
         desc: 'Relaxed designer chairs bringing high-end comfort to breakout spaces.'
     }

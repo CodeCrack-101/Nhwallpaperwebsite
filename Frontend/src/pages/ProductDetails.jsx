@@ -163,9 +163,12 @@ const ProductDetails = () => {
                             style={{
                                 transformOrigin: `${zoomPos.x}% ${zoomPos.y}%`,
                                 transform: isZoomed ? 'scale(2)' : 'scale(1)',
-                                width: '100%',
-                                height: '100%',
-                                objectFit: 'cover',
+                                maxWidth: '100%',
+                                maxHeight: '100%',
+                                width: 'auto',
+                                height: 'auto',
+                                objectFit: 'contain',
+                                borderRadius: '12px',
                                 transition: isZoomed ? 'none' : 'transform 0.3s ease'
                             }}
                         />

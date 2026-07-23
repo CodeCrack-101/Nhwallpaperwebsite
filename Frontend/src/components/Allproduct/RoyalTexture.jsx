@@ -1,8 +1,8 @@
 /**
- * Office Chair (Urbano) Category Catalog Page File
- * Location: frontend/src/components/Allproduct/Urbano.jsx
- * Description: Renders products under the Office Chair category with infinite scroll,
- *              image lazy loading, and Mosaic indicators.
+ * Royal Texture Category Catalog Page Component
+ * Location: frontend/src/components/Allproduct/RoyalTexture.jsx
+ * Description: Renders all products under the ROYALTEXTURE category with infinite scrolling,
+ *              live search filtering, lazy loaded images, and product details links.
  */
 
 import React, { useState, useMemo } from 'react';
@@ -12,18 +12,18 @@ import { FiSearch, FiX, FiArrowLeft } from 'react-icons/fi';
 import InfiniteProductGrid from './InfiniteProductGrid';
 import './CategoryProducts.css';
 
-const products = getProductsByCategory('Office Chair');
-
-const Urbano = () => {
+const RoyalTexture = () => {
     const [searchTerm, setSearchTerm] = useState('');
+
+    const products = useMemo(() => getProductsByCategory('ROYALTEXTURE'), []);
 
     const filteredProducts = useMemo(() => {
         return products.filter((p) =>
-            `${p.name} ${p.category}`
+            `${p.name} ${p.category} ${p.patternno}`
                 .toLowerCase()
                 .includes(searchTerm.toLowerCase())
         );
-    }, [searchTerm]);
+    }, [products, searchTerm]);
 
     return (
         <main className="app-main" style={{ maxWidth: '1200px', margin: '60px auto', padding: '0 20px', width: '100%', boxSizing: 'border-box' }}>
@@ -34,8 +34,8 @@ const Urbano = () => {
 
             {/* Page Header */}
             <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-                <h1 className="category-heading-title">Office Chairs</h1>
-                <p className="category-heading-desc">Durable taskmesh chairs perfect for high-traffic office floors and shared desks.</p>
+                <h1 className="category-heading-title">Royal Texture Catalogue</h1>
+                <p className="category-heading-desc">Experience luxury with our Royalweave collection. Superior durability and elegant design make every room stand out.</p>
             </div>
 
             {/* Search Bar */}
@@ -43,7 +43,7 @@ const Urbano = () => {
                 <FiSearch className="category-search-icon" />
                 <input
                     type="text"
-                    placeholder="Search Office products..."
+                    placeholder="Search Royal Texture products..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                     className="category-search-input"
@@ -59,10 +59,10 @@ const Urbano = () => {
             {/* Infinite Scroll Product Grid */}
             <InfiniteProductGrid 
                 products={filteredProducts} 
-                emptyMessage="No Office chairs found." 
+                emptyMessage="No Royal Texture products found matching your search." 
             />
         </main>
     );
 };
 
-export default Urbano;
+export default RoyalTexture;

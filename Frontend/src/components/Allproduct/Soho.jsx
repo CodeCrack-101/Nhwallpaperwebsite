@@ -19,7 +19,7 @@ const Soho = () => {
 
     const filteredProducts = useMemo(() => {
         return products.filter((p) =>
-            `${p.name} ${p.category}`
+            `${p.name} ${p.category} ${p.patternno}`
                 .toLowerCase()
                 .includes(searchTerm.toLowerCase())
         );
@@ -34,7 +34,7 @@ const Soho = () => {
 
             {/* Page Header */}
             <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-                <h1 className="category-heading-title">SOHO Chairs</h1>
+                <h1 className="category-heading-title">Soho Catalogue</h1>
                 <p className="category-heading-desc">Premium minimalist seating designed to elevate your home workspaces.</p>
             </div>
 

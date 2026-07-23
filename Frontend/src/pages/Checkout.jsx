@@ -12,7 +12,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { useCart } from '../context/CartContext';
 import axiosInstance from '../api/axiosInstance';
-import { orderToasts, showError } from '../utils/toast';
+import { orderToasts, showError, triggerToast } from '../utils/toast';
 import {
     FiMapPin,
     FiCreditCard,
@@ -41,7 +41,7 @@ const loadRazorpayScript = () => {
 
 const Checkout = () => {
     const { user } = useAuth();
-    const { cart, clearCart, triggerToast } = useCart();
+    const { cart, clearCart } = useCart();
     const navigate = useNavigate();
 
     // Steps: 1 (Checkout Form), 2 (Success Screen)
